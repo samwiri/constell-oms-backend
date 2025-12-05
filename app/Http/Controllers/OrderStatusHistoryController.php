@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreOrderStatusHistoryRequest;
+use App\Models\Order;
 use App\Models\OrderStatusHistory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderStatusHistoryController extends Controller
 {
@@ -23,12 +26,43 @@ class OrderStatusHistoryController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    /** 
+     * Update Order status
+     * 
+     * @group Orders  
+     * @header Bearer Token    
+     * @bodyParam order_id integer required
+     * @bodyParam status string required
+     * @bodyParam notes string required
+     * @bodyParam location string
+     * @authenticated
+     * @response  {
+     *          "status": "success", 
+     *           "message": "Order history created successfully.",            
+     *       }   
+     * 
+    **/
+
+    public function store(StoreOrderStatusHistoryRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        $data['user_id'] = Auth::id();
+
+        $data['order_id'] = $request->order_id;
+
+        $order_history = OrderStatusHistory::create($data);
+
+        $order_history->status = $order_history->status;
+
+        $order_history->save();
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'Order history created successfully.',
+            'data'    => $order_history,
+        ], 201);
+
     }
 
     /**
@@ -55,11 +89,27 @@ class OrderStatusHistoryController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    /** 
+     * Delete Order status history
+     * 
+     * @group Orders  
+     * @header Bearer Token    
+     * @urlParam orderStatusHistory_id integer required 
+     * @authenticated
+     * @response  {
+     *          "status": "success", 
+     *           "message": "Order status history deleted.",            
+     *       }
+     *   } 
+     * 
+    **/
     public function destroy(OrderStatusHistory $orderStatusHistory)
     {
-        //
+        $orderStatusHistory->delete();
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'Order status history deleted.',
+        ]);
     }
 }

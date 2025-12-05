@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderStatusHistoryController;
 use App\Http\Controllers\WarehouseLocationController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,12 +26,17 @@ Route::middleware(['auth:sanctum'])->group(function () {
     });
 
     Route::prefix('settings')->group(function() {
-
-        Route::get('locations',[WarehouseLocationController::class,'index']);
-        Route::post('locations',[WarehouseLocationController::class,'store']);
-        Route::put('locations/{id}',[WarehouseLocationController::class,'update']);
-        Route::delete('locations/{id}',[WarehouseLocationController::class,'destroy']);
-
+        Route::apiResource('locations', WarehouseLocationController::class);
     });
+
+    
+
+    Route::apiResource('orders', OrderController::class);
+    Route::post('order_status_hisory',[OrderStatusHistoryController::class,'store']);
+    Route::delete('order_status_hisory/{id}',[OrderStatusHistoryController::class,'destroy']);
+        
+   
+
+     
   
 });

@@ -4,27 +4,36 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Activitylog\LogOptions;
 
 class Order extends Model
 {
-    use HasFactory;
+    use HasFactory, LogsActivity, SoftDeletes;
 
     protected $fillable = [
-        'tracking_number', 'user_id', 'origin_country',
-        'receiver_name', 'receiver_phone', 'receiver_email',
+        'tracking_number',
+        'user_id',
+        'origin_country',
+        'receiver_name',
+        'receiver_phone',
+        'receiver_email',
         'receiver_address',
-        'status', 'received_at', 'dispatched_at', 'arrived_at',
-        'released_at', 'delivered_at'
+        'status',
+        'received_at',
+        'dispatched_at',
+        'arrived_at',
+        'released_at',
+        'delivered_at',
     ];
 
     protected $casts = [
-        'received_at' => 'datetime',
+        'received_at'   => 'datetime',
         'dispatched_at' => 'datetime',
-        'arrived_at' => 'datetime',
-        'released_at' => 'datetime',
-        'delivered_at' => 'datetime',
+        'arrived_at'    => 'datetime',
+        'released_at'   => 'datetime',
+        'delivered_at'  => 'datetime',
     ];
 
     public function user()
@@ -53,16 +62,22 @@ class Order extends Model
     public function deliveryOrder()
     {
         return $this->hasOne(DeliveryOrder::class);
-    }
-
-   
-    public function getActivitylogOptions(): LogOptions
-    {
-        return LogOptions::defaults()->logFillable();
-    }
-   
+    }   
+     
     public function scopeByStatus($query, $status)
     {
         return $query->where('status', $status);
+    }
+
+    protected function generateOrderNumber(): string
+    {
+        $date = now()->format('Ymd');
+        $sequence = Order::withTrashed()->whereDate('created_at', today())->count() + 1;
+        return sprintf('ORD-%s-%05d', $date, $sequence);
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()->logFillable();
     }
 }
