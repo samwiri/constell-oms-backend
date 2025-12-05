@@ -1,9 +1,35 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\WarehouseLocationController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('auth')->group(function() {
+
+    Route::post('register',[AuthController::class,'register']);
+    Route::post('send_otp',[AuthController::class,'sendOtp']);
+    Route::post('verify_otp',[AuthController::class,'verifyOtp']);
+    Route::post('change_password',[AuthController::class,'changePassword']);  
+    Route::post('login',[AuthController::class,'login']);     
+    
+});
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    
+    Route::prefix('auth')->group(function() {
+        Route::post('logout',[AuthController::class,'userLogout']);
+        Route::get('user',[AuthController::class,'userProfile']);
+        Route::put('update_user',[AuthController::class,'updateUser']);       
+    });
+
+    Route::prefix('settings')->group(function() {
+
+        Route::get('locations',[WarehouseLocationController::class,'index']);
+        Route::post('locations',[WarehouseLocationController::class,'store']);
+        Route::put('locations/{id}',[WarehouseLocationController::class,'update']);
+        Route::delete('locations/{id}',[WarehouseLocationController::class,'destroy']);
+
+    });
+  
 });

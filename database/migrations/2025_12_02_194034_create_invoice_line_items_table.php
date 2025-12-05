@@ -15,6 +15,7 @@ return new class extends Migration
             
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
             
             $table->foreignId('invoice_id')->constrained('invoices')->onDelete('cascade');
             $table->string('description');

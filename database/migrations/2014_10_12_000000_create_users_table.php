@@ -22,7 +22,9 @@ return new class extends Migration
             $table->string('tin')->nullable()->comment('Tax Identification Number');
             $table->string('passport')->nullable();
             $table->text('address')->nullable();
+            $table->string('otp')->nullable();
             $table->enum('status', ['active', 'suspended'])->default('active');
+            $table->enum('user_type', ['user', 'staff','super_user'])->default('user');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

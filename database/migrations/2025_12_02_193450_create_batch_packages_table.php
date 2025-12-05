@@ -15,6 +15,7 @@ return new class extends Migration
             
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreignId('batch_id')->constrained('consolidation_batches')->onDelete('cascade');
             $table->foreignId('package_id')->constrained('packages')->onDelete('cascade');

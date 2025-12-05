@@ -15,9 +15,10 @@ return new class extends Migration
             
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->string('mawb_number', 50)->unique()->comment('Master Airway Bill Number');
-            $table->enum('transport_mode', ['AIR', 'SEA']);
+            $table->enum('transport_mode', ['AIR', 'SEA', 'ROAD', 'TRAIN']);
             $table->string('container_flight_number');
             $table->date('departure_date');
             $table->enum('status', ['OPEN', 'FINALIZED', 'DEPARTED', 'ARRIVED'])->default('OPEN');

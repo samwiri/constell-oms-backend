@@ -15,6 +15,7 @@ return new class extends Migration
 
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
             
             $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
             $table->decimal('original_value', 10, 2);
