@@ -4,16 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Package extends Model
 {
 
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'order_id', 'hwb_number', 'contents', 'declared_value',
         'weight', 'length', 'width', 'height',
-        'is_fragile', 'is_hazardous', 'is_damaged', 'damage_photos',
+        'is_fragile', 'is_hazardous', 'is_damaged', 'package_photos',
         'location_id', 'received_at'
     ];
 
@@ -21,7 +22,7 @@ class Package extends Model
         'is_fragile' => 'boolean',
         'is_hazardous' => 'boolean',
         'is_damaged' => 'boolean',
-        'damage_photos' => 'array',
+        'package_photos' => 'array',
         'received_at' => 'datetime',
     ];
 

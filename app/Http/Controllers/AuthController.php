@@ -136,7 +136,7 @@ class AuthController extends Controller
      * 
      * @group User profile  
      * @header Bearer Token    
-     * @bodyParam validation_text string required Example: Email or Password
+     * @bodyParam validation_text string required Example: Email or phone number
      * @bodyParam otp string required
      * @authenticated
      * @response  {
@@ -307,7 +307,7 @@ class AuthController extends Controller
     /** 
      * Log Out  User
      * 
-     * @group Authentication  
+     * @group User profile  
      * @header Bearer Token    
      * @authenticated
      * @response  {
@@ -333,7 +333,7 @@ class AuthController extends Controller
     /** 
      * User Profile
      * 
-     * @group Authentication  
+     * @group User profile  
      * @header Bearer Token    
      * @authenticated
      * @response  {
@@ -376,7 +376,7 @@ class AuthController extends Controller
     /** 
      * Update user
      * 
-     * @group Authentication  
+     * @group User profile  
      * @header Bearer Token 
      * @bodyParam phone string required 
      * @bodyParam full_name string required 

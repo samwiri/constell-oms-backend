@@ -1,187 +1,20 @@
-name: 'Warehouse Location'
+name: Others
 description: ''
 endpoints:
   -
     custom: []
     httpMethods:
       - GET
-    uri: api/settings/locations
-    metadata:
-      custom: []
-      groupName: 'Warehouse Location'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Warehouse Locations'
-      description: ''
-      authenticated: true
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: |-
-          {
-                "status": "success",
-                "message": "Warehouse Locations",
-                "data": [
-                    {
-                        "id": 1,
-                        "created_at": "2025-12-05T09:12:00.000000Z",
-                        "updated_at": "2025-12-05T09:12:00.000000Z",
-                        "deleted_at": null,
-                        "code": "A-01-B-03",
-                        "zone": "A",
-                        "rack": "01",
-                        "bay": "B",
-                        "shelf": "03",
-                        "is_occupied": 0
-                    }
-                ]
-            }
-        headers: []
-        description: ''
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - POST
-    uri: api/settings/locations
-    metadata:
-      custom: []
-      groupName: 'Warehouse Location'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Create Warehouse Location'
-      description: ''
-      authenticated: true
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      code:
-        custom: []
-        name: code
-        description: ''
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      zone:
-        custom: []
-        name: zone
-        description: ''
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      rack:
-        custom: []
-        name: rack
-        description: ''
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      bay:
-        custom: []
-        name: bay
-        description: ''
-        required: false
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      shelf:
-        custom: []
-        name: shelf
-        description: ''
-        required: false
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanBodyParameters:
-      code: consequatur
-      zone: consequatur
-      rack: consequatur
-      bay: consequatur
-      shelf: consequatur
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: |-
-          {
-                "status": "success",
-                "message": "Account created successfully",
-                "data": {
-                    "full_name": "Thembo Charles",
-                    "email": "ashley7520charles@gmail.com",
-                    "phone": "0787444081",
-                    "tin": "110023452",
-                    "passport": "65748",
-                    "address": "Kampala",
-                    "updated_at": "2025-12-05T06:42:09.000000Z",
-                    "created_at": "2025-12-05T06:42:09.000000Z",
-                    "id": 1
-                }
-            }
-        headers: []
-        description: ''
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - PUT
     uri: 'api/settings/locations/{id}'
     metadata:
       custom: []
-      groupName: 'Warehouse Location'
+      groupName: Others
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update Warehouse Location'
+      title: 'Display the specified resource.'
       description: ''
-      authenticated: true
+      authenticated: false
       deprecated: false
     headers:
       Content-Type: application/json
@@ -192,150 +25,14 @@ endpoints:
         name: id
         description: 'The ID of the location.'
         required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      id: consequatur
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      code:
-        custom: []
-        name: code
-        description: ''
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      zone:
-        custom: []
-        name: zone
-        description: ''
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      rack:
-        custom: []
-        name: rack
-        description: ''
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      bay:
-        custom: []
-        name: bay
-        description: ''
-        required: false
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      shelf:
-        custom: []
-        name: shelf
-        description: ''
-        required: false
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanBodyParameters:
-      code: consequatur
-      zone: consequatur
-      rack: consequatur
-      bay: consequatur
-      shelf: consequatur
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: |-
-          {
-                "status": "success",
-                "message": "Account created successfully",
-                "data": {
-                    "full_name": "Thembo Charles",
-                    "email": "ashley7520charles@gmail.com",
-                    "phone": "0787444081",
-                    "tin": "110023452",
-                    "passport": "65748",
-                    "address": "Kampala",
-                    "updated_at": "2025-12-05T06:42:09.000000Z",
-                    "created_at": "2025-12-05T06:42:09.000000Z",
-                    "id": 1
-                }
-            }
-        headers: []
-        description: ''
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - DELETE
-    uri: 'api/settings/locations/{id}'
-    metadata:
-      custom: []
-      groupName: 'Warehouse Location'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Delete Warehouse Location'
-      description: ''
-      authenticated: true
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        custom: []
-        name: id
-        description: 'The ID of the location.'
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      warehouseLocation_id:
-        custom: []
-        name: warehouseLocation_id
-        description: ''
-        required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: consequatur
-      warehouseLocation_id: 17
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -344,14 +41,13 @@ endpoints:
     responses:
       -
         custom: []
-        status: 200
-        content: |-
-          {
-                "status": "success",
-                "message": "Warehouse Location deleted successfully"
-            }
-        headers: []
-        description: ''
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
     responseFields: []
     auth: []
     controller: null

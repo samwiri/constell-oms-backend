@@ -31,7 +31,7 @@ return new class extends Migration
             $table->boolean('is_hazardous')->default(false);
             $table->boolean('is_damaged')->default(false);
 
-            $table->json('damage_photos')->nullable();
+            $table->json('package_photos')->nullable();
             $table->foreignId('location_id')->nullable()->constrained('warehouse_locations')->nullOnDelete();
             $table->timestamp('received_at')->nullable();          
             

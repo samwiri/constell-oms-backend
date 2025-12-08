@@ -1,0 +1,840 @@
+name: Orders
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/orders
+    metadata:
+      custom: []
+      groupName: Orders
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Orders
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                "status": "success",
+               "data": {
+                    "current_page": 1,
+                    "data": [
+                        {
+                            "id": 5,
+                            "created_at": "2025-12-05T12:20:11.000000Z",
+                            "updated_at": "2025-12-05T12:20:11.000000Z",
+                            "deleted_at": null,
+                            "tracking_number": "ORD-20251205-00002",
+                            "user_id": 1,
+                            "origin_country": "ITALY",
+                            "receiver_name": "Tom Mboya",
+                            "receiver_phone": "0789887766",
+                            "receiver_email": "tom.mboya@gmail.com",
+                            "receiver_address": "Uganda - Kampala",
+                            "status": "PENDING",
+                            "received_at": null,
+                            "dispatched_at": null,
+                            "arrived_at": null,
+                            "released_at": null,
+                            "delivered_at": null,
+                            "status_history": [
+                                {
+                                    "id": 4,
+                                    "created_at": "2025-12-05T12:27:49.000000Z",
+                                    "updated_at": "2025-12-05T12:27:49.000000Z",
+                                    "deleted_at": null,
+                                    "order_id": 5,
+                                    "status": "CONSOLIDATED",
+                                    "notes": "Well received",
+                                    "location": "USA",
+                                    "user_id": 1,
+                                    "user": {
+                                        "id": 1,
+                                        "full_name": "Thembo Charles",
+                                        "email": "ashley7520charles@gmail.com",
+                                        "phone": "0787444081",
+                                        "email_verified_at": null,
+                                        "tin": "110023452",
+                                        "passport": "65748",
+                                        "address": "Kampala",
+                                        "otp": "4782",
+                                        "status": "active",
+                                        "user_type": "user",
+                                        "created_at": "2025-12-05T06:42:09.000000Z",
+                                        "updated_at": "2025-12-05T07:58:28.000000Z",
+                                        "deleted_at": null
+                                    }
+                                }
+                            ],
+                            "user": {
+                                "id": 1,
+                                "full_name": "Thembo Charles",
+                                "email": "ashley7520charles@gmail.com",
+                                "phone": "0787444081",
+                                "email_verified_at": null,
+                                "tin": "110023452",
+                                "passport": "65748",
+                                "address": "Kampala",
+                                "otp": "4782",
+                                "status": "active",
+                                "user_type": "user",
+                                "created_at": "2025-12-05T06:42:09.000000Z",
+                                "updated_at": "2025-12-05T07:58:28.000000Z",
+                                "deleted_at": null
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "created_at": "2025-12-05T11:29:08.000000Z",
+                            "updated_at": "2025-12-05T11:29:08.000000Z",
+                            "deleted_at": null,
+                            "tracking_number": "ORD-20251205-00001",
+                            "user_id": 1,
+                            "origin_country": "USA",
+                            "receiver_name": "Tom Mboya",
+                            "receiver_phone": "0789887766",
+                            "receiver_email": "tom.mboya@gmail.com",
+                            "receiver_address": "Uganda - Kampala",
+                            "status": "PENDING",
+                            "received_at": null,
+                            "dispatched_at": null,
+                            "arrived_at": null,
+                            "released_at": null,
+                            "delivered_at": null,
+                            "status_history": [
+                                {
+                                    "id": 2,
+                                    "created_at": "2025-12-05T12:03:09.000000Z",
+                                    "updated_at": "2025-12-05T12:03:09.000000Z",
+                                    "deleted_at": null,
+                                    "order_id": 2,
+                                    "status": "CONSOLIDATED",
+                                    "notes": "Well received",
+                                    "location": "USA",
+                                    "user_id": 1,
+                                    "user": {
+                                        "id": 1,
+                                        "full_name": "Thembo Charles",
+                                        "email": "ashley7520charles@gmail.com",
+                                        "phone": "0787444081",
+                                        "email_verified_at": null,
+                                        "tin": "110023452",
+                                        "passport": "65748",
+                                        "address": "Kampala",
+                                        "otp": "4782",
+                                        "status": "active",
+                                        "user_type": "user",
+                                        "created_at": "2025-12-05T06:42:09.000000Z",
+                                        "updated_at": "2025-12-05T07:58:28.000000Z",
+                                        "deleted_at": null
+                                    }
+                                },
+                                {
+                                    "id": 1,
+                                    "created_at": "2025-12-05T12:01:16.000000Z",
+                                    "updated_at": "2025-12-05T12:01:16.000000Z",
+                                    "deleted_at": null,
+                                    "order_id": 2,
+                                    "status": "RECEIVED",
+                                    "notes": "Well received",
+                                    "location": "USA",
+                                    "user_id": null,
+                                    "user": null
+                                }
+                            ],
+                            "user": {
+                                "id": 1,
+                                "full_name": "Thembo Charles",
+                                "email": "ashley7520charles@gmail.com",
+                                "phone": "0787444081",
+                               "email_verified_at": null,
+                                "tin": "110023452",
+                                "passport": "65748",
+                                "address": "Kampala",
+                                "otp": "4782",
+                                "status": "active",
+                                "user_type": "user",
+                                "created_at": "2025-12-05T06:42:09.000000Z",
+                                "updated_at": "2025-12-05T07:58:28.000000Z",
+                                "deleted_at": null
+                            }
+                        }
+                    ],
+                    "first_page_url": "http://127.0.0.1:8000/api/orders?page=1",
+                    "from": 1,
+                    "last_page": 1,
+                    "last_page_url": "http://127.0.0.1:8000/api/orders?page=1",
+                    "links": [
+                        {
+                            "url": null,
+                            "label": "&laquo; Previous",
+                            "active": false
+                        },
+                        {
+                            "url": "http://127.0.0.1:8000/api/orders?page=1",
+                            "label": "1",
+                            "active": true
+                        },
+                        {
+                            "url": null,
+                            "label": "Next &raquo;",
+                            "active": false
+                        }
+                    ],
+                    "next_page_url": null,
+                    "path": "http://127.0.0.1:8000/api/orders",
+                    "per_page": 20,
+                    "prev_page_url": null,
+                    "to": 2,
+                    "total": 2
+                }
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/orders
+    metadata:
+      custom: []
+      groupName: Orders
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Place Order'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      origin_country:
+        custom: []
+        name: origin_country
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      receiver_name:
+        custom: []
+        name: receiver_name
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      receiver_phone:
+        custom: []
+        name: receiver_phone
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      receiver_email:
+        custom: []
+        name: receiver_email
+        description: ''
+        required: false
+        example: qkunze@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      receiver_address:
+        custom: []
+        name: receiver_address
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      origin_country: consequatur
+      receiver_name: consequatur
+      receiver_phone: consequatur
+      receiver_email: qkunze@example.com
+      receiver_address: consequatur
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                "status": "success",
+                "message": "Order created successfully.",
+                "data": {
+                    "origin_country": "ITALY",
+                    "receiver_name": "Tom Mboya",
+                    "receiver_phone": "0789887766",
+                    "receiver_email": "tom.mboya@gmail.com",
+                    "receiver_address": "Uganda - Kampala",
+                    "tracking_number": "ORD-20251205-00002",
+                    "user_id": 1,
+                    "updated_at": "2025-12-05T12:20:11.000000Z",
+                    "created_at": "2025-12-05T12:20:11.000000Z",
+                    "id": 5,
+                    "status_history": [],
+                    "user": {
+                        "id": 1,
+                        "full_name": "Thembo Charles",
+                        "email": "ashley7520charles@gmail.com",
+                        "phone": "0787444081",
+                        "email_verified_at": null,
+                        "tin": "110023452",
+                        "passport": "65748",
+                        "address": "Kampala",
+                        "otp": "4782",
+                        "status": "active",
+                        "user_type": "user",
+                        "created_at": "2025-12-05T06:42:09.000000Z",
+                        "updated_at": "2025-12-05T07:58:28.000000Z",
+                        "deleted_at": null
+                    }
+                }
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/orders/{id}'
+    metadata:
+      custom: []
+      groupName: Orders
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show Order'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      order_id:
+        custom: []
+        name: order_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 2
+      order_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "status": "success",
+            "data": {
+                "id": 5,
+                "created_at": "2025-12-05T12:20:11.000000Z",
+                "updated_at": "2025-12-05T12:20:11.000000Z",
+                "deleted_at": null,
+                "tracking_number": "ORD-20251205-00002",
+                "user_id": 1,
+                "origin_country": "ITALY",
+                "receiver_name": "Tom Mboya",
+                "receiver_phone": "0789887766",
+                "receiver_email": "tom.mboya@gmail.com",
+                "receiver_address": "Uganda - Kampala",
+                "status": "PENDING",
+                "received_at": null,
+                "dispatched_at": null,
+                "arrived_at": null,
+                "released_at": null,
+                "delivered_at": null,
+                "status_history": [
+                    {
+                        "id": 4,
+                        "created_at": "2025-12-05T12:27:49.000000Z",
+                        "updated_at": "2025-12-05T12:27:49.000000Z",
+                        "deleted_at": null,
+                        "order_id": 5,
+                        "status": "CONSOLIDATED",
+                        "notes": "Well received",
+                        "location": "USA",
+                        "user_id": 1,
+                        "user": {
+                            "id": 1,
+                            "full_name": "Thembo Charles",
+                            "email": "ashley7520charles@gmail.com",
+                            "phone": "0787444081",
+                            "email_verified_at": null,
+                            "tin": "110023452",
+                            "passport": "65748",
+                            "address": "Kampala",
+                            "otp": "4782",
+                            "status": "active",
+                            "user_type": "user",
+                            "created_at": "2025-12-05T06:42:09.000000Z",
+                            "updated_at": "2025-12-05T07:58:28.000000Z",
+                            "deleted_at": null
+                        }
+                    }
+                ],
+                "user": {
+                    "id": 1,
+                    "full_name": "Thembo Charles",
+                    "email": "ashley7520charles@gmail.com",
+                    "phone": "0787444081",
+                    "email_verified_at": null,
+                    "tin": "110023452",
+                    "passport": "65748",
+                    "address": "Kampala",
+                    "otp": "4782",
+                    "status": "active",
+                    "user_type": "user",
+                    "created_at": "2025-12-05T06:42:09.000000Z",
+                    "updated_at": "2025-12-05T07:58:28.000000Z",
+                    "deleted_at": null
+                }
+            }
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/orders/{id}'
+    metadata:
+      custom: []
+      groupName: Orders
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Order'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      order_id:
+        custom: []
+        name: order_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 2
+      order_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      origin_country:
+        custom: []
+        name: origin_country
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      receiver_name:
+        custom: []
+        name: receiver_name
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      receiver_phone:
+        custom: []
+        name: receiver_phone
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      receiver_email:
+        custom: []
+        name: receiver_email
+        description: ''
+        required: false
+        example: qkunze@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      receiver_address:
+        custom: []
+        name: receiver_address
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      origin_country: consequatur
+      receiver_name: consequatur
+      receiver_phone: consequatur
+      receiver_email: qkunze@example.com
+      receiver_address: consequatur
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                   "status": "success",
+                    "message": "Order updated successfully.",
+                }
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/orders/{id}'
+    metadata:
+      custom: []
+      groupName: Orders
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Order'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      order_id:
+        custom: []
+        name: order_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 2
+      order_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                   "status": "success",
+                    "message": "Order deleted successfully.",
+                }
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/order_status_hisory
+    metadata:
+      custom: []
+      groupName: Orders
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Order status'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      order_id:
+        custom: []
+        name: order_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      status:
+        custom: []
+        name: status
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      location:
+        custom: []
+        name: location
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      notes:
+        custom: []
+        name: notes
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      user_id:
+        custom: []
+        name: user_id
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      order_id: 17
+      status: consequatur
+      location: consequatur
+      notes: consequatur
+      user_id: 17
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                   "status": "success",
+                    "message": "Order history created successfully.",
+                }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/order_status_hisory/{id}'
+    metadata:
+      custom: []
+      groupName: Orders
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Order status history'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order status hisory.'
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      orderStatusHistory_id:
+        custom: []
+        name: orderStatusHistory_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 17
+      orderStatusHistory_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                   "status": "success",
+                    "message": "Order status history deleted.",
+                }
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
