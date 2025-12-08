@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBatchPackageRequest;
 use App\Models\BatchPackage;
+use App\Models\ConsolidationBatche;
+use App\Models\Package;
 use Illuminate\Http\Request;
 
 class BatchPackageController extends Controller
@@ -23,17 +26,40 @@ class BatchPackageController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+ 
+    /** 
+     * Add Package to Batch
+     * 
+     * @group Batch Package
+     * @header Bearer Token    
+     * 
+     * @bodyParam batch_id integer required
+     * @bodyParam package_id integer required
+     * 
+     * @authenticated
+     * @response  {
+     *          "status": "success", 
+     *           "message": "Package added to batch successfully.",            
+     *       }
+     *   } 
+     * 
+    **/
+
+    public function store(StoreBatchPackageRequest $request)
     {
-        //
+       $batchPackage = BatchPackage::create([
+            'batch_id'   => $request->batch_id,
+            'package_id' => $request->package_id,
+        ]);
+      
+        return response()->json([
+            'message' => 'Package added to batch successfully',
+            'data'    => $batchPackage
+        ], 201);
+
     }
 
-    /**
-     * Display the specified resource.
-     */
+ 
     public function show(BatchPackage $batchPackage)
     {
         //
@@ -55,11 +81,36 @@ class BatchPackageController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(BatchPackage $batchPackage)
+    /** 
+     * Delete Consolidation Batch
+     * 
+     * @group Batch Package
+     * @header Bearer Token    
+     * 
+     * @bodyParam batch_id integer required
+     * @bodyParam package_id integer required
+     * 
+     * @authenticated
+     * @response  {
+     *          "status": "success", 
+     *           "message": "Package removed from batch.",            
+     *       }
+     *   } 
+     * 
+    **/
+   public function deleteByPair(Request $request)
     {
-        //
+        $request->validate([
+            'batch_id' => 'required|exists:consolidation_batches,id',
+            'package_id' => 'required|exists:packages,id',
+        ]);
+
+        BatchPackage::where('batch_id', $request->batch_id)
+                    ->where('package_id', $request->package_id)
+                    ->forceDelete();
+
+        return response()->json([
+            'message' => 'Package removed from batch'
+        ]);
     }
 }

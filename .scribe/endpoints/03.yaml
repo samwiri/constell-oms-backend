@@ -707,7 +707,7 @@ endpoints:
       status:
         custom: []
         name: status
-        description: ''
+        description: 'e.g PENDING,RECEIVED,CONSOLIDATED,DISPATCHED,IN_TRANSIT,ARRIVED,READY_FOR_RELEASE,RELEASED,DELIVERED'
         required: true
         example: consequatur
         type: string

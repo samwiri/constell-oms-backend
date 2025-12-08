@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BatchPackageController;
+use App\Http\Controllers\ConsolidationBatcheController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderStatusHistoryController;
 use App\Http\Controllers\PackageController;
@@ -38,8 +40,17 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('packages', [PackageController::class, 'store']);
     Route::put('packages/{id}', [PackageController::class, 'update']);
     Route::delete('packages/{id}', [PackageController::class, 'destroy']);
-    Route::post('/packages/{id}/package-photos', [PackageController::class, 'storePackagePhotos']);
-    Route::delete('/packages/{id}/package-photos', [PackageController::class, 'deletePackagePhotos']);
+    Route::post('packages/{id}/package-photos', [PackageController::class, 'storePackagePhotos']);
+    Route::delete('packages/{id}/package-photos', [PackageController::class, 'deletePackagePhotos']);
 
+
+    Route::get('consolidation-batches', [ConsolidationBatcheController::class, 'index']);
+    Route::get('consolidation-batches/{id}', [ConsolidationBatcheController::class, 'show']);
+    Route::post('consolidation-batches', [ConsolidationBatcheController::class, 'store']);
+    Route::put('consolidation-batches/{id}', [ConsolidationBatcheController::class, 'update']);
+    Route::delete('consolidation-batches/{id}', [ConsolidationBatcheController::class, 'destroy']);
   
+    Route::post('/batch-packages', [BatchPackageController::class, 'store']);
+    Route::delete('/batch-packages', [BatchPackageController::class, 'deleteByPair']);
+
 });

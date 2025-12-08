@@ -20,8 +20,7 @@ return new class extends Migration
             $table->foreignId('invoice_id')->constrained('invoices')->onDelete('cascade');
             $table->string('description');
             $table->integer('quantity');
-            $table->decimal('unit_price', 10, 2);
-            $table->decimal('total', 10, 2);
+            $table->double('unit_price');
             
             $table->index('invoice_id');
 

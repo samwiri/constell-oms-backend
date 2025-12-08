@@ -20,7 +20,7 @@ return new class extends Migration
             $table->foreignId('batch_id')->constrained('consolidation_batches')->onDelete('cascade');
             $table->string('manifest_number', 50)->unique();
             $table->string('file_path');
-            $table->foreignId('generated_by')->constrained('staff');         
+            $table->foreignId('generated_by')->constrained('user');         
 
             $table->index('manifest_number');
             $table->index('batch_id');

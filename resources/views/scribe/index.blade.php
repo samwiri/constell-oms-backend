@@ -168,6 +168,41 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-consolidation-batch" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="consolidation-batch">
+                    <a href="#consolidation-batch">Consolidation Batch</a>
+                </li>
+                                    <ul id="tocify-subheader-consolidation-batch" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="consolidation-batch-GETapi-consolidation-batches">
+                                <a href="#consolidation-batch-GETapi-consolidation-batches">Consolidation Batches</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="consolidation-batch-GETapi-consolidation-batches--id-">
+                                <a href="#consolidation-batch-GETapi-consolidation-batches--id-">Consolidation Batch</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="consolidation-batch-POSTapi-consolidation-batches">
+                                <a href="#consolidation-batch-POSTapi-consolidation-batches">Create a Consolidation Batch</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="consolidation-batch-PUTapi-consolidation-batches--id-">
+                                <a href="#consolidation-batch-PUTapi-consolidation-batches--id-">Update a Consolidation Batch</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="consolidation-batch-DELETEapi-consolidation-batches--id-">
+                                <a href="#consolidation-batch-DELETEapi-consolidation-batches--id-">Delete Consolidation Batch</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-batch-package" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="batch-package">
+                    <a href="#batch-package">Batch Package</a>
+                </li>
+                                    <ul id="tocify-subheader-batch-package" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="batch-package-POSTapi-batch-packages">
+                                <a href="#batch-package-POSTapi-batch-packages">Add Package to Batch</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="batch-package-DELETEapi-batch-packages">
+                                <a href="#batch-package-DELETEapi-batch-packages">Delete Consolidation Batch</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-others" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="others">
                     <a href="#others">Others</a>
@@ -4083,7 +4118,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="consequatur"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>e.g PENDING,RECEIVED,CONSOLIDATED,DISPATCHED,IN_TRANSIT,ARRIVED,READY_FOR_RELEASE,RELEASED,DELIVERED Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>location</code></b>&nbsp;&nbsp;
@@ -5357,8 +5392,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Bearer: Token" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpF05B.tmp" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpF06C.tmp" </code></pre></div>
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpD984.tmp" \
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpDA50.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5397,11 +5432,11 @@ $response = $client-&gt;post(
         'multipart' =&gt; [
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpF05B.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpD984.tmp', 'r')
             ],
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpF06C.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpDA50.tmp', 'r')
             ],
         ],
     ]
@@ -5580,7 +5615,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Example: <code>C:\Users\HP\AppData\Local\Temp\phpF06C.tmp</code></p>
+<p>Example: <code>C:\Users\HP\AppData\Local\Temp\phpDA50.tmp</code></p>
         </div>
         </form>
 
@@ -5806,6 +5841,1786 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>e.g package_photos/ngtZoTVR3mPb8G8otpFTeKnD78maftxCL7UXRcuD.jpg Example: <code>consequatur</code></p>
+        </div>
+        </form>
+
+                <h1 id="consolidation-batch">Consolidation Batch</h1>
+
+    
+
+                                <h2 id="consolidation-batch-GETapi-consolidation-batches">Consolidation Batches</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-consolidation-batches">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/consolidation-batches" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/consolidation-batches"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/consolidation-batches';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-consolidation-batches">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;id&quot;: 1,
+        &quot;created_at&quot;: &quot;2025-12-08T08:21:32.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-08T08:40:10.000000Z&quot;,
+        &quot;deleted_at&quot;: null,
+        &quot;mawb_number&quot;: &quot;MAWB-20251208-001&quot;,
+        &quot;transport_mode&quot;: &quot;AIR&quot;,
+        &quot;container_flight_number&quot;: &quot;AB001&quot;,
+        &quot;departure_date&quot;: &quot;2025-12-10T00:00:00.000000Z&quot;,
+        &quot;status&quot;: &quot;FINALIZED&quot;,
+        &quot;package_count&quot;: 0,
+        &quot;total_weight&quot;: &quot;0.00&quot;,
+        &quot;created_by&quot;: 1,
+        &quot;finalized_at&quot;: &quot;2025-12-09T00:00:00.000000Z&quot;,
+        &quot;departed_at&quot;: &quot;2025-12-10T00:00:00.000000Z&quot;,
+        &quot;arrived_at&quot;: &quot;2025-12-10T00:00:00.000000Z&quot;,
+        &quot;packages&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;created_at&quot;: &quot;2025-12-08T07:19:43.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-08T07:42:06.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;order_id&quot;: 5,
+                &quot;hwb_number&quot;: &quot;HWB-2025128-0002&quot;,
+                &quot;contents&quot;: &quot;Computer - Desktop&quot;,
+                &quot;declared_value&quot;: &quot;2500000.00&quot;,
+                &quot;weight&quot;: &quot;5.00&quot;,
+                &quot;length&quot;: &quot;4.00&quot;,
+                &quot;width&quot;: &quot;6.00&quot;,
+                &quot;height&quot;: &quot;2.00&quot;,
+                &quot;is_fragile&quot;: true,
+                &quot;is_hazardous&quot;: false,
+                &quot;is_damaged&quot;: false,
+                &quot;package_photos&quot;: [
+                    &quot;package_photos/LXHHmhE4YM0YoTn1Lva95FSyQi31i89dskkPv2il.jpg&quot;,
+                    &quot;package_photos/thtdPXJtqtkpECHhbeyXIOAIMSGt564ZFIXBqdcp.jpg&quot;,
+                    &quot;package_photos/Uc34hnpyAPsAT1QINJfca0msaFdudcYfaY2Qs21h.jpg&quot;
+                ],
+                &quot;location_id&quot;: 1,
+                &quot;received_at&quot;: &quot;2025-12-03T00:00:00.000000Z&quot;,
+                &quot;pivot&quot;: {
+                    &quot;batch_id&quot;: 1,
+                    &quot;package_id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2025-12-08T08:57:19.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-08T08:57:19.000000Z&quot;
+                },
+                &quot;order&quot;: {
+                    &quot;id&quot;: 5,
+                    &quot;created_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;tracking_number&quot;: &quot;ORD-20251205-00002&quot;,
+                    &quot;user_id&quot;: 1,
+                    &quot;origin_country&quot;: &quot;ITALY&quot;,
+                    &quot;receiver_name&quot;: &quot;Tom Mboya&quot;,
+                    &quot;receiver_phone&quot;: &quot;0789887766&quot;,
+                    &quot;receiver_email&quot;: &quot;tom.mboya@gmail.com&quot;,
+                    &quot;receiver_address&quot;: &quot;Uganda - Kampala&quot;,
+                    &quot;status&quot;: &quot;PENDING&quot;,
+                    &quot;received_at&quot;: null,
+                    &quot;dispatched_at&quot;: null,
+                    &quot;arrived_at&quot;: null,
+                    &quot;released_at&quot;: null,
+                    &quot;delivered_at&quot;: null,
+                    &quot;user&quot;: {
+                        &quot;id&quot;: 1,
+                        &quot;full_name&quot;: &quot;Thembo Charles&quot;,
+                        &quot;email&quot;: &quot;ashley7520charles@gmail.com&quot;,
+                        &quot;phone&quot;: &quot;0787444081&quot;,
+                        &quot;email_verified_at&quot;: null,
+                        &quot;tin&quot;: &quot;110023452&quot;,
+                        &quot;passport&quot;: &quot;65748&quot;,
+                        &quot;address&quot;: &quot;Kampala&quot;,
+                        &quot;otp&quot;: &quot;4782&quot;,
+                        &quot;status&quot;: &quot;active&quot;,
+                        &quot;user_type&quot;: &quot;user&quot;,
+                        &quot;created_at&quot;: &quot;2025-12-05T06:42:09.000000Z&quot;,
+                        &quot;updated_at&quot;: &quot;2025-12-05T07:58:28.000000Z&quot;,
+                        &quot;deleted_at&quot;: null
+                    }
+                }
+            }
+        ]
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-consolidation-batches" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-consolidation-batches"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-consolidation-batches"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-consolidation-batches" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-consolidation-batches">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-consolidation-batches" data-method="GET"
+      data-path="api/consolidation-batches"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-consolidation-batches', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-consolidation-batches"
+                    onclick="tryItOut('GETapi-consolidation-batches');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-consolidation-batches"
+                    onclick="cancelTryOut('GETapi-consolidation-batches');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-consolidation-batches"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/consolidation-batches</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="GETapi-consolidation-batches"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-consolidation-batches"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-consolidation-batches"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="consolidation-batch-GETapi-consolidation-batches--id-">Consolidation Batch</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-consolidation-batches--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/consolidation-batches/consequatur" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/consolidation-batches/consequatur"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/consolidation-batches/consequatur';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-consolidation-batches--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">[
+    {
+        &quot;id&quot;: 1,
+        &quot;created_at&quot;: &quot;2025-12-08T08:21:32.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-08T08:40:10.000000Z&quot;,
+        &quot;deleted_at&quot;: null,
+        &quot;mawb_number&quot;: &quot;MAWB-20251208-001&quot;,
+        &quot;transport_mode&quot;: &quot;AIR&quot;,
+        &quot;container_flight_number&quot;: &quot;AB001&quot;,
+        &quot;departure_date&quot;: &quot;2025-12-10T00:00:00.000000Z&quot;,
+        &quot;status&quot;: &quot;FINALIZED&quot;,
+        &quot;package_count&quot;: 0,
+        &quot;total_weight&quot;: &quot;0.00&quot;,
+        &quot;created_by&quot;: 1,
+        &quot;finalized_at&quot;: &quot;2025-12-09T00:00:00.000000Z&quot;,
+        &quot;departed_at&quot;: &quot;2025-12-10T00:00:00.000000Z&quot;,
+        &quot;arrived_at&quot;: &quot;2025-12-10T00:00:00.000000Z&quot;,
+        &quot;packages&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;created_at&quot;: &quot;2025-12-08T07:19:43.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-08T07:42:06.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;order_id&quot;: 5,
+                &quot;hwb_number&quot;: &quot;HWB-2025128-0002&quot;,
+                &quot;contents&quot;: &quot;Computer - Desktop&quot;,
+                &quot;declared_value&quot;: &quot;2500000.00&quot;,
+                &quot;weight&quot;: &quot;5.00&quot;,
+                &quot;length&quot;: &quot;4.00&quot;,
+                &quot;width&quot;: &quot;6.00&quot;,
+                &quot;height&quot;: &quot;2.00&quot;,
+                &quot;is_fragile&quot;: true,
+                &quot;is_hazardous&quot;: false,
+                &quot;is_damaged&quot;: false,
+                &quot;package_photos&quot;: [
+                    &quot;package_photos/LXHHmhE4YM0YoTn1Lva95FSyQi31i89dskkPv2il.jpg&quot;,
+                    &quot;package_photos/thtdPXJtqtkpECHhbeyXIOAIMSGt564ZFIXBqdcp.jpg&quot;,
+                    &quot;package_photos/Uc34hnpyAPsAT1QINJfca0msaFdudcYfaY2Qs21h.jpg&quot;
+                ],
+                &quot;location_id&quot;: 1,
+                &quot;received_at&quot;: &quot;2025-12-03T00:00:00.000000Z&quot;,
+                &quot;pivot&quot;: {
+                    &quot;batch_id&quot;: 1,
+                    &quot;package_id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2025-12-08T08:57:19.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-08T08:57:19.000000Z&quot;
+                },
+                &quot;order&quot;: {
+                    &quot;id&quot;: 5,
+                    &quot;created_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;tracking_number&quot;: &quot;ORD-20251205-00002&quot;,
+                    &quot;user_id&quot;: 1,
+                    &quot;origin_country&quot;: &quot;ITALY&quot;,
+                    &quot;receiver_name&quot;: &quot;Tom Mboya&quot;,
+                    &quot;receiver_phone&quot;: &quot;0789887766&quot;,
+                    &quot;receiver_email&quot;: &quot;tom.mboya@gmail.com&quot;,
+                    &quot;receiver_address&quot;: &quot;Uganda - Kampala&quot;,
+                    &quot;status&quot;: &quot;PENDING&quot;,
+                    &quot;received_at&quot;: null,
+                    &quot;dispatched_at&quot;: null,
+                    &quot;arrived_at&quot;: null,
+                    &quot;released_at&quot;: null,
+                    &quot;delivered_at&quot;: null,
+                    &quot;user&quot;: {
+                        &quot;id&quot;: 1,
+                        &quot;full_name&quot;: &quot;Thembo Charles&quot;,
+                        &quot;email&quot;: &quot;ashley7520charles@gmail.com&quot;,
+                        &quot;phone&quot;: &quot;0787444081&quot;,
+                        &quot;email_verified_at&quot;: null,
+                        &quot;tin&quot;: &quot;110023452&quot;,
+                        &quot;passport&quot;: &quot;65748&quot;,
+                        &quot;address&quot;: &quot;Kampala&quot;,
+                        &quot;otp&quot;: &quot;4782&quot;,
+                        &quot;status&quot;: &quot;active&quot;,
+                        &quot;user_type&quot;: &quot;user&quot;,
+                        &quot;created_at&quot;: &quot;2025-12-05T06:42:09.000000Z&quot;,
+                        &quot;updated_at&quot;: &quot;2025-12-05T07:58:28.000000Z&quot;,
+                        &quot;deleted_at&quot;: null
+                    }
+                }
+            }
+        ]
+    }
+]</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-consolidation-batches--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-consolidation-batches--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-consolidation-batches--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-consolidation-batches--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-consolidation-batches--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-consolidation-batches--id-" data-method="GET"
+      data-path="api/consolidation-batches/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-consolidation-batches--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-consolidation-batches--id-"
+                    onclick="tryItOut('GETapi-consolidation-batches--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-consolidation-batches--id-"
+                    onclick="cancelTryOut('GETapi-consolidation-batches--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-consolidation-batches--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/consolidation-batches/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="GETapi-consolidation-batches--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-consolidation-batches--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-consolidation-batches--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-consolidation-batches--id-"
+               value="consequatur"
+               data-component="url">
+    <br>
+<p>The ID of the consolidation batch. Example: <code>consequatur</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="consolidation-batch-POSTapi-consolidation-batches">Create a Consolidation Batch</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-consolidation-batches">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/consolidation-batches" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"mawb_number\": \"consequatur\",
+    \"transport_mode\": \"consequatur\",
+    \"container_flight_number\": \"consequatur\",
+    \"departure_date\": \"consequatur\",
+    \"status\": \"ARRIVED\",
+    \"package_count\": 56,
+    \"total_weight\": 16,
+    \"finalized_at\": \"2025-12-08T09:21:09\",
+    \"departed_at\": \"2025-12-08T09:21:09\",
+    \"arrived_at\": \"2025-12-08T09:21:09\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/consolidation-batches"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "mawb_number": "consequatur",
+    "transport_mode": "consequatur",
+    "container_flight_number": "consequatur",
+    "departure_date": "consequatur",
+    "status": "ARRIVED",
+    "package_count": 56,
+    "total_weight": 16,
+    "finalized_at": "2025-12-08T09:21:09",
+    "departed_at": "2025-12-08T09:21:09",
+    "arrived_at": "2025-12-08T09:21:09"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/consolidation-batches';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'mawb_number' =&gt; 'consequatur',
+            'transport_mode' =&gt; 'consequatur',
+            'container_flight_number' =&gt; 'consequatur',
+            'departure_date' =&gt; 'consequatur',
+            'status' =&gt; 'ARRIVED',
+            'package_count' =&gt; 56,
+            'total_weight' =&gt; 16,
+            'finalized_at' =&gt; '2025-12-08T09:21:09',
+            'departed_at' =&gt; '2025-12-08T09:21:09',
+            'arrived_at' =&gt; '2025-12-08T09:21:09',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-consolidation-batches">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Consolidation batch created successfully&quot;,
+    &quot;data&quot;: {
+        &quot;mawb_number&quot;: &quot;MAWB-20251208-002&quot;,
+        &quot;transport_mode&quot;: &quot;AIR&quot;,
+        &quot;container_flight_number&quot;: &quot;AB001&quot;,
+        &quot;departure_date&quot;: &quot;2025-12-10T00:00:00.000000Z&quot;,
+        &quot;departed_at&quot;: &quot;2025-12-10T00:00:00.000000Z&quot;,
+        &quot;created_by&quot;: 1,
+        &quot;updated_at&quot;: &quot;2025-12-08T08:27:36.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-08T08:27:36.000000Z&quot;,
+        &quot;id&quot;: 3,
+        &quot;user&quot;: {
+            &quot;id&quot;: 1,
+            &quot;full_name&quot;: &quot;Thembo Charles&quot;,
+            &quot;email&quot;: &quot;ashley7520charles@gmail.com&quot;,
+            &quot;phone&quot;: &quot;0787444081&quot;,
+            &quot;email_verified_at&quot;: null,
+            &quot;tin&quot;: &quot;110023452&quot;,
+            &quot;passport&quot;: &quot;65748&quot;,
+            &quot;address&quot;: &quot;Kampala&quot;,
+            &quot;otp&quot;: &quot;4782&quot;,
+            &quot;status&quot;: &quot;active&quot;,
+            &quot;user_type&quot;: &quot;user&quot;,
+            &quot;created_at&quot;: &quot;2025-12-05T06:42:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-05T07:58:28.000000Z&quot;,
+            &quot;deleted_at&quot;: null
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-consolidation-batches" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-consolidation-batches"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-consolidation-batches"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-consolidation-batches" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-consolidation-batches">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-consolidation-batches" data-method="POST"
+      data-path="api/consolidation-batches"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-consolidation-batches', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-consolidation-batches"
+                    onclick="tryItOut('POSTapi-consolidation-batches');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-consolidation-batches"
+                    onclick="cancelTryOut('POSTapi-consolidation-batches');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-consolidation-batches"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/consolidation-batches</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-consolidation-batches"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-consolidation-batches"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-consolidation-batches"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>mawb_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="mawb_number"                data-endpoint="POSTapi-consolidation-batches"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>transport_mode</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="transport_mode"                data-endpoint="POSTapi-consolidation-batches"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>e.g 'AIR', 'SEA', 'ROAD', 'TRAIN' Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>container_flight_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="container_flight_number"                data-endpoint="POSTapi-consolidation-batches"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>departure_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="departure_date"                data-endpoint="POSTapi-consolidation-batches"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="POSTapi-consolidation-batches"
+               value="ARRIVED"
+               data-component="body">
+    <br>
+<p>Example: <code>ARRIVED</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>OPEN</code></li> <li><code>FINALIZED</code></li> <li><code>DEPARTED</code></li> <li><code>ARRIVED</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>package_count</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="package_count"                data-endpoint="POSTapi-consolidation-batches"
+               value="56"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>56</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_weight</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="total_weight"                data-endpoint="POSTapi-consolidation-batches"
+               value="16"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>16</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>created_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="created_by"                data-endpoint="POSTapi-consolidation-batches"
+               value=""
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users table.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>finalized_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="finalized_at"                data-endpoint="POSTapi-consolidation-batches"
+               value="2025-12-08T09:21:09"
+               data-component="body">
+    <br>
+<p>Must be a valid date. Example: <code>2025-12-08T09:21:09</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>departed_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="departed_at"                data-endpoint="POSTapi-consolidation-batches"
+               value="2025-12-08T09:21:09"
+               data-component="body">
+    <br>
+<p>Must be a valid date. Example: <code>2025-12-08T09:21:09</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>arrived_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="arrived_at"                data-endpoint="POSTapi-consolidation-batches"
+               value="2025-12-08T09:21:09"
+               data-component="body">
+    <br>
+<p>Must be a valid date. Example: <code>2025-12-08T09:21:09</code></p>
+        </div>
+        </form>
+
+                    <h2 id="consolidation-batch-PUTapi-consolidation-batches--id-">Update a Consolidation Batch</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-consolidation-batches--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/consolidation-batches/consequatur" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"mawb_number\": \"consequatur\",
+    \"transport_mode\": \"consequatur\",
+    \"container_flight_number\": \"consequatur\",
+    \"departure_date\": \"consequatur\",
+    \"status\": \"consequatur\",
+    \"package_count\": 56,
+    \"total_weight\": 16,
+    \"finalized_at\": \"consequatur\",
+    \"departed_at\": \"consequatur\",
+    \"arrived_at\": \"consequatur\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/consolidation-batches/consequatur"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "mawb_number": "consequatur",
+    "transport_mode": "consequatur",
+    "container_flight_number": "consequatur",
+    "departure_date": "consequatur",
+    "status": "consequatur",
+    "package_count": 56,
+    "total_weight": 16,
+    "finalized_at": "consequatur",
+    "departed_at": "consequatur",
+    "arrived_at": "consequatur"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/consolidation-batches/consequatur';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'mawb_number' =&gt; 'consequatur',
+            'transport_mode' =&gt; 'consequatur',
+            'container_flight_number' =&gt; 'consequatur',
+            'departure_date' =&gt; 'consequatur',
+            'status' =&gt; 'consequatur',
+            'package_count' =&gt; 56,
+            'total_weight' =&gt; 16,
+            'finalized_at' =&gt; 'consequatur',
+            'departed_at' =&gt; 'consequatur',
+            'arrived_at' =&gt; 'consequatur',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-consolidation-batches--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Consolidation batch updated successfully&quot;,
+    &quot;data&quot;: {
+        &quot;mawb_number&quot;: &quot;MAWB-20251208-002&quot;,
+        &quot;transport_mode&quot;: &quot;AIR&quot;,
+        &quot;container_flight_number&quot;: &quot;AB001&quot;,
+        &quot;departure_date&quot;: &quot;2025-12-10T00:00:00.000000Z&quot;,
+        &quot;departed_at&quot;: &quot;2025-12-10T00:00:00.000000Z&quot;,
+        &quot;created_by&quot;: 1,
+        &quot;updated_at&quot;: &quot;2025-12-08T08:27:36.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-08T08:27:36.000000Z&quot;,
+        &quot;id&quot;: 3,
+        &quot;user&quot;: {
+            &quot;id&quot;: 1,
+            &quot;full_name&quot;: &quot;Thembo Charles&quot;,
+            &quot;email&quot;: &quot;ashley7520charles@gmail.com&quot;,
+            &quot;phone&quot;: &quot;0787444081&quot;,
+            &quot;email_verified_at&quot;: null,
+            &quot;tin&quot;: &quot;110023452&quot;,
+            &quot;passport&quot;: &quot;65748&quot;,
+            &quot;address&quot;: &quot;Kampala&quot;,
+            &quot;otp&quot;: &quot;4782&quot;,
+            &quot;status&quot;: &quot;active&quot;,
+            &quot;user_type&quot;: &quot;user&quot;,
+            &quot;created_at&quot;: &quot;2025-12-05T06:42:09.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-05T07:58:28.000000Z&quot;,
+            &quot;deleted_at&quot;: null
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-consolidation-batches--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-consolidation-batches--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-consolidation-batches--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-consolidation-batches--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-consolidation-batches--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-consolidation-batches--id-" data-method="PUT"
+      data-path="api/consolidation-batches/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-consolidation-batches--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-consolidation-batches--id-"
+                    onclick="tryItOut('PUTapi-consolidation-batches--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-consolidation-batches--id-"
+                    onclick="cancelTryOut('PUTapi-consolidation-batches--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-consolidation-batches--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/consolidation-batches/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="consequatur"
+               data-component="url">
+    <br>
+<p>The ID of the consolidation batch. Example: <code>consequatur</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>consolidationBatche_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="consolidationBatche_id"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>mawb_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="mawb_number"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>transport_mode</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="transport_mode"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>e.g 'AIR', 'SEA', 'ROAD', 'TRAIN' Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>container_flight_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="container_flight_number"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>departure_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="departure_date"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>e.g OPEN,FINALIZED,DEPARTED,ARRIVED Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>package_count</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="package_count"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="56"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>56</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>total_weight</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="total_weight"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="16"
+               data-component="body">
+    <br>
+<p>Must be at least 0. Example: <code>16</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>created_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="created_by"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value=""
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users table.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>finalized_at</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="finalized_at"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>departed_at</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="departed_at"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>arrived_at</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="arrived_at"                data-endpoint="PUTapi-consolidation-batches--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+        </form>
+
+                    <h2 id="consolidation-batch-DELETEapi-consolidation-batches--id-">Delete Consolidation Batch</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-consolidation-batches--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/consolidation-batches/consequatur" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/consolidation-batches/consequatur"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/consolidation-batches/consequatur';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-consolidation-batches--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+         &quot;status&quot;: &quot;success&quot;,
+          &quot;message&quot;: &quot;Consolidation batch deleted successfully.&quot;,
+      }
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-consolidation-batches--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-consolidation-batches--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-consolidation-batches--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-consolidation-batches--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-consolidation-batches--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-consolidation-batches--id-" data-method="DELETE"
+      data-path="api/consolidation-batches/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-consolidation-batches--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-consolidation-batches--id-"
+                    onclick="tryItOut('DELETEapi-consolidation-batches--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-consolidation-batches--id-"
+                    onclick="cancelTryOut('DELETEapi-consolidation-batches--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-consolidation-batches--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/consolidation-batches/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="DELETEapi-consolidation-batches--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-consolidation-batches--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-consolidation-batches--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-consolidation-batches--id-"
+               value="consequatur"
+               data-component="url">
+    <br>
+<p>The ID of the consolidation batch. Example: <code>consequatur</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>consolidationBatche_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="consolidationBatche_id"                data-endpoint="DELETEapi-consolidation-batches--id-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                    </form>
+
+                <h1 id="batch-package">Batch Package</h1>
+
+    
+
+                                <h2 id="batch-package-POSTapi-batch-packages">Add Package to Batch</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-batch-packages">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/batch-packages" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"batch_id\": 17,
+    \"package_id\": 17
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/batch-packages"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "batch_id": 17,
+    "package_id": 17
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/batch-packages';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'batch_id' =&gt; 17,
+            'package_id' =&gt; 17,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-batch-packages">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+         &quot;status&quot;: &quot;success&quot;,
+          &quot;message&quot;: &quot;Package added to batch successfully.&quot;,
+      }
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-batch-packages" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-batch-packages"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-batch-packages"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-batch-packages" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-batch-packages">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-batch-packages" data-method="POST"
+      data-path="api/batch-packages"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-batch-packages', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-batch-packages"
+                    onclick="tryItOut('POSTapi-batch-packages');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-batch-packages"
+                    onclick="cancelTryOut('POSTapi-batch-packages');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-batch-packages"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/batch-packages</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-batch-packages"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-batch-packages"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-batch-packages"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>batch_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="batch_id"                data-endpoint="POSTapi-batch-packages"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>package_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="package_id"                data-endpoint="POSTapi-batch-packages"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+        </form>
+
+                    <h2 id="batch-package-DELETEapi-batch-packages">Delete Consolidation Batch</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-batch-packages">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/batch-packages" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"batch_id\": 17,
+    \"package_id\": 17
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/batch-packages"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "batch_id": 17,
+    "package_id": 17
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/batch-packages';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'batch_id' =&gt; 17,
+            'package_id' =&gt; 17,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-batch-packages">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+         &quot;status&quot;: &quot;success&quot;,
+          &quot;message&quot;: &quot;Package removed from batch.&quot;,
+      }
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-batch-packages" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-batch-packages"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-batch-packages"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-batch-packages" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-batch-packages">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-batch-packages" data-method="DELETE"
+      data-path="api/batch-packages"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-batch-packages', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-batch-packages"
+                    onclick="tryItOut('DELETEapi-batch-packages');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-batch-packages"
+                    onclick="cancelTryOut('DELETEapi-batch-packages');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-batch-packages"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/batch-packages</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="DELETEapi-batch-packages"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-batch-packages"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-batch-packages"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>batch_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="batch_id"                data-endpoint="DELETEapi-batch-packages"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>package_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="package_id"                data-endpoint="DELETEapi-batch-packages"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
         </div>
         </form>
 

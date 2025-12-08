@@ -32,7 +32,7 @@ class OrderStatusHistoryController extends Controller
      * @group Orders  
      * @header Bearer Token    
      * @bodyParam order_id integer required
-     * @bodyParam status string required
+     * @bodyParam status string required e.g PENDING,RECEIVED,CONSOLIDATED,DISPATCHED,IN_TRANSIT,ARRIVED,READY_FOR_RELEASE,RELEASED,DELIVERED
      * @bodyParam notes string required
      * @bodyParam location string
      * @authenticated

@@ -25,7 +25,7 @@ return new class extends Migration
 
             $table->integer('package_count')->default(0);
             $table->decimal('total_weight', 10, 2)->default(0);
-            $table->foreignId('created_by')->constrained('staff');
+            $table->foreignId('created_by')->constrained('users');
             $table->timestamp('finalized_at')->nullable();
             $table->timestamp('departed_at')->nullable();
             $table->timestamp('arrived_at')->nullable();            

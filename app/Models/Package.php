@@ -48,7 +48,7 @@ class Package extends Model
 
     public function getVolumetricWeightAttribute()
     {
-        return ($this->length * $this->width * $this->height) / 5000;
+        return ($this->length * $this->width * $this->height);
     }
 
     public function getChargeableWeightAttribute()
