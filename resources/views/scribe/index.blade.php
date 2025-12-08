@@ -203,6 +203,46 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-invoice" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="invoice">
+                    <a href="#invoice">Invoice</a>
+                </li>
+                                    <ul id="tocify-subheader-invoice" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="invoice-GETapi-billing-invoices">
+                                <a href="#invoice-GETapi-billing-invoices">Make an Invoice</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-POSTapi-billing-invoices">
+                                <a href="#invoice-POSTapi-billing-invoices">Make an Invoice</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-PUTapi-billing-invoices--id-">
+                                <a href="#invoice-PUTapi-billing-invoices--id-">Update an Invoice</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-DELETEapi-billing-invoices--id-">
+                                <a href="#invoice-DELETEapi-billing-invoices--id-">Delete Invoice</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-POSTapi-billing-invoices--id--restore">
+                                <a href="#invoice-POSTapi-billing-invoices--id--restore">Restore Invoice</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-POSTapi-billing-invoice-line-items">
+                                <a href="#invoice-POSTapi-billing-invoice-line-items">Add Item to Invoice</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-PUTapi-billing-invoice-line-items--id-">
+                                <a href="#invoice-PUTapi-billing-invoice-line-items--id-">Edit Invoice Item</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-DELETEapi-billing-invoice-line-items--id-">
+                                <a href="#invoice-DELETEapi-billing-invoice-line-items--id-">Delete Invoice Item</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-POSTapi-billing-invoice-line-items--id--restore">
+                                <a href="#invoice-POSTapi-billing-invoice-line-items--id--restore">Restore Invoice Item</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-POSTapi-billing-payments">
+                                <a href="#invoice-POSTapi-billing-payments">Record Invoice Payment</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-DELETEapi-billing-payments--payment_id-">
+                                <a href="#invoice-DELETEapi-billing-payments--payment_id-">Delete Invoice Payment</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-others" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="others">
                     <a href="#others">Others</a>
@@ -210,6 +250,15 @@
                                     <ul id="tocify-subheader-others" class="tocify-subheader">
                                                     <li class="tocify-item level-2" data-unique="others-GETapi-settings-locations--id-">
                                 <a href="#others-GETapi-settings-locations--id-">Display the specified resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="others-GETapi-billing-invoices--id-">
+                                <a href="#others-GETapi-billing-invoices--id-">Display the specified resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="others-GETapi-billing-invoice-line-items">
+                                <a href="#others-GETapi-billing-invoice-line-items">Display a listing of the resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="others-GETapi-billing-invoice-line-items--id-">
+                                <a href="#others-GETapi-billing-invoice-line-items--id-">Display the specified resource.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -5392,8 +5441,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Bearer: Token" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpD984.tmp" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpDA50.tmp" </code></pre></div>
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php2AE8.tmp" \
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php2AF9.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5432,11 +5481,11 @@ $response = $client-&gt;post(
         'multipart' =&gt; [
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpD984.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php2AE8.tmp', 'r')
             ],
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpDA50.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php2AF9.tmp', 'r')
             ],
         ],
     ]
@@ -5615,7 +5664,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Example: <code>C:\Users\HP\AppData\Local\Temp\phpDA50.tmp</code></p>
+<p>Example: <code>C:\Users\HP\AppData\Local\Temp\php2AF9.tmp</code></p>
         </div>
         </form>
 
@@ -6355,9 +6404,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"status\": \"ARRIVED\",
     \"package_count\": 56,
     \"total_weight\": 16,
-    \"finalized_at\": \"2025-12-08T09:21:09\",
-    \"departed_at\": \"2025-12-08T09:21:09\",
-    \"arrived_at\": \"2025-12-08T09:21:09\"
+    \"finalized_at\": \"2025-12-08T13:49:06\",
+    \"departed_at\": \"2025-12-08T13:49:06\",
+    \"arrived_at\": \"2025-12-08T13:49:06\"
 }"
 </code></pre></div>
 
@@ -6381,9 +6430,9 @@ let body = {
     "status": "ARRIVED",
     "package_count": 56,
     "total_weight": 16,
-    "finalized_at": "2025-12-08T09:21:09",
-    "departed_at": "2025-12-08T09:21:09",
-    "arrived_at": "2025-12-08T09:21:09"
+    "finalized_at": "2025-12-08T13:49:06",
+    "departed_at": "2025-12-08T13:49:06",
+    "arrived_at": "2025-12-08T13:49:06"
 };
 
 fetch(url, {
@@ -6412,9 +6461,9 @@ $response = $client-&gt;post(
             'status' =&gt; 'ARRIVED',
             'package_count' =&gt; 56,
             'total_weight' =&gt; 16,
-            'finalized_at' =&gt; '2025-12-08T09:21:09',
-            'departed_at' =&gt; '2025-12-08T09:21:09',
-            'arrived_at' =&gt; '2025-12-08T09:21:09',
+            'finalized_at' =&gt; '2025-12-08T13:49:06',
+            'departed_at' =&gt; '2025-12-08T13:49:06',
+            'arrived_at' =&gt; '2025-12-08T13:49:06',
         ],
     ]
 );
@@ -6650,10 +6699,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="finalized_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-08T09:21:09"
+               value="2025-12-08T13:49:06"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-08T09:21:09</code></p>
+<p>Must be a valid date. Example: <code>2025-12-08T13:49:06</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>departed_at</code></b>&nbsp;&nbsp;
@@ -6662,10 +6711,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="departed_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-08T09:21:09"
+               value="2025-12-08T13:49:06"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-08T09:21:09</code></p>
+<p>Must be a valid date. Example: <code>2025-12-08T13:49:06</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>arrived_at</code></b>&nbsp;&nbsp;
@@ -6674,10 +6723,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="arrived_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-08T09:21:09"
+               value="2025-12-08T13:49:06"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-08T09:21:09</code></p>
+<p>Must be a valid date. Example: <code>2025-12-08T13:49:06</code></p>
         </div>
         </form>
 
@@ -7624,6 +7673,2393 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
+                <h1 id="invoice">Invoice</h1>
+
+    
+
+                                <h2 id="invoice-GETapi-billing-invoices">Make an Invoice</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-billing-invoices">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/billing/invoices" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoices"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoices';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-billing-invoices">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Invoices fetched successfully&quot;,
+    &quot;data&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: 2,
+                &quot;created_at&quot;: &quot;2025-12-08T10:31:55.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-08T10:42:55.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;invoice_number&quot;: &quot;INV-20251208-00002&quot;,
+                &quot;user_id&quot;: 1,
+                &quot;order_id&quot;: 5,
+                &quot;type&quot;: &quot;FREIGHT&quot;,
+                &quot;status&quot;: &quot;PAID&quot;,
+                &quot;due_date&quot;: &quot;2005-12-09T00:00:00.000000Z&quot;,
+                &quot;order&quot;: {
+                    &quot;id&quot;: 5,
+                    &quot;created_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;tracking_number&quot;: &quot;ORD-20251205-00002&quot;,
+                    &quot;user_id&quot;: 1,
+                    &quot;origin_country&quot;: &quot;ITALY&quot;,
+                    &quot;receiver_name&quot;: &quot;Tom Mboya&quot;,
+                    &quot;receiver_phone&quot;: &quot;0789887766&quot;,
+                    &quot;receiver_email&quot;: &quot;tom.mboya@gmail.com&quot;,
+                    &quot;receiver_address&quot;: &quot;Uganda - Kampala&quot;,
+                    &quot;status&quot;: &quot;PENDING&quot;,
+                    &quot;received_at&quot;: null,
+                    &quot;dispatched_at&quot;: null,
+                    &quot;arrived_at&quot;: null,
+                    &quot;released_at&quot;: null,
+                    &quot;delivered_at&quot;: null,
+                    &quot;user&quot;: {
+                        &quot;id&quot;: 1,
+                        &quot;full_name&quot;: &quot;Thembo Charles&quot;,
+                        &quot;email&quot;: &quot;ashley7520charles@gmail.com&quot;,
+                        &quot;phone&quot;: &quot;0787444081&quot;,
+                        &quot;email_verified_at&quot;: null,
+                        &quot;tin&quot;: &quot;110023452&quot;,
+                        &quot;passport&quot;: &quot;65748&quot;,
+                        &quot;address&quot;: &quot;Kampala&quot;,
+                        &quot;otp&quot;: &quot;4782&quot;,
+                        &quot;status&quot;: &quot;active&quot;,
+                        &quot;user_type&quot;: &quot;user&quot;,
+                        &quot;created_at&quot;: &quot;2025-12-05T06:42:09.000000Z&quot;,
+                        &quot;updated_at&quot;: &quot;2025-12-05T07:58:28.000000Z&quot;,
+                        &quot;deleted_at&quot;: null
+                    }
+                },
+                &quot;line_items&quot;: [],
+                &quot;payments&quot;: []
+            },
+            {
+                &quot;id&quot;: 1,
+                &quot;created_at&quot;: &quot;2025-12-08T10:31:08.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-08T10:31:08.000000Z&quot;,
+                &quot;deleted_at&quot;: null,
+                &quot;invoice_number&quot;: &quot;ORD-20251208-00001&quot;,
+                &quot;user_id&quot;: 1,
+                &quot;order_id&quot;: 5,
+                &quot;type&quot;: &quot;FREIGHT&quot;,
+                &quot;status&quot;: &quot;UNPAID&quot;,
+                &quot;due_date&quot;: &quot;2005-12-09T00:00:00.000000Z&quot;,
+                &quot;order&quot;: {
+                    &quot;id&quot;: 5,
+                    &quot;created_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;tracking_number&quot;: &quot;ORD-20251205-00002&quot;,
+                    &quot;user_id&quot;: 1,
+                    &quot;origin_country&quot;: &quot;ITALY&quot;,
+                    &quot;receiver_name&quot;: &quot;Tom Mboya&quot;,
+                    &quot;receiver_phone&quot;: &quot;0789887766&quot;,
+                    &quot;receiver_email&quot;: &quot;tom.mboya@gmail.com&quot;,
+                    &quot;receiver_address&quot;: &quot;Uganda - Kampala&quot;,
+                    &quot;status&quot;: &quot;PENDING&quot;,
+                    &quot;received_at&quot;: null,
+                    &quot;dispatched_at&quot;: null,
+                    &quot;arrived_at&quot;: null,
+                    &quot;released_at&quot;: null,
+                    &quot;delivered_at&quot;: null,
+                    &quot;user&quot;: {
+                        &quot;id&quot;: 1,
+                        &quot;full_name&quot;: &quot;Thembo Charles&quot;,
+                        &quot;email&quot;: &quot;ashley7520charles@gmail.com&quot;,
+                        &quot;phone&quot;: &quot;0787444081&quot;,
+                        &quot;email_verified_at&quot;: null,
+                        &quot;tin&quot;: &quot;110023452&quot;,
+                        &quot;passport&quot;: &quot;65748&quot;,
+                        &quot;address&quot;: &quot;Kampala&quot;,
+                        &quot;otp&quot;: &quot;4782&quot;,
+                        &quot;status&quot;: &quot;active&quot;,
+                        &quot;user_type&quot;: &quot;user&quot;,
+                        &quot;created_at&quot;: &quot;2025-12-05T06:42:09.000000Z&quot;,
+                        &quot;updated_at&quot;: &quot;2025-12-05T07:58:28.000000Z&quot;,
+                        &quot;deleted_at&quot;: null
+                    }
+                },
+                &quot;line_items&quot;: [],
+                &quot;payments&quot;: []
+            }
+        ],
+        &quot;first_page_url&quot;: &quot;http://127.0.0.1:8000/api/billing/invoices?page=1&quot;,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 1,
+        &quot;last_page_url&quot;: &quot;http://127.0.0.1:8000/api/billing/invoices?page=1&quot;,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://127.0.0.1:8000/api/billing/invoices?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;next_page_url&quot;: null,
+        &quot;path&quot;: &quot;http://127.0.0.1:8000/api/billing/invoices&quot;,
+        &quot;per_page&quot;: 20,
+        &quot;prev_page_url&quot;: null,
+        &quot;to&quot;: 2,
+        &quot;total&quot;: 2
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-billing-invoices" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-billing-invoices"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-billing-invoices"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-billing-invoices" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-billing-invoices">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-billing-invoices" data-method="GET"
+      data-path="api/billing/invoices"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-billing-invoices', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-billing-invoices"
+                    onclick="tryItOut('GETapi-billing-invoices');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-billing-invoices"
+                    onclick="cancelTryOut('GETapi-billing-invoices');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-billing-invoices"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/billing/invoices</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="GETapi-billing-invoices"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-billing-invoices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-billing-invoices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="invoice-POSTapi-billing-invoices">Make an Invoice</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-billing-invoices">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/billing/invoices" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"order_id\": \"consequatur\",
+    \"type\": \"FREIGHT,STORAGE,CUSTOMS,OTHER\",
+    \"due_date\": \"consequatur\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoices"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "order_id": "consequatur",
+    "type": "FREIGHT,STORAGE,CUSTOMS,OTHER",
+    "due_date": "consequatur"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoices';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'order_id' =&gt; 'consequatur',
+            'type' =&gt; 'FREIGHT,STORAGE,CUSTOMS,OTHER',
+            'due_date' =&gt; 'consequatur',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-billing-invoices">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Invoice created successfully&quot;,
+    &quot;data&quot;: {
+        &quot;order_id&quot;: &quot;5&quot;,
+        &quot;type&quot;: &quot;FREIGHT&quot;,
+        &quot;due_date&quot;: &quot;2005-12-09T00:00:00.000000Z&quot;,
+        &quot;user_id&quot;: 1,
+        &quot;invoice_number&quot;: &quot;INV-20251208-00002&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-08T10:31:55.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-08T10:31:55.000000Z&quot;,
+        &quot;id&quot;: 2,
+        &quot;order&quot;: {
+            &quot;id&quot;: 5,
+            &quot;created_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+            &quot;deleted_at&quot;: null,
+            &quot;tracking_number&quot;: &quot;ORD-20251205-00002&quot;,
+            &quot;user_id&quot;: 1,
+            &quot;origin_country&quot;: &quot;ITALY&quot;,
+            &quot;receiver_name&quot;: &quot;Tom Mboya&quot;,
+            &quot;receiver_phone&quot;: &quot;0789887766&quot;,
+            &quot;receiver_email&quot;: &quot;tom.mboya@gmail.com&quot;,
+            &quot;receiver_address&quot;: &quot;Uganda - Kampala&quot;,
+            &quot;status&quot;: &quot;PENDING&quot;,
+            &quot;received_at&quot;: null,
+            &quot;dispatched_at&quot;: null,
+            &quot;arrived_at&quot;: null,
+            &quot;released_at&quot;: null,
+            &quot;delivered_at&quot;: null
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-billing-invoices" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-billing-invoices"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-billing-invoices"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-billing-invoices" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-billing-invoices">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-billing-invoices" data-method="POST"
+      data-path="api/billing/invoices"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-billing-invoices', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-billing-invoices"
+                    onclick="tryItOut('POSTapi-billing-invoices');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-billing-invoices"
+                    onclick="cancelTryOut('POSTapi-billing-invoices');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-billing-invoices"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/billing/invoices</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-billing-invoices"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-billing-invoices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-billing-invoices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="order_id"                data-endpoint="POSTapi-billing-invoices"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="type"                data-endpoint="POSTapi-billing-invoices"
+               value="FREIGHT,STORAGE,CUSTOMS,OTHER"
+               data-component="body">
+    <br>
+<p>Example: <code>FREIGHT,STORAGE,CUSTOMS,OTHER</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>due_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="due_date"                data-endpoint="POSTapi-billing-invoices"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+        </form>
+
+                    <h2 id="invoice-PUTapi-billing-invoices--id-">Update an Invoice</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-billing-invoices--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/billing/invoices/1" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"type\": \"FREIGHT,STORAGE,CUSTOMS,OTHER\",
+    \"status\": \"UNPAID,PAID,OVERDUE,CANCELLED\",
+    \"due_date\": \"consequatur\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoices/1"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "type": "FREIGHT,STORAGE,CUSTOMS,OTHER",
+    "status": "UNPAID,PAID,OVERDUE,CANCELLED",
+    "due_date": "consequatur"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoices/1';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'type' =&gt; 'FREIGHT,STORAGE,CUSTOMS,OTHER',
+            'status' =&gt; 'UNPAID,PAID,OVERDUE,CANCELLED',
+            'due_date' =&gt; 'consequatur',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-billing-invoices--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Invoice Updated successfully&quot;,
+    &quot;data&quot;: {
+        &quot;order_id&quot;: &quot;5&quot;,
+        &quot;type&quot;: &quot;FREIGHT&quot;,
+        &quot;due_date&quot;: &quot;2005-12-09T00:00:00.000000Z&quot;,
+        &quot;user_id&quot;: 1,
+        &quot;invoice_number&quot;: &quot;INV-20251208-00002&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-08T10:31:55.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-08T10:31:55.000000Z&quot;,
+        &quot;id&quot;: 2,
+        &quot;order&quot;: {
+            &quot;id&quot;: 5,
+            &quot;created_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+            &quot;deleted_at&quot;: null,
+            &quot;tracking_number&quot;: &quot;ORD-20251205-00002&quot;,
+            &quot;user_id&quot;: 1,
+            &quot;origin_country&quot;: &quot;ITALY&quot;,
+            &quot;receiver_name&quot;: &quot;Tom Mboya&quot;,
+            &quot;receiver_phone&quot;: &quot;0789887766&quot;,
+            &quot;receiver_email&quot;: &quot;tom.mboya@gmail.com&quot;,
+            &quot;receiver_address&quot;: &quot;Uganda - Kampala&quot;,
+            &quot;status&quot;: &quot;PENDING&quot;,
+            &quot;received_at&quot;: null,
+            &quot;dispatched_at&quot;: null,
+            &quot;arrived_at&quot;: null,
+            &quot;released_at&quot;: null,
+            &quot;delivered_at&quot;: null
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-billing-invoices--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-billing-invoices--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-billing-invoices--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-billing-invoices--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-billing-invoices--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-billing-invoices--id-" data-method="PUT"
+      data-path="api/billing/invoices/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-billing-invoices--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-billing-invoices--id-"
+                    onclick="tryItOut('PUTapi-billing-invoices--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-billing-invoices--id-"
+                    onclick="cancelTryOut('PUTapi-billing-invoices--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-billing-invoices--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/billing/invoices/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/billing/invoices/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="PUTapi-billing-invoices--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-billing-invoices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-billing-invoices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="PUTapi-billing-invoices--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the invoice. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="type"                data-endpoint="PUTapi-billing-invoices--id-"
+               value="FREIGHT,STORAGE,CUSTOMS,OTHER"
+               data-component="body">
+    <br>
+<p>Example: <code>FREIGHT,STORAGE,CUSTOMS,OTHER</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="PUTapi-billing-invoices--id-"
+               value="UNPAID,PAID,OVERDUE,CANCELLED"
+               data-component="body">
+    <br>
+<p>Example: <code>UNPAID,PAID,OVERDUE,CANCELLED</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>due_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="due_date"                data-endpoint="PUTapi-billing-invoices--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+        </form>
+
+                    <h2 id="invoice-DELETEapi-billing-invoices--id-">Delete Invoice</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-billing-invoices--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/billing/invoices/1" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoices/1"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoices/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-billing-invoices--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+         &quot;status&quot;: &quot;success&quot;,
+          &quot;message&quot;: &quot;Invoice deleted successfully&quot;,
+      }
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-billing-invoices--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-billing-invoices--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-billing-invoices--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-billing-invoices--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-billing-invoices--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-billing-invoices--id-" data-method="DELETE"
+      data-path="api/billing/invoices/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-billing-invoices--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-billing-invoices--id-"
+                    onclick="tryItOut('DELETEapi-billing-invoices--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-billing-invoices--id-"
+                    onclick="cancelTryOut('DELETEapi-billing-invoices--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-billing-invoices--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/billing/invoices/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="DELETEapi-billing-invoices--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-billing-invoices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-billing-invoices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-billing-invoices--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the invoice. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>invoice_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="invoice_id"                data-endpoint="DELETEapi-billing-invoices--id-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="invoice-POSTapi-billing-invoices--id--restore">Restore Invoice</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-billing-invoices--id--restore">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/billing/invoices/1/restore" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoices/1/restore"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoices/1/restore';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-billing-invoices--id--restore">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+         &quot;status&quot;: &quot;success&quot;,
+          &quot;message&quot;: &quot;Invoice restored successfully&quot;,
+      }
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-billing-invoices--id--restore" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-billing-invoices--id--restore"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-billing-invoices--id--restore"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-billing-invoices--id--restore" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-billing-invoices--id--restore">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-billing-invoices--id--restore" data-method="POST"
+      data-path="api/billing/invoices/{id}/restore"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-billing-invoices--id--restore', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-billing-invoices--id--restore"
+                    onclick="tryItOut('POSTapi-billing-invoices--id--restore');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-billing-invoices--id--restore"
+                    onclick="cancelTryOut('POSTapi-billing-invoices--id--restore');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-billing-invoices--id--restore"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/billing/invoices/{id}/restore</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-billing-invoices--id--restore"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-billing-invoices--id--restore"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-billing-invoices--id--restore"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="POSTapi-billing-invoices--id--restore"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the invoice. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>invoice_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="invoice_id"                data-endpoint="POSTapi-billing-invoices--id--restore"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="invoice-POSTapi-billing-invoice-line-items">Add Item to Invoice</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-billing-invoice-line-items">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/billing/invoice-line-items" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"invoice_id\": \"consequatur\",
+    \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
+    \"quantity\": 17,
+    \"unit_price\": 11613.31890586
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoice-line-items"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "invoice_id": "consequatur",
+    "description": "Dolores dolorum amet iste laborum eius est dolor.",
+    "quantity": 17,
+    "unit_price": 11613.31890586
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoice-line-items';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'invoice_id' =&gt; 'consequatur',
+            'description' =&gt; 'Dolores dolorum amet iste laborum eius est dolor.',
+            'quantity' =&gt; 17,
+            'unit_price' =&gt; 11613.31890586,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-billing-invoice-line-items">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Invoice line item created successfully&quot;,
+    &quot;data&quot;: {
+        &quot;invoice_id&quot;: &quot;1&quot;,
+        &quot;description&quot;: &quot;Cargo A&quot;,
+        &quot;quantity&quot;: &quot;1&quot;,
+        &quot;unit_price&quot;: &quot;30000&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-08T13:30:52.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-08T13:30:52.000000Z&quot;,
+        &quot;id&quot;: 1
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-billing-invoice-line-items" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-billing-invoice-line-items"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-billing-invoice-line-items"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-billing-invoice-line-items" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-billing-invoice-line-items">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-billing-invoice-line-items" data-method="POST"
+      data-path="api/billing/invoice-line-items"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-billing-invoice-line-items', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-billing-invoice-line-items"
+                    onclick="tryItOut('POSTapi-billing-invoice-line-items');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-billing-invoice-line-items"
+                    onclick="cancelTryOut('POSTapi-billing-invoice-line-items');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-billing-invoice-line-items"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/billing/invoice-line-items</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-billing-invoice-line-items"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-billing-invoice-line-items"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-billing-invoice-line-items"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>invoice_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="invoice_id"                data-endpoint="POSTapi-billing-invoice-line-items"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="POSTapi-billing-invoice-line-items"
+               value="Dolores dolorum amet iste laborum eius est dolor."
+               data-component="body">
+    <br>
+<p>Example: <code>Dolores dolorum amet iste laborum eius est dolor.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="quantity"                data-endpoint="POSTapi-billing-invoice-line-items"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>unit_price</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="unit_price"                data-endpoint="POSTapi-billing-invoice-line-items"
+               value="11613.31890586"
+               data-component="body">
+    <br>
+<p>Example: <code>11613.31890586</code></p>
+        </div>
+        </form>
+
+                    <h2 id="invoice-PUTapi-billing-invoice-line-items--id-">Edit Invoice Item</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-billing-invoice-line-items--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/billing/invoice-line-items/1" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
+    \"quantity\": 17,
+    \"unit_price\": 11613.31890586,
+    \"invoice_id\": \"consequatur\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoice-line-items/1"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "description": "Dolores dolorum amet iste laborum eius est dolor.",
+    "quantity": 17,
+    "unit_price": 11613.31890586,
+    "invoice_id": "consequatur"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoice-line-items/1';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'description' =&gt; 'Dolores dolorum amet iste laborum eius est dolor.',
+            'quantity' =&gt; 17,
+            'unit_price' =&gt; 11613.31890586,
+            'invoice_id' =&gt; 'consequatur',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-billing-invoice-line-items--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Invoice line item updated successfully&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 2,
+        &quot;created_at&quot;: &quot;2025-12-08T13:32:09.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-08T13:32:09.000000Z&quot;,
+        &quot;deleted_at&quot;: null,
+        &quot;invoice_id&quot;: 1,
+        &quot;description&quot;: &quot;Cargo A&quot;,
+        &quot;quantity&quot;: 1,
+        &quot;unit_price&quot;: 30000
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-billing-invoice-line-items--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-billing-invoice-line-items--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-billing-invoice-line-items--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-billing-invoice-line-items--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-billing-invoice-line-items--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-billing-invoice-line-items--id-" data-method="PUT"
+      data-path="api/billing/invoice-line-items/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-billing-invoice-line-items--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-billing-invoice-line-items--id-"
+                    onclick="tryItOut('PUTapi-billing-invoice-line-items--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-billing-invoice-line-items--id-"
+                    onclick="cancelTryOut('PUTapi-billing-invoice-line-items--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-billing-invoice-line-items--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/billing/invoice-line-items/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/billing/invoice-line-items/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="PUTapi-billing-invoice-line-items--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-billing-invoice-line-items--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-billing-invoice-line-items--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="PUTapi-billing-invoice-line-items--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the invoice line item. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="description"                data-endpoint="PUTapi-billing-invoice-line-items--id-"
+               value="Dolores dolorum amet iste laborum eius est dolor."
+               data-component="body">
+    <br>
+<p>Example: <code>Dolores dolorum amet iste laborum eius est dolor.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="quantity"                data-endpoint="PUTapi-billing-invoice-line-items--id-"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>unit_price</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="unit_price"                data-endpoint="PUTapi-billing-invoice-line-items--id-"
+               value="11613.31890586"
+               data-component="body">
+    <br>
+<p>Example: <code>11613.31890586</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>invoice_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="invoice_id"                data-endpoint="PUTapi-billing-invoice-line-items--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+        </form>
+
+                    <h2 id="invoice-DELETEapi-billing-invoice-line-items--id-">Delete Invoice Item</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-billing-invoice-line-items--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/billing/invoice-line-items/1" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoice-line-items/1"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoice-line-items/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-billing-invoice-line-items--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Invoice line item deleted successfully&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-billing-invoice-line-items--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-billing-invoice-line-items--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-billing-invoice-line-items--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-billing-invoice-line-items--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-billing-invoice-line-items--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-billing-invoice-line-items--id-" data-method="DELETE"
+      data-path="api/billing/invoice-line-items/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-billing-invoice-line-items--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-billing-invoice-line-items--id-"
+                    onclick="tryItOut('DELETEapi-billing-invoice-line-items--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-billing-invoice-line-items--id-"
+                    onclick="cancelTryOut('DELETEapi-billing-invoice-line-items--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-billing-invoice-line-items--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/billing/invoice-line-items/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="DELETEapi-billing-invoice-line-items--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-billing-invoice-line-items--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-billing-invoice-line-items--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-billing-invoice-line-items--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the invoice line item. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="invoice-POSTapi-billing-invoice-line-items--id--restore">Restore Invoice Item</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-billing-invoice-line-items--id--restore">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/billing/invoice-line-items/1/restore" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoice-line-items/1/restore"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoice-line-items/1/restore';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-billing-invoice-line-items--id--restore">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Invoice line item deleted successfully&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-billing-invoice-line-items--id--restore" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-billing-invoice-line-items--id--restore"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-billing-invoice-line-items--id--restore"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-billing-invoice-line-items--id--restore" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-billing-invoice-line-items--id--restore">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-billing-invoice-line-items--id--restore" data-method="POST"
+      data-path="api/billing/invoice-line-items/{id}/restore"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-billing-invoice-line-items--id--restore', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-billing-invoice-line-items--id--restore"
+                    onclick="tryItOut('POSTapi-billing-invoice-line-items--id--restore');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-billing-invoice-line-items--id--restore"
+                    onclick="cancelTryOut('POSTapi-billing-invoice-line-items--id--restore');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-billing-invoice-line-items--id--restore"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/billing/invoice-line-items/{id}/restore</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-billing-invoice-line-items--id--restore"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-billing-invoice-line-items--id--restore"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-billing-invoice-line-items--id--restore"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="POSTapi-billing-invoice-line-items--id--restore"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the invoice line item. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>invoiceLineItem_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="invoiceLineItem_id"                data-endpoint="POSTapi-billing-invoice-line-items--id--restore"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="invoice-POSTapi-billing-payments">Record Invoice Payment</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-billing-payments">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/billing/payments" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"invoice_id\": \"consequatur\",
+    \"amount\": 11613.31890586,
+    \"method\": \"MOBILE_MONEY,CARD,BANK_TRANSFER,CASH\",
+    \"transaction_reference\": \"consequatur\",
+    \"gateway_reference\": \"consequatur\",
+    \"status\": \"PENDING\",
+    \"paid_at\": \"consequatur\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/payments"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "invoice_id": "consequatur",
+    "amount": 11613.31890586,
+    "method": "MOBILE_MONEY,CARD,BANK_TRANSFER,CASH",
+    "transaction_reference": "consequatur",
+    "gateway_reference": "consequatur",
+    "status": "PENDING",
+    "paid_at": "consequatur"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/payments';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'invoice_id' =&gt; 'consequatur',
+            'amount' =&gt; 11613.31890586,
+            'method' =&gt; 'MOBILE_MONEY,CARD,BANK_TRANSFER,CASH',
+            'transaction_reference' =&gt; 'consequatur',
+            'gateway_reference' =&gt; 'consequatur',
+            'status' =&gt; 'PENDING',
+            'paid_at' =&gt; 'consequatur',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-billing-payments">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Payment recorded successfully&quot;,
+    &quot;data&quot;: {
+        &quot;invoice_id&quot;: &quot;1&quot;,
+        &quot;amount&quot;: &quot;30000&quot;,
+        &quot;method&quot;: &quot;CASH&quot;,
+        &quot;paid_at&quot;: &quot;2025-12-08&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-08T13:47:08.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-08T13:47:08.000000Z&quot;,
+        &quot;id&quot;: 1
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-billing-payments" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-billing-payments"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-billing-payments"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-billing-payments" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-billing-payments">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-billing-payments" data-method="POST"
+      data-path="api/billing/payments"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-billing-payments', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-billing-payments"
+                    onclick="tryItOut('POSTapi-billing-payments');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-billing-payments"
+                    onclick="cancelTryOut('POSTapi-billing-payments');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-billing-payments"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/billing/payments</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-billing-payments"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-billing-payments"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-billing-payments"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>invoice_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="invoice_id"                data-endpoint="POSTapi-billing-payments"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="amount"                data-endpoint="POSTapi-billing-payments"
+               value="11613.31890586"
+               data-component="body">
+    <br>
+<p>Example: <code>11613.31890586</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>method</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="method"                data-endpoint="POSTapi-billing-payments"
+               value="MOBILE_MONEY,CARD,BANK_TRANSFER,CASH"
+               data-component="body">
+    <br>
+<p>Example: <code>MOBILE_MONEY,CARD,BANK_TRANSFER,CASH</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>transaction_reference</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="transaction_reference"                data-endpoint="POSTapi-billing-payments"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>gateway_reference</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="gateway_reference"                data-endpoint="POSTapi-billing-payments"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="POSTapi-billing-payments"
+               value="PENDING"
+               data-component="body">
+    <br>
+<p>Example: <code>PENDING</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>PENDING</code></li> <li><code>COMPLETED</code></li> <li><code>FAILED</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>paid_at</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="paid_at"                data-endpoint="POSTapi-billing-payments"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+        </form>
+
+                    <h2 id="invoice-DELETEapi-billing-payments--payment_id-">Delete Invoice Payment</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-billing-payments--payment_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/billing/payments/consequatur" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/payments/consequatur"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/payments/consequatur';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-billing-payments--payment_id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+      &quot;message&quot;: &quot;Payment deleted successfully&quot;,
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-billing-payments--payment_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-billing-payments--payment_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-billing-payments--payment_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-billing-payments--payment_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-billing-payments--payment_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-billing-payments--payment_id-" data-method="DELETE"
+      data-path="api/billing/payments/{payment_id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-billing-payments--payment_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-billing-payments--payment_id-"
+                    onclick="tryItOut('DELETEapi-billing-payments--payment_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-billing-payments--payment_id-"
+                    onclick="cancelTryOut('DELETEapi-billing-payments--payment_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-billing-payments--payment_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/billing/payments/{payment_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="DELETEapi-billing-payments--payment_id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-billing-payments--payment_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-billing-payments--payment_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>payment_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="payment_id"                data-endpoint="DELETEapi-billing-payments--payment_id-"
+               value="consequatur"
+               data-component="url">
+    <br>
+<p>date required Example: <code>consequatur</code></p>
+            </div>
+                    </form>
+
                 <h1 id="others">Others</h1>
 
     
@@ -7780,6 +10216,458 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="url">
     <br>
 <p>The ID of the location. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="others-GETapi-billing-invoices--id-">Display the specified resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-billing-invoices--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/billing/invoices/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoices/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoices/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-billing-invoices--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-billing-invoices--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-billing-invoices--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-billing-invoices--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-billing-invoices--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-billing-invoices--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-billing-invoices--id-" data-method="GET"
+      data-path="api/billing/invoices/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-billing-invoices--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-billing-invoices--id-"
+                    onclick="tryItOut('GETapi-billing-invoices--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-billing-invoices--id-"
+                    onclick="cancelTryOut('GETapi-billing-invoices--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-billing-invoices--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/billing/invoices/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-billing-invoices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-billing-invoices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-billing-invoices--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the invoice. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="others-GETapi-billing-invoice-line-items">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-billing-invoice-line-items">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/billing/invoice-line-items" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoice-line-items"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoice-line-items';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-billing-invoice-line-items">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-billing-invoice-line-items" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-billing-invoice-line-items"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-billing-invoice-line-items"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-billing-invoice-line-items" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-billing-invoice-line-items">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-billing-invoice-line-items" data-method="GET"
+      data-path="api/billing/invoice-line-items"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-billing-invoice-line-items', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-billing-invoice-line-items"
+                    onclick="tryItOut('GETapi-billing-invoice-line-items');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-billing-invoice-line-items"
+                    onclick="cancelTryOut('GETapi-billing-invoice-line-items');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-billing-invoice-line-items"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/billing/invoice-line-items</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-billing-invoice-line-items"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-billing-invoice-line-items"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="others-GETapi-billing-invoice-line-items--id-">Display the specified resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-billing-invoice-line-items--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/billing/invoice-line-items/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoice-line-items/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoice-line-items/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-billing-invoice-line-items--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-billing-invoice-line-items--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-billing-invoice-line-items--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-billing-invoice-line-items--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-billing-invoice-line-items--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-billing-invoice-line-items--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-billing-invoice-line-items--id-" data-method="GET"
+      data-path="api/billing/invoice-line-items/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-billing-invoice-line-items--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-billing-invoice-line-items--id-"
+                    onclick="tryItOut('GETapi-billing-invoice-line-items--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-billing-invoice-line-items--id-"
+                    onclick="cancelTryOut('GETapi-billing-invoice-line-items--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-billing-invoice-line-items--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/billing/invoice-line-items/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-billing-invoice-line-items--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-billing-invoice-line-items--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-billing-invoice-line-items--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the invoice line item. Example: <code>1</code></p>
             </div>
                     </form>
 

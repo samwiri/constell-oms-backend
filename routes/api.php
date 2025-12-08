@@ -3,9 +3,12 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BatchPackageController;
 use App\Http\Controllers\ConsolidationBatcheController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\InvoiceLineItemController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderStatusHistoryController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\WarehouseLocationController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,7 +53,21 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::put('consolidation-batches/{id}', [ConsolidationBatcheController::class, 'update']);
     Route::delete('consolidation-batches/{id}', [ConsolidationBatcheController::class, 'destroy']);
   
-    Route::post('/batch-packages', [BatchPackageController::class, 'store']);
-    Route::delete('/batch-packages', [BatchPackageController::class, 'deleteByPair']);
+    Route::post('batch-packages', [BatchPackageController::class, 'store']);
+    Route::delete('batch-packages', [BatchPackageController::class, 'deleteByPair']);
+
+    Route::prefix('billing')->group(function() {
+        Route::apiResource('invoices', InvoiceController::class);   
+        Route::post('invoices/{id}/restore', [InvoiceController::class, 'restore']);  // Restore soft deleted invoice
+            
+        Route::apiResource('invoice-line-items', InvoiceLineItemController::class);
+        // Restore
+        Route::post('invoice-line-items/{id}/restore', [InvoiceLineItemController::class, 'restore']);
+
+        Route::post('payments', [PaymentController::class, 'store']);
+        Route::delete('payments/{payment}', [PaymentController::class, 'destroy']);
+
+    
+    });
 
 });

@@ -4,18 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Invoice extends Model
 {
-    use HasFactory;
+    use HasFactory, LogsActivity, SoftDeletes;
 
     protected $fillable = [
-        'invoice_number', 'user_id', 'order_id', 'type',
-        'subtotal', 'tax', 'total', 'status', 'due_date', 'paid_at'
+        'invoice_number', 'user_id', 'order_id', 'type','status', 'due_date',
     ];
     protected $casts = [
         'due_date' => 'date',
-        'paid_at' => 'datetime',
     ];
 
     public function user()
@@ -46,6 +47,19 @@ class Invoice extends Model
     public function getIsOverdueAttribute()
     {
         return $this->status === 'UNPAID' && $this->due_date->isPast();
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()->logFillable();
+    }
+
+
+    protected function generateInvoiceNumber(): string
+    {
+        $date = now()->format('Ymd');
+        $sequence = Invoice::withTrashed()->whereDate('created_at', today())->count() + 1;
+        return sprintf('INV-%s-%05d', $date, $sequence);
     }
 
 }
