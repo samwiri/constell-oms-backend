@@ -3,8 +3,10 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BatchPackageController;
 use App\Http\Controllers\ConsolidationBatcheController;
+use App\Http\Controllers\DeliveryOrderController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\InvoiceLineItemController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderStatusHistoryController;
 use App\Http\Controllers\PackageController;
@@ -46,7 +48,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('packages/{id}/package-photos', [PackageController::class, 'storePackagePhotos']);
     Route::delete('packages/{id}/package-photos', [PackageController::class, 'deletePackagePhotos']);
 
-
     Route::get('consolidation-batches', [ConsolidationBatcheController::class, 'index']);
     Route::get('consolidation-batches/{id}', [ConsolidationBatcheController::class, 'show']);
     Route::post('consolidation-batches', [ConsolidationBatcheController::class, 'store']);
@@ -65,9 +66,20 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::post('invoice-line-items/{id}/restore', [InvoiceLineItemController::class, 'restore']);
 
         Route::post('payments', [PaymentController::class, 'store']);
-        Route::delete('payments/{payment}', [PaymentController::class, 'destroy']);
+        Route::delete('payments/{payment}', [PaymentController::class, 'destroy']);    
+    });
+
+    Route::prefix('delivery')->group(function() {
+        Route::apiResource('orders', DeliveryOrderController::class);
+        Route::post('orders/{delivery_order}/upload-pod', [DeliveryOrderController::class, 'uploadPod']);
+        Route::post('orders/{delivery_order}/upload-signature', [DeliveryOrderController::class, 'uploadSignature']);        
+        Route::post('update-orders-status/{delivery_order}', [DeliveryOrderController::class, 'updateStatus']);
+        Route::get('dashboard', [DeliveryOrderController::class, 'dashboard']);
+        Route::get('riders',[DeliveryOrderController::class,'riders']);
+    });
+
+    Route::get('activity_logs',[NotificationController::class,'activityLogs']);
 
     
-    });
 
 });

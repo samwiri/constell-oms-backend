@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Notification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NotificationController extends Controller
 {
@@ -61,5 +62,15 @@ class NotificationController extends Controller
     public function destroy(Notification $notification)
     {
         //
+    }
+
+    function activityLogs() {
+
+        $logs = DB::table('activity_log')->latest()->paginate(10);
+
+        return response()->json([
+            'message' => 'Activity Logs',
+            'data' => $logs
+        ]);
     }
 }

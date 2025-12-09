@@ -46,7 +46,7 @@ class User extends Authenticatable
             return $this->hasMany(Invoice::class);
         }
 
-        public static function createUser($full_name,$email,$phone,$password,$tin,$passport,$address){
+        public static function createUser($full_name,$email,$phone,$password,$tin,$passport,$address,$user_type=null){
 
             $saveUser = new User();
 
@@ -66,9 +66,17 @@ class User extends Authenticatable
 
             $saveUser->remember_token = Str::random(32);
 
-            $saveUser->save();
+            if (!is_null($user_type)) {
+                $saveUser->user_type = $user_type;
+            }
 
-            return $saveUser;
+            try {
+
+                $saveUser->save();
+
+                return $saveUser;
+
+            } catch (\Exception $th) {}           
             
         }
 

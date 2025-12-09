@@ -243,6 +243,43 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-delivery-order" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="delivery-order">
+                    <a href="#delivery-order">Delivery Order</a>
+                </li>
+                                    <ul id="tocify-subheader-delivery-order" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="delivery-order-GETapi-delivery-orders">
+                                <a href="#delivery-order-GETapi-delivery-orders">Delivery Orders</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="delivery-order-POSTapi-delivery-orders">
+                                <a href="#delivery-order-POSTapi-delivery-orders">Create Order Deliver</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="delivery-order-GETapi-delivery-orders--id-">
+                                <a href="#delivery-order-GETapi-delivery-orders--id-">Single Delivery Order</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="delivery-order-PUTapi-delivery-orders--id-">
+                                <a href="#delivery-order-PUTapi-delivery-orders--id-">Update Order Deliver</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="delivery-order-DELETEapi-delivery-orders--id-">
+                                <a href="#delivery-order-DELETEapi-delivery-orders--id-">Delete Delivery Order</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="delivery-order-POSTapi-delivery-orders--delivery_order--upload-pod">
+                                <a href="#delivery-order-POSTapi-delivery-orders--delivery_order--upload-pod">Upload a point of Delivery photo</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="delivery-order-POSTapi-delivery-orders--delivery_order--upload-signature">
+                                <a href="#delivery-order-POSTapi-delivery-orders--delivery_order--upload-signature">Upload Customer Delivery Signature</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="delivery-order-POSTapi-delivery-update-orders-status--delivery_order-">
+                                <a href="#delivery-order-POSTapi-delivery-update-orders-status--delivery_order-">Update Delivery Order status</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="delivery-order-GETapi-delivery-dashboard">
+                                <a href="#delivery-order-GETapi-delivery-dashboard">Dashboard</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="delivery-order-GETapi-delivery-riders">
+                                <a href="#delivery-order-GETapi-delivery-riders">Riders</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-others" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="others">
                     <a href="#others">Others</a>
@@ -271,7 +308,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: December 8, 2025</li>
+        <li>Last updated: December 9, 2025</li>
     </ul>
 </div>
 
@@ -5441,8 +5478,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Bearer: Token" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php2AE8.tmp" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php2AF9.tmp" </code></pre></div>
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php508C.tmp" \
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php509D.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5481,11 +5518,11 @@ $response = $client-&gt;post(
         'multipart' =&gt; [
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php2AE8.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php508C.tmp', 'r')
             ],
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php2AF9.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php509D.tmp', 'r')
             ],
         ],
     ]
@@ -5664,7 +5701,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Example: <code>C:\Users\HP\AppData\Local\Temp\php2AF9.tmp</code></p>
+<p>Example: <code>C:\Users\HP\AppData\Local\Temp\php509D.tmp</code></p>
         </div>
         </form>
 
@@ -6404,9 +6441,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"status\": \"ARRIVED\",
     \"package_count\": 56,
     \"total_weight\": 16,
-    \"finalized_at\": \"2025-12-08T13:49:06\",
-    \"departed_at\": \"2025-12-08T13:49:06\",
-    \"arrived_at\": \"2025-12-08T13:49:06\"
+    \"finalized_at\": \"2025-12-09T08:52:52\",
+    \"departed_at\": \"2025-12-09T08:52:52\",
+    \"arrived_at\": \"2025-12-09T08:52:52\"
 }"
 </code></pre></div>
 
@@ -6430,9 +6467,9 @@ let body = {
     "status": "ARRIVED",
     "package_count": 56,
     "total_weight": 16,
-    "finalized_at": "2025-12-08T13:49:06",
-    "departed_at": "2025-12-08T13:49:06",
-    "arrived_at": "2025-12-08T13:49:06"
+    "finalized_at": "2025-12-09T08:52:52",
+    "departed_at": "2025-12-09T08:52:52",
+    "arrived_at": "2025-12-09T08:52:52"
 };
 
 fetch(url, {
@@ -6461,9 +6498,9 @@ $response = $client-&gt;post(
             'status' =&gt; 'ARRIVED',
             'package_count' =&gt; 56,
             'total_weight' =&gt; 16,
-            'finalized_at' =&gt; '2025-12-08T13:49:06',
-            'departed_at' =&gt; '2025-12-08T13:49:06',
-            'arrived_at' =&gt; '2025-12-08T13:49:06',
+            'finalized_at' =&gt; '2025-12-09T08:52:52',
+            'departed_at' =&gt; '2025-12-09T08:52:52',
+            'arrived_at' =&gt; '2025-12-09T08:52:52',
         ],
     ]
 );
@@ -6699,10 +6736,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="finalized_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-08T13:49:06"
+               value="2025-12-09T08:52:52"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-08T13:49:06</code></p>
+<p>Must be a valid date. Example: <code>2025-12-09T08:52:52</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>departed_at</code></b>&nbsp;&nbsp;
@@ -6711,10 +6748,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="departed_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-08T13:49:06"
+               value="2025-12-09T08:52:52"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-08T13:49:06</code></p>
+<p>Must be a valid date. Example: <code>2025-12-09T08:52:52</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>arrived_at</code></b>&nbsp;&nbsp;
@@ -6723,10 +6760,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="arrived_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-08T13:49:06"
+               value="2025-12-09T08:52:52"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-08T13:49:06</code></p>
+<p>Must be a valid date. Example: <code>2025-12-09T08:52:52</code></p>
         </div>
         </form>
 
@@ -10059,6 +10096,2374 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>date required Example: <code>consequatur</code></p>
             </div>
                     </form>
+
+                <h1 id="delivery-order">Delivery Order</h1>
+
+    
+
+                                <h2 id="delivery-order-GETapi-delivery-orders">Delivery Orders</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-delivery-orders">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/delivery/orders" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delivery/orders"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/delivery/orders';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-delivery-orders">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+  &quot;current_page&quot;: 1,
+  &quot;data&quot;: [
+      {
+          &quot;id&quot;: 4,
+          &quot;created_at&quot;: &quot;2025-12-09T07:41:36.000000Z&quot;,
+          &quot;updated_at&quot;: &quot;2025-12-09T08:12:25.000000Z&quot;,
+          &quot;deleted_at&quot;: null,
+          &quot;delivery_number&quot;: &quot;DEL-000001&quot;,
+          &quot;order_id&quot;: 5,
+          &quot;rider_id&quot;: null,
+          &quot;delivery_address&quot;: &quot;Kasese&quot;,
+          &quot;delivery_date&quot;: &quot;2025-12-10&quot;,
+          &quot;status&quot;: &quot;PENDING&quot;,
+          &quot;pod_signature&quot;: null,
+          &quot;pod_photo_path&quot;: &quot;pod_photos/2akLAes8oj4j5OIxC71O5GxwEN8fSJ1jxtotKyxk.jpg&quot;,
+          &quot;delivery_notes&quot;: null,
+          &quot;delivered_at&quot;: null,
+          &quot;order&quot;: {
+              &quot;id&quot;: 5,
+              &quot;created_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+              &quot;updated_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+              &quot;deleted_at&quot;: null,
+              &quot;tracking_number&quot;: &quot;ORD-20251205-00002&quot;,
+              &quot;user_id&quot;: 1,
+              &quot;origin_country&quot;: &quot;ITALY&quot;,
+              &quot;receiver_name&quot;: &quot;Tom Mboya&quot;,
+              &quot;receiver_phone&quot;: &quot;0789887766&quot;,
+              &quot;receiver_email&quot;: &quot;tom.mboya@gmail.com&quot;,
+              &quot;receiver_address&quot;: &quot;Uganda - Kampala&quot;,
+              &quot;status&quot;: &quot;PENDING&quot;,
+              &quot;received_at&quot;: null,
+              &quot;dispatched_at&quot;: null,
+              &quot;arrived_at&quot;: null,
+              &quot;released_at&quot;: null,
+              &quot;delivered_at&quot;: null,
+              &quot;packages&quot;: [
+                  {
+                      &quot;id&quot;: 1,
+                      &quot;created_at&quot;: &quot;2025-12-08T07:19:43.000000Z&quot;,
+                      &quot;updated_at&quot;: &quot;2025-12-08T07:42:06.000000Z&quot;,
+                      &quot;deleted_at&quot;: null,
+                      &quot;order_id&quot;: 5,
+                      &quot;hwb_number&quot;: &quot;HWB-2025128-0002&quot;,
+                      &quot;contents&quot;: &quot;Computer - Desktop&quot;,
+                      &quot;declared_value&quot;: &quot;2500000.00&quot;,
+                      &quot;weight&quot;: &quot;5.00&quot;,
+                      &quot;length&quot;: &quot;4.00&quot;,
+                      &quot;width&quot;: &quot;6.00&quot;,
+                      &quot;height&quot;: &quot;2.00&quot;,
+                      &quot;is_fragile&quot;: true,
+                      &quot;is_hazardous&quot;: false,
+                      &quot;is_damaged&quot;: false,
+                      &quot;package_photos&quot;: [
+                          &quot;package_photos/LXHHmhE4YM0YoTn1Lva95FSyQi31i89dskkPv2il.jpg&quot;,
+                          &quot;package_photos/thtdPXJtqtkpECHhbeyXIOAIMSGt564ZFIXBqdcp.jpg&quot;,
+                          &quot;package_photos/Uc34hnpyAPsAT1QINJfca0msaFdudcYfaY2Qs21h.jpg&quot;
+                      ],
+                      &quot;location_id&quot;: 1,
+                      &quot;received_at&quot;: &quot;2025-12-03T00:00:00.000000Z&quot;
+                  },
+
+              ]
+          }
+      }
+  ],
+  &quot;first_page_url&quot;: &quot;http://127.0.0.1:8000/api/delivery/orders?page=1&quot;,
+  &quot;from&quot;: 1,
+  &quot;last_page&quot;: 1,
+  &quot;last_page_url&quot;: &quot;http://127.0.0.1:8000/api/delivery/orders?page=1&quot;,
+  &quot;links&quot;: [
+      {
+          &quot;url&quot;: null,
+          &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+          &quot;active&quot;: false
+      },
+      {
+          &quot;url&quot;: &quot;http://127.0.0.1:8000/api/delivery/orders?page=1&quot;,
+          &quot;label&quot;: &quot;1&quot;,
+          &quot;active&quot;: true
+      },
+      {
+          &quot;url&quot;: null,
+          &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+          &quot;active&quot;: false
+      }
+  ],
+  &quot;next_page_url&quot;: null,
+  &quot;path&quot;: &quot;http://127.0.0.1:8000/api/delivery/orders&quot;,
+  &quot;per_page&quot;: 20,
+  &quot;prev_page_url&quot;: null,
+  &quot;to&quot;: 1,
+  &quot;total&quot;: 1
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-delivery-orders" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-delivery-orders"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-delivery-orders"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-delivery-orders" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-delivery-orders">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-delivery-orders" data-method="GET"
+      data-path="api/delivery/orders"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-delivery-orders', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-delivery-orders"
+                    onclick="tryItOut('GETapi-delivery-orders');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-delivery-orders"
+                    onclick="cancelTryOut('GETapi-delivery-orders');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-delivery-orders"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/delivery/orders</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="GETapi-delivery-orders"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-delivery-orders"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-delivery-orders"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="delivery-order-POSTapi-delivery-orders">Create Order Deliver</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-delivery-orders">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/delivery/orders" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"order_id\": 17,
+    \"delivery_address\": \"consequatur\",
+    \"delivery_date\": \"consequatur\",
+    \"status\": \"ASSIGNED\",
+    \"pod_signature\": \"consequatur\",
+    \"pod_photo_path\": \"consequatur\",
+    \"delivery_notes\": \"consequatur\",
+    \"delivered_at\": \"2025-12-09T08:52:52\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delivery/orders"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "order_id": 17,
+    "delivery_address": "consequatur",
+    "delivery_date": "consequatur",
+    "status": "ASSIGNED",
+    "pod_signature": "consequatur",
+    "pod_photo_path": "consequatur",
+    "delivery_notes": "consequatur",
+    "delivered_at": "2025-12-09T08:52:52"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/delivery/orders';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'order_id' =&gt; 17,
+            'delivery_address' =&gt; 'consequatur',
+            'delivery_date' =&gt; 'consequatur',
+            'status' =&gt; 'ASSIGNED',
+            'pod_signature' =&gt; 'consequatur',
+            'pod_photo_path' =&gt; 'consequatur',
+            'delivery_notes' =&gt; 'consequatur',
+            'delivered_at' =&gt; '2025-12-09T08:52:52',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-delivery-orders">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Delivery order created successfully&quot;,
+    &quot;data&quot;: {
+        &quot;order_id&quot;: &quot;5&quot;,
+        &quot;delivery_address&quot;: &quot;Kasese&quot;,
+        &quot;delivery_date&quot;: &quot;2025-12-10&quot;,
+        &quot;delivery_number&quot;: &quot;DEL-000001&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-09T07:41:36.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-09T07:41:36.000000Z&quot;,
+        &quot;id&quot;: 4,
+        &quot;order&quot;: {
+            &quot;id&quot;: 5,
+            &quot;created_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+            &quot;deleted_at&quot;: null,
+            &quot;tracking_number&quot;: &quot;ORD-20251205-00002&quot;,
+            &quot;user_id&quot;: 1,
+            &quot;origin_country&quot;: &quot;ITALY&quot;,
+            &quot;receiver_name&quot;: &quot;Tom Mboya&quot;,
+            &quot;receiver_phone&quot;: &quot;0789887766&quot;,
+            &quot;receiver_email&quot;: &quot;tom.mboya@gmail.com&quot;,
+            &quot;receiver_address&quot;: &quot;Uganda - Kampala&quot;,
+            &quot;status&quot;: &quot;PENDING&quot;,
+            &quot;received_at&quot;: null,
+            &quot;dispatched_at&quot;: null,
+            &quot;arrived_at&quot;: null,
+            &quot;released_at&quot;: null,
+            &quot;delivered_at&quot;: null,
+            &quot;packages&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2025-12-08T07:19:43.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-08T07:42:06.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;order_id&quot;: 5,
+                    &quot;hwb_number&quot;: &quot;HWB-2025128-0002&quot;,
+                    &quot;contents&quot;: &quot;Computer - Desktop&quot;,
+                    &quot;declared_value&quot;: &quot;2500000.00&quot;,
+                    &quot;weight&quot;: &quot;5.00&quot;,
+                    &quot;length&quot;: &quot;4.00&quot;,
+                    &quot;width&quot;: &quot;6.00&quot;,
+                    &quot;height&quot;: &quot;2.00&quot;,
+                    &quot;is_fragile&quot;: true,
+                    &quot;is_hazardous&quot;: false,
+                    &quot;is_damaged&quot;: false,
+                    &quot;package_photos&quot;: [
+                        &quot;package_photos/LXHHmhE4YM0YoTn1Lva95FSyQi31i89dskkPv2il.jpg&quot;,
+                        &quot;package_photos/thtdPXJtqtkpECHhbeyXIOAIMSGt564ZFIXBqdcp.jpg&quot;,
+                        &quot;package_photos/Uc34hnpyAPsAT1QINJfca0msaFdudcYfaY2Qs21h.jpg&quot;
+                    ],
+                    &quot;location_id&quot;: 1,
+                    &quot;received_at&quot;: &quot;2025-12-03T00:00:00.000000Z&quot;
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;created_at&quot;: &quot;2025-12-08T07:32:17.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-08T07:32:17.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;order_id&quot;: 5,
+                    &quot;hwb_number&quot;: &quot;HWB-2025128-0021&quot;,
+                    &quot;contents&quot;: &quot;Computer - Desktop&quot;,
+                    &quot;declared_value&quot;: &quot;2500000.00&quot;,
+                    &quot;weight&quot;: &quot;5.00&quot;,
+                    &quot;length&quot;: &quot;4.00&quot;,
+                    &quot;width&quot;: &quot;6.00&quot;,
+                    &quot;height&quot;: &quot;2.00&quot;,
+                    &quot;is_fragile&quot;: true,
+                    &quot;is_hazardous&quot;: false,
+                    &quot;is_damaged&quot;: false,
+                    &quot;package_photos&quot;: null,
+                    &quot;location_id&quot;: 1,
+                    &quot;received_at&quot;: &quot;2025-12-03T00:00:00.000000Z&quot;
+                }
+            ]
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-delivery-orders" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-delivery-orders"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-delivery-orders"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-delivery-orders" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-delivery-orders">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-delivery-orders" data-method="POST"
+      data-path="api/delivery/orders"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-delivery-orders', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-delivery-orders"
+                    onclick="tryItOut('POSTapi-delivery-orders');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-delivery-orders"
+                    onclick="cancelTryOut('POSTapi-delivery-orders');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-delivery-orders"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/delivery/orders</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-delivery-orders"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-delivery-orders"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-delivery-orders"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="order_id"                data-endpoint="POSTapi-delivery-orders"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rider_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="rider_id"                data-endpoint="POSTapi-delivery-orders"
+               value=""
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users table.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>delivery_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="delivery_address"                data-endpoint="POSTapi-delivery-orders"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>delivery_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="delivery_date"                data-endpoint="POSTapi-delivery-orders"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="POSTapi-delivery-orders"
+               value="ASSIGNED"
+               data-component="body">
+    <br>
+<p>Example: <code>ASSIGNED</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>PENDING</code></li> <li><code>ASSIGNED</code></li> <li><code>OUT_FOR_DELIVERY</code></li> <li><code>DELIVERED</code></li> <li><code>FAILED</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pod_signature</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pod_signature"                data-endpoint="POSTapi-delivery-orders"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pod_photo_path</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pod_photo_path"                data-endpoint="POSTapi-delivery-orders"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>delivery_notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="delivery_notes"                data-endpoint="POSTapi-delivery-orders"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>delivered_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="delivered_at"                data-endpoint="POSTapi-delivery-orders"
+               value="2025-12-09T08:52:52"
+               data-component="body">
+    <br>
+<p>Must be a valid date. Example: <code>2025-12-09T08:52:52</code></p>
+        </div>
+        </form>
+
+                    <h2 id="delivery-order-GETapi-delivery-orders--id-">Single Delivery Order</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-delivery-orders--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/delivery/orders/2" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delivery/orders/2"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/delivery/orders/2';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-delivery-orders--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Delivery order&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: 4,
+        &quot;created_at&quot;: &quot;2025-12-09T07:41:36.000000Z&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-09T08:12:25.000000Z&quot;,
+        &quot;deleted_at&quot;: null,
+        &quot;delivery_number&quot;: &quot;DEL-000001&quot;,
+        &quot;order_id&quot;: 5,
+        &quot;rider_id&quot;: null,
+        &quot;delivery_address&quot;: &quot;Kasese&quot;,
+        &quot;delivery_date&quot;: &quot;2025-12-10&quot;,
+        &quot;status&quot;: &quot;PENDING&quot;,
+        &quot;pod_signature&quot;: null,
+        &quot;pod_photo_path&quot;: &quot;pod_photos/2akLAes8oj4j5OIxC71O5GxwEN8fSJ1jxtotKyxk.jpg&quot;,
+        &quot;delivery_notes&quot;: null,
+        &quot;delivered_at&quot;: null,
+        &quot;order&quot;: {
+            &quot;id&quot;: 5,
+            &quot;created_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+            &quot;deleted_at&quot;: null,
+            &quot;tracking_number&quot;: &quot;ORD-20251205-00002&quot;,
+            &quot;user_id&quot;: 1,
+            &quot;origin_country&quot;: &quot;ITALY&quot;,
+            &quot;receiver_name&quot;: &quot;Tom Mboya&quot;,
+            &quot;receiver_phone&quot;: &quot;0789887766&quot;,
+            &quot;receiver_email&quot;: &quot;tom.mboya@gmail.com&quot;,
+            &quot;receiver_address&quot;: &quot;Uganda - Kampala&quot;,
+            &quot;status&quot;: &quot;PENDING&quot;,
+            &quot;received_at&quot;: null,
+            &quot;dispatched_at&quot;: null,
+            &quot;arrived_at&quot;: null,
+            &quot;released_at&quot;: null,
+            &quot;delivered_at&quot;: null,
+            &quot;packages&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2025-12-08T07:19:43.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-08T07:42:06.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;order_id&quot;: 5,
+                    &quot;hwb_number&quot;: &quot;HWB-2025128-0002&quot;,
+                    &quot;contents&quot;: &quot;Computer - Desktop&quot;,
+                    &quot;declared_value&quot;: &quot;2500000.00&quot;,
+                    &quot;weight&quot;: &quot;5.00&quot;,
+                    &quot;length&quot;: &quot;4.00&quot;,
+                    &quot;width&quot;: &quot;6.00&quot;,
+                    &quot;height&quot;: &quot;2.00&quot;,
+                    &quot;is_fragile&quot;: true,
+                    &quot;is_hazardous&quot;: false,
+                    &quot;is_damaged&quot;: false,
+                    &quot;package_photos&quot;: [
+                        &quot;package_photos/LXHHmhE4YM0YoTn1Lva95FSyQi31i89dskkPv2il.jpg&quot;,
+                        &quot;package_photos/thtdPXJtqtkpECHhbeyXIOAIMSGt564ZFIXBqdcp.jpg&quot;,
+                        &quot;package_photos/Uc34hnpyAPsAT1QINJfca0msaFdudcYfaY2Qs21h.jpg&quot;
+                    ],
+                    &quot;location_id&quot;: 1,
+                    &quot;received_at&quot;: &quot;2025-12-03T00:00:00.000000Z&quot;
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;created_at&quot;: &quot;2025-12-08T07:32:17.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-08T07:32:17.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;order_id&quot;: 5,
+                    &quot;hwb_number&quot;: &quot;HWB-2025128-0021&quot;,
+                    &quot;contents&quot;: &quot;Computer - Desktop&quot;,
+                    &quot;declared_value&quot;: &quot;2500000.00&quot;,
+                    &quot;weight&quot;: &quot;5.00&quot;,
+                    &quot;length&quot;: &quot;4.00&quot;,
+                    &quot;width&quot;: &quot;6.00&quot;,
+                    &quot;height&quot;: &quot;2.00&quot;,
+                    &quot;is_fragile&quot;: true,
+                    &quot;is_hazardous&quot;: false,
+                    &quot;is_damaged&quot;: false,
+                    &quot;package_photos&quot;: null,
+                    &quot;location_id&quot;: 1,
+                    &quot;received_at&quot;: &quot;2025-12-03T00:00:00.000000Z&quot;
+                }
+            ],
+            &quot;user&quot;: {
+                &quot;id&quot;: 1,
+                &quot;full_name&quot;: &quot;Thembo Charles&quot;,
+                &quot;email&quot;: &quot;ashley7520charles@gmail.com&quot;,
+                &quot;phone&quot;: &quot;0787444081&quot;,
+                &quot;email_verified_at&quot;: null,
+                &quot;tin&quot;: &quot;110023452&quot;,
+                &quot;passport&quot;: &quot;65748&quot;,
+                &quot;address&quot;: &quot;Kampala&quot;,
+                &quot;otp&quot;: &quot;4782&quot;,
+                &quot;status&quot;: &quot;active&quot;,
+                &quot;user_type&quot;: &quot;user&quot;,
+                &quot;created_at&quot;: &quot;2025-12-05T06:42:09.000000Z&quot;,
+                &quot;updated_at&quot;: &quot;2025-12-05T07:58:28.000000Z&quot;,
+                &quot;deleted_at&quot;: null
+            }
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-delivery-orders--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-delivery-orders--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-delivery-orders--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-delivery-orders--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-delivery-orders--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-delivery-orders--id-" data-method="GET"
+      data-path="api/delivery/orders/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-delivery-orders--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-delivery-orders--id-"
+                    onclick="tryItOut('GETapi-delivery-orders--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-delivery-orders--id-"
+                    onclick="cancelTryOut('GETapi-delivery-orders--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-delivery-orders--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/delivery/orders/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="GETapi-delivery-orders--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-delivery-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-delivery-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-delivery-orders--id-"
+               value="2"
+               data-component="url">
+    <br>
+<p>The ID of the order. Example: <code>2</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="delivery-order-PUTapi-delivery-orders--id-">Update Order Deliver</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-delivery-orders--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/delivery/orders/2" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"delivery_address\": \"consequatur\",
+    \"delivery_date\": \"consequatur\",
+    \"pod_signature\": \"consequatur\",
+    \"pod_photo_path\": \"consequatur\",
+    \"delivery_notes\": \"consequatur\",
+    \"delivered_at\": \"2025-12-09T08:52:52\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delivery/orders/2"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "delivery_address": "consequatur",
+    "delivery_date": "consequatur",
+    "pod_signature": "consequatur",
+    "pod_photo_path": "consequatur",
+    "delivery_notes": "consequatur",
+    "delivered_at": "2025-12-09T08:52:52"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/delivery/orders/2';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'delivery_address' =&gt; 'consequatur',
+            'delivery_date' =&gt; 'consequatur',
+            'pod_signature' =&gt; 'consequatur',
+            'pod_photo_path' =&gt; 'consequatur',
+            'delivery_notes' =&gt; 'consequatur',
+            'delivered_at' =&gt; '2025-12-09T08:52:52',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-delivery-orders--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Delivery order updated successfully&quot;,
+    &quot;data&quot;: {
+        &quot;order_id&quot;: &quot;5&quot;,
+        &quot;delivery_address&quot;: &quot;Kasese&quot;,
+        &quot;delivery_date&quot;: &quot;2025-12-10&quot;,
+        &quot;delivery_number&quot;: &quot;DEL-000001&quot;,
+        &quot;updated_at&quot;: &quot;2025-12-09T07:41:36.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-09T07:41:36.000000Z&quot;,
+        &quot;id&quot;: 4,
+        &quot;order&quot;: {
+            &quot;id&quot;: 5,
+            &quot;created_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+            &quot;updated_at&quot;: &quot;2025-12-05T12:20:11.000000Z&quot;,
+            &quot;deleted_at&quot;: null,
+            &quot;tracking_number&quot;: &quot;ORD-20251205-00002&quot;,
+            &quot;user_id&quot;: 1,
+            &quot;origin_country&quot;: &quot;ITALY&quot;,
+            &quot;receiver_name&quot;: &quot;Tom Mboya&quot;,
+            &quot;receiver_phone&quot;: &quot;0789887766&quot;,
+            &quot;receiver_email&quot;: &quot;tom.mboya@gmail.com&quot;,
+            &quot;receiver_address&quot;: &quot;Uganda - Kampala&quot;,
+            &quot;status&quot;: &quot;PENDING&quot;,
+            &quot;received_at&quot;: null,
+            &quot;dispatched_at&quot;: null,
+            &quot;arrived_at&quot;: null,
+            &quot;released_at&quot;: null,
+            &quot;delivered_at&quot;: null,
+            &quot;packages&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;created_at&quot;: &quot;2025-12-08T07:19:43.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-08T07:42:06.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;order_id&quot;: 5,
+                    &quot;hwb_number&quot;: &quot;HWB-2025128-0002&quot;,
+                    &quot;contents&quot;: &quot;Computer - Desktop&quot;,
+                    &quot;declared_value&quot;: &quot;2500000.00&quot;,
+                    &quot;weight&quot;: &quot;5.00&quot;,
+                    &quot;length&quot;: &quot;4.00&quot;,
+                    &quot;width&quot;: &quot;6.00&quot;,
+                    &quot;height&quot;: &quot;2.00&quot;,
+                    &quot;is_fragile&quot;: true,
+                    &quot;is_hazardous&quot;: false,
+                    &quot;is_damaged&quot;: false,
+                    &quot;package_photos&quot;: [
+                        &quot;package_photos/LXHHmhE4YM0YoTn1Lva95FSyQi31i89dskkPv2il.jpg&quot;,
+                        &quot;package_photos/thtdPXJtqtkpECHhbeyXIOAIMSGt564ZFIXBqdcp.jpg&quot;,
+                        &quot;package_photos/Uc34hnpyAPsAT1QINJfca0msaFdudcYfaY2Qs21h.jpg&quot;
+                    ],
+                    &quot;location_id&quot;: 1,
+                    &quot;received_at&quot;: &quot;2025-12-03T00:00:00.000000Z&quot;
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;created_at&quot;: &quot;2025-12-08T07:32:17.000000Z&quot;,
+                    &quot;updated_at&quot;: &quot;2025-12-08T07:32:17.000000Z&quot;,
+                    &quot;deleted_at&quot;: null,
+                    &quot;order_id&quot;: 5,
+                    &quot;hwb_number&quot;: &quot;HWB-2025128-0021&quot;,
+                    &quot;contents&quot;: &quot;Computer - Desktop&quot;,
+                    &quot;declared_value&quot;: &quot;2500000.00&quot;,
+                    &quot;weight&quot;: &quot;5.00&quot;,
+                    &quot;length&quot;: &quot;4.00&quot;,
+                    &quot;width&quot;: &quot;6.00&quot;,
+                    &quot;height&quot;: &quot;2.00&quot;,
+                    &quot;is_fragile&quot;: true,
+                    &quot;is_hazardous&quot;: false,
+                    &quot;is_damaged&quot;: false,
+                    &quot;package_photos&quot;: null,
+                    &quot;location_id&quot;: 1,
+                    &quot;received_at&quot;: &quot;2025-12-03T00:00:00.000000Z&quot;
+                }
+            ]
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-delivery-orders--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-delivery-orders--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-delivery-orders--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-delivery-orders--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-delivery-orders--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-delivery-orders--id-" data-method="PUT"
+      data-path="api/delivery/orders/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-delivery-orders--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-delivery-orders--id-"
+                    onclick="tryItOut('PUTapi-delivery-orders--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-delivery-orders--id-"
+                    onclick="cancelTryOut('PUTapi-delivery-orders--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-delivery-orders--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/delivery/orders/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/delivery/orders/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="PUTapi-delivery-orders--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-delivery-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-delivery-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="PUTapi-delivery-orders--id-"
+               value="2"
+               data-component="url">
+    <br>
+<p>The ID of the order. Example: <code>2</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>deliveryOrder_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="deliveryOrder_id"                data-endpoint="PUTapi-delivery-orders--id-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rider_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="rider_id"                data-endpoint="PUTapi-delivery-orders--id-"
+               value=""
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the user table.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>delivery_address</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="delivery_address"                data-endpoint="PUTapi-delivery-orders--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>delivery_date</code></b>&nbsp;&nbsp;
+<small>date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="delivery_date"                data-endpoint="PUTapi-delivery-orders--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pod_signature</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pod_signature"                data-endpoint="PUTapi-delivery-orders--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pod_photo_path</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pod_photo_path"                data-endpoint="PUTapi-delivery-orders--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>delivery_notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="delivery_notes"                data-endpoint="PUTapi-delivery-orders--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>delivered_at</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="delivered_at"                data-endpoint="PUTapi-delivery-orders--id-"
+               value="2025-12-09T08:52:52"
+               data-component="body">
+    <br>
+<p>Must be a valid date. Example: <code>2025-12-09T08:52:52</code></p>
+        </div>
+        </form>
+
+                    <h2 id="delivery-order-DELETEapi-delivery-orders--id-">Delete Delivery Order</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-delivery-orders--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/delivery/orders/2" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delivery/orders/2"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/delivery/orders/2';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-delivery-orders--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+         &quot;status&quot;: &quot;success&quot;,
+          &quot;message&quot;: &quot;Delivery order deleted successfully&quot;,
+      }</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-delivery-orders--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-delivery-orders--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-delivery-orders--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-delivery-orders--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-delivery-orders--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-delivery-orders--id-" data-method="DELETE"
+      data-path="api/delivery/orders/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-delivery-orders--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-delivery-orders--id-"
+                    onclick="tryItOut('DELETEapi-delivery-orders--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-delivery-orders--id-"
+                    onclick="cancelTryOut('DELETEapi-delivery-orders--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-delivery-orders--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/delivery/orders/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="DELETEapi-delivery-orders--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-delivery-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-delivery-orders--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-delivery-orders--id-"
+               value="2"
+               data-component="url">
+    <br>
+<p>The ID of the order. Example: <code>2</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>deliveryOrder_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="deliveryOrder_id"                data-endpoint="DELETEapi-delivery-orders--id-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="delivery-order-POSTapi-delivery-orders--delivery_order--upload-pod">Upload a point of Delivery photo</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-delivery-orders--delivery_order--upload-pod">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/delivery/orders/2/upload-pod" \
+    --header "Bearer: Token" \
+    --header "Content-Type: multipart/form-data" \
+    --header "Accept: application/json" \
+    --form "pod_photo=@C:\Users\HP\AppData\Local\Temp\php51E8.tmp" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delivery/orders/2/upload-pod"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('pod_photo', document.querySelector('input[name="pod_photo"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/delivery/orders/2/upload-pod';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'multipart/form-data',
+            'Accept' =&gt; 'application/json',
+        ],
+        'multipart' =&gt; [
+            [
+                'name' =&gt; 'pod_photo',
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php51E8.tmp', 'r')
+            ],
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-delivery-orders--delivery_order--upload-pod">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Point Of Delivery photo uploaded successfully&quot;,
+    &quot;photo_url&quot;: &quot;pod_photos/2akLAes8oj4j5OIxC71O5GxwEN8fSJ1jxtotKyxk.jpg&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-delivery-orders--delivery_order--upload-pod" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-delivery-orders--delivery_order--upload-pod"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-delivery-orders--delivery_order--upload-pod"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-delivery-orders--delivery_order--upload-pod" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-delivery-orders--delivery_order--upload-pod">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-delivery-orders--delivery_order--upload-pod" data-method="POST"
+      data-path="api/delivery/orders/{delivery_order}/upload-pod"
+      data-authed="1"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-delivery-orders--delivery_order--upload-pod', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-delivery-orders--delivery_order--upload-pod"
+                    onclick="tryItOut('POSTapi-delivery-orders--delivery_order--upload-pod');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-delivery-orders--delivery_order--upload-pod"
+                    onclick="cancelTryOut('POSTapi-delivery-orders--delivery_order--upload-pod');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-delivery-orders--delivery_order--upload-pod"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/delivery/orders/{delivery_order}/upload-pod</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-pod"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-pod"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-pod"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>delivery_order</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="delivery_order"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-pod"
+               value="2"
+               data-component="url">
+    <br>
+<p>Example: <code>2</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>delivery_order_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="delivery_order_id"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-pod"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pod_photo</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="file" style="display: none"
+                              name="pod_photo"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-pod"
+               value=""
+               data-component="body">
+    <br>
+<p>Example: <code>C:\Users\HP\AppData\Local\Temp\php51E8.tmp</code></p>
+        </div>
+        </form>
+
+                    <h2 id="delivery-order-POSTapi-delivery-orders--delivery_order--upload-signature">Upload Customer Delivery Signature</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-delivery-orders--delivery_order--upload-signature">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/delivery/orders/2/upload-signature" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"signature\": \"consequatur\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delivery/orders/2/upload-signature"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "signature": "consequatur"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/delivery/orders/2/upload-signature';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'signature' =&gt; 'consequatur',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-delivery-orders--delivery_order--upload-signature">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+      &quot;message&quot;: &quot;Signature saved successfully&quot;,
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-delivery-orders--delivery_order--upload-signature" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-delivery-orders--delivery_order--upload-signature"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-delivery-orders--delivery_order--upload-signature"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-delivery-orders--delivery_order--upload-signature" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-delivery-orders--delivery_order--upload-signature">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-delivery-orders--delivery_order--upload-signature" data-method="POST"
+      data-path="api/delivery/orders/{delivery_order}/upload-signature"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-delivery-orders--delivery_order--upload-signature', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-delivery-orders--delivery_order--upload-signature"
+                    onclick="tryItOut('POSTapi-delivery-orders--delivery_order--upload-signature');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-delivery-orders--delivery_order--upload-signature"
+                    onclick="cancelTryOut('POSTapi-delivery-orders--delivery_order--upload-signature');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-delivery-orders--delivery_order--upload-signature"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/delivery/orders/{delivery_order}/upload-signature</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-signature"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-signature"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-signature"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>delivery_order</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="delivery_order"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-signature"
+               value="2"
+               data-component="url">
+    <br>
+<p>Example: <code>2</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>delivery_order_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="delivery_order_id"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-signature"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>signature</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="signature"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-signature"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+        </form>
+
+                    <h2 id="delivery-order-POSTapi-delivery-update-orders-status--delivery_order-">Update Delivery Order status</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-delivery-update-orders-status--delivery_order-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/delivery/update-orders-status/consequatur" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"status\": \"PENDING,ASSIGNED,OUT_FOR_DELIVERY,DELIVERED,FAILED\",
+    \"rider_id\": 17,
+    \"reason\": \"consequatur\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delivery/update-orders-status/consequatur"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "status": "PENDING,ASSIGNED,OUT_FOR_DELIVERY,DELIVERED,FAILED",
+    "rider_id": 17,
+    "reason": "consequatur"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/delivery/update-orders-status/consequatur';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'status' =&gt; 'PENDING,ASSIGNED,OUT_FOR_DELIVERY,DELIVERED,FAILED',
+            'rider_id' =&gt; 17,
+            'reason' =&gt; 'consequatur',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-delivery-update-orders-status--delivery_order-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+      &quot;message&quot;: &quot;Rider assigned successfully&quot;,
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-delivery-update-orders-status--delivery_order-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-delivery-update-orders-status--delivery_order-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-delivery-update-orders-status--delivery_order-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-delivery-update-orders-status--delivery_order-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-delivery-update-orders-status--delivery_order-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-delivery-update-orders-status--delivery_order-" data-method="POST"
+      data-path="api/delivery/update-orders-status/{delivery_order}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-delivery-update-orders-status--delivery_order-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-delivery-update-orders-status--delivery_order-"
+                    onclick="tryItOut('POSTapi-delivery-update-orders-status--delivery_order-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-delivery-update-orders-status--delivery_order-"
+                    onclick="cancelTryOut('POSTapi-delivery-update-orders-status--delivery_order-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-delivery-update-orders-status--delivery_order-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/delivery/update-orders-status/{delivery_order}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-delivery-update-orders-status--delivery_order-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-delivery-update-orders-status--delivery_order-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-delivery-update-orders-status--delivery_order-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>delivery_order</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="delivery_order"                data-endpoint="POSTapi-delivery-update-orders-status--delivery_order-"
+               value="consequatur"
+               data-component="url">
+    <br>
+<p>Example: <code>consequatur</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>delivery_order_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="delivery_order_id"                data-endpoint="POSTapi-delivery-update-orders-status--delivery_order-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="POSTapi-delivery-update-orders-status--delivery_order-"
+               value="PENDING,ASSIGNED,OUT_FOR_DELIVERY,DELIVERED,FAILED"
+               data-component="body">
+    <br>
+<p>Example: <code>PENDING,ASSIGNED,OUT_FOR_DELIVERY,DELIVERED,FAILED</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rider_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rider_id"                data-endpoint="POSTapi-delivery-update-orders-status--delivery_order-"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>reason</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="reason"                data-endpoint="POSTapi-delivery-update-orders-status--delivery_order-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+        </form>
+
+                    <h2 id="delivery-order-GETapi-delivery-dashboard">Dashboard</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-delivery-dashboard">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/delivery/dashboard" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delivery/dashboard"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/delivery/dashboard';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-delivery-dashboard">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;total&quot;: 1,
+    &quot;pending&quot;: 1,
+    &quot;assigned&quot;: 0,
+    &quot;out&quot;: 0,
+    &quot;delivered&quot;: 0,
+    &quot;failed&quot;: 0,
+    &quot;today_deliveries&quot;: []
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-delivery-dashboard" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-delivery-dashboard"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-delivery-dashboard"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-delivery-dashboard" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-delivery-dashboard">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-delivery-dashboard" data-method="GET"
+      data-path="api/delivery/dashboard"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-delivery-dashboard', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-delivery-dashboard"
+                    onclick="tryItOut('GETapi-delivery-dashboard');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-delivery-dashboard"
+                    onclick="cancelTryOut('GETapi-delivery-dashboard');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-delivery-dashboard"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/delivery/dashboard</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="GETapi-delivery-dashboard"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-delivery-dashboard"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-delivery-dashboard"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="delivery-order-GETapi-delivery-riders">Riders</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-delivery-riders">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/delivery/riders" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/delivery/riders"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/delivery/riders';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-delivery-riders">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Riders&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;full_name&quot;: &quot;Thembo Charles&quot;,
+            &quot;phone&quot;: &quot;0787444081&quot;,
+            &quot;email&quot;: &quot;ashley7520charles@gmail.com&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-delivery-riders" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-delivery-riders"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-delivery-riders"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-delivery-riders" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-delivery-riders">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-delivery-riders" data-method="GET"
+      data-path="api/delivery/riders"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-delivery-riders', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-delivery-riders"
+                    onclick="tryItOut('GETapi-delivery-riders');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-delivery-riders"
+                    onclick="cancelTryOut('GETapi-delivery-riders');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-delivery-riders"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/delivery/riders</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="GETapi-delivery-riders"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-delivery-riders"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-delivery-riders"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
 
                 <h1 id="others">Others</h1>
 

@@ -1,0 +1,1153 @@
+name: 'Delivery Order'
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/delivery/orders
+    metadata:
+      custom: []
+      groupName: 'Delivery Order'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delivery Orders'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "current_page": 1,
+            "data": [
+                {
+                    "id": 4,
+                    "created_at": "2025-12-09T07:41:36.000000Z",
+                    "updated_at": "2025-12-09T08:12:25.000000Z",
+                    "deleted_at": null,
+                    "delivery_number": "DEL-000001",
+                    "order_id": 5,
+                    "rider_id": null,
+                    "delivery_address": "Kasese",
+                    "delivery_date": "2025-12-10",
+                    "status": "PENDING",
+                    "pod_signature": null,
+                    "pod_photo_path": "pod_photos/2akLAes8oj4j5OIxC71O5GxwEN8fSJ1jxtotKyxk.jpg",
+                    "delivery_notes": null,
+                    "delivered_at": null,
+                    "order": {
+                        "id": 5,
+                        "created_at": "2025-12-05T12:20:11.000000Z",
+                        "updated_at": "2025-12-05T12:20:11.000000Z",
+                        "deleted_at": null,
+                        "tracking_number": "ORD-20251205-00002",
+                        "user_id": 1,
+                        "origin_country": "ITALY",
+                        "receiver_name": "Tom Mboya",
+                        "receiver_phone": "0789887766",
+                        "receiver_email": "tom.mboya@gmail.com",
+                        "receiver_address": "Uganda - Kampala",
+                        "status": "PENDING",
+                        "received_at": null,
+                        "dispatched_at": null,
+                        "arrived_at": null,
+                        "released_at": null,
+                        "delivered_at": null,
+                        "packages": [
+                            {
+                                "id": 1,
+                                "created_at": "2025-12-08T07:19:43.000000Z",
+                                "updated_at": "2025-12-08T07:42:06.000000Z",
+                                "deleted_at": null,
+                                "order_id": 5,
+                                "hwb_number": "HWB-2025128-0002",
+                                "contents": "Computer - Desktop",
+                                "declared_value": "2500000.00",
+                                "weight": "5.00",
+                                "length": "4.00",
+                                "width": "6.00",
+                                "height": "2.00",
+                                "is_fragile": true,
+                                "is_hazardous": false,
+                                "is_damaged": false,
+                                "package_photos": [
+                                    "package_photos/LXHHmhE4YM0YoTn1Lva95FSyQi31i89dskkPv2il.jpg",
+                                    "package_photos/thtdPXJtqtkpECHhbeyXIOAIMSGt564ZFIXBqdcp.jpg",
+                                    "package_photos/Uc34hnpyAPsAT1QINJfca0msaFdudcYfaY2Qs21h.jpg"
+                                ],
+                                "location_id": 1,
+                                "received_at": "2025-12-03T00:00:00.000000Z"
+                            },
+
+                        ]
+                    }
+                }
+            ],
+            "first_page_url": "http://127.0.0.1:8000/api/delivery/orders?page=1",
+            "from": 1,
+            "last_page": 1,
+            "last_page_url": "http://127.0.0.1:8000/api/delivery/orders?page=1",
+            "links": [
+                {
+                    "url": null,
+                    "label": "&laquo; Previous",
+                    "active": false
+                },
+                {
+                    "url": "http://127.0.0.1:8000/api/delivery/orders?page=1",
+                    "label": "1",
+                    "active": true
+                },
+                {
+                    "url": null,
+                    "label": "Next &raquo;",
+                    "active": false
+                }
+            ],
+            "next_page_url": null,
+            "path": "http://127.0.0.1:8000/api/delivery/orders",
+            "per_page": 20,
+            "prev_page_url": null,
+            "to": 1,
+            "total": 1
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/delivery/orders
+    metadata:
+      custom: []
+      groupName: 'Delivery Order'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create Order Deliver'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      order_id:
+        custom: []
+        name: order_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      rider_id:
+        custom: []
+        name: rider_id
+        description: 'The <code>id</code> of an existing record in the users table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      delivery_address:
+        custom: []
+        name: delivery_address
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      delivery_date:
+        custom: []
+        name: delivery_date
+        description: ''
+        required: true
+        example: consequatur
+        type: date
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      status:
+        custom: []
+        name: status
+        description: ''
+        required: false
+        example: ASSIGNED
+        type: string
+        enumValues:
+          - PENDING
+          - ASSIGNED
+          - OUT_FOR_DELIVERY
+          - DELIVERED
+          - FAILED
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      pod_signature:
+        custom: []
+        name: pod_signature
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      pod_photo_path:
+        custom: []
+        name: pod_photo_path
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      delivery_notes:
+        custom: []
+        name: delivery_notes
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      delivered_at:
+        custom: []
+        name: delivered_at
+        description: 'Must be a valid date.'
+        required: false
+        example: '2025-12-09T08:52:52'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      order_id: 17
+      delivery_address: consequatur
+      delivery_date: consequatur
+      status: ASSIGNED
+      pod_signature: consequatur
+      pod_photo_path: consequatur
+      delivery_notes: consequatur
+      delivered_at: '2025-12-09T08:52:52'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                "message": "Delivery order created successfully",
+                "data": {
+                    "order_id": "5",
+                    "delivery_address": "Kasese",
+                    "delivery_date": "2025-12-10",
+                    "delivery_number": "DEL-000001",
+                    "updated_at": "2025-12-09T07:41:36.000000Z",
+                    "created_at": "2025-12-09T07:41:36.000000Z",
+                    "id": 4,
+                    "order": {
+                        "id": 5,
+                        "created_at": "2025-12-05T12:20:11.000000Z",
+                        "updated_at": "2025-12-05T12:20:11.000000Z",
+                        "deleted_at": null,
+                        "tracking_number": "ORD-20251205-00002",
+                        "user_id": 1,
+                        "origin_country": "ITALY",
+                        "receiver_name": "Tom Mboya",
+                        "receiver_phone": "0789887766",
+                        "receiver_email": "tom.mboya@gmail.com",
+                        "receiver_address": "Uganda - Kampala",
+                        "status": "PENDING",
+                        "received_at": null,
+                        "dispatched_at": null,
+                        "arrived_at": null,
+                        "released_at": null,
+                        "delivered_at": null,
+                        "packages": [
+                            {
+                                "id": 1,
+                                "created_at": "2025-12-08T07:19:43.000000Z",
+                                "updated_at": "2025-12-08T07:42:06.000000Z",
+                                "deleted_at": null,
+                                "order_id": 5,
+                                "hwb_number": "HWB-2025128-0002",
+                                "contents": "Computer - Desktop",
+                                "declared_value": "2500000.00",
+                                "weight": "5.00",
+                                "length": "4.00",
+                                "width": "6.00",
+                                "height": "2.00",
+                                "is_fragile": true,
+                                "is_hazardous": false,
+                                "is_damaged": false,
+                                "package_photos": [
+                                    "package_photos/LXHHmhE4YM0YoTn1Lva95FSyQi31i89dskkPv2il.jpg",
+                                    "package_photos/thtdPXJtqtkpECHhbeyXIOAIMSGt564ZFIXBqdcp.jpg",
+                                    "package_photos/Uc34hnpyAPsAT1QINJfca0msaFdudcYfaY2Qs21h.jpg"
+                                ],
+                                "location_id": 1,
+                                "received_at": "2025-12-03T00:00:00.000000Z"
+                            },
+                            {
+                                "id": 2,
+                                "created_at": "2025-12-08T07:32:17.000000Z",
+                                "updated_at": "2025-12-08T07:32:17.000000Z",
+                                "deleted_at": null,
+                                "order_id": 5,
+                                "hwb_number": "HWB-2025128-0021",
+                                "contents": "Computer - Desktop",
+                                "declared_value": "2500000.00",
+                                "weight": "5.00",
+                                "length": "4.00",
+                                "width": "6.00",
+                                "height": "2.00",
+                                "is_fragile": true,
+                                "is_hazardous": false,
+                                "is_damaged": false,
+                                "package_photos": null,
+                                "location_id": 1,
+                                "received_at": "2025-12-03T00:00:00.000000Z"
+                            }
+                        ]
+                    }
+                }
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/delivery/orders/{id}'
+    metadata:
+      custom: []
+      groupName: 'Delivery Order'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Single Delivery Order'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 2
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "message": "Delivery order",
+            "data": {
+                "id": 4,
+                "created_at": "2025-12-09T07:41:36.000000Z",
+                "updated_at": "2025-12-09T08:12:25.000000Z",
+                "deleted_at": null,
+                "delivery_number": "DEL-000001",
+                "order_id": 5,
+                "rider_id": null,
+                "delivery_address": "Kasese",
+                "delivery_date": "2025-12-10",
+                "status": "PENDING",
+                "pod_signature": null,
+                "pod_photo_path": "pod_photos/2akLAes8oj4j5OIxC71O5GxwEN8fSJ1jxtotKyxk.jpg",
+                "delivery_notes": null,
+                "delivered_at": null,
+                "order": {
+                    "id": 5,
+                    "created_at": "2025-12-05T12:20:11.000000Z",
+                    "updated_at": "2025-12-05T12:20:11.000000Z",
+                    "deleted_at": null,
+                    "tracking_number": "ORD-20251205-00002",
+                    "user_id": 1,
+                    "origin_country": "ITALY",
+                    "receiver_name": "Tom Mboya",
+                    "receiver_phone": "0789887766",
+                    "receiver_email": "tom.mboya@gmail.com",
+                    "receiver_address": "Uganda - Kampala",
+                    "status": "PENDING",
+                    "received_at": null,
+                    "dispatched_at": null,
+                    "arrived_at": null,
+                    "released_at": null,
+                    "delivered_at": null,
+                    "packages": [
+                        {
+                            "id": 1,
+                            "created_at": "2025-12-08T07:19:43.000000Z",
+                            "updated_at": "2025-12-08T07:42:06.000000Z",
+                            "deleted_at": null,
+                            "order_id": 5,
+                            "hwb_number": "HWB-2025128-0002",
+                            "contents": "Computer - Desktop",
+                            "declared_value": "2500000.00",
+                            "weight": "5.00",
+                            "length": "4.00",
+                            "width": "6.00",
+                            "height": "2.00",
+                            "is_fragile": true,
+                            "is_hazardous": false,
+                            "is_damaged": false,
+                            "package_photos": [
+                                "package_photos/LXHHmhE4YM0YoTn1Lva95FSyQi31i89dskkPv2il.jpg",
+                                "package_photos/thtdPXJtqtkpECHhbeyXIOAIMSGt564ZFIXBqdcp.jpg",
+                                "package_photos/Uc34hnpyAPsAT1QINJfca0msaFdudcYfaY2Qs21h.jpg"
+                            ],
+                            "location_id": 1,
+                            "received_at": "2025-12-03T00:00:00.000000Z"
+                        },
+                        {
+                            "id": 2,
+                            "created_at": "2025-12-08T07:32:17.000000Z",
+                            "updated_at": "2025-12-08T07:32:17.000000Z",
+                            "deleted_at": null,
+                            "order_id": 5,
+                            "hwb_number": "HWB-2025128-0021",
+                            "contents": "Computer - Desktop",
+                            "declared_value": "2500000.00",
+                            "weight": "5.00",
+                            "length": "4.00",
+                            "width": "6.00",
+                            "height": "2.00",
+                            "is_fragile": true,
+                            "is_hazardous": false,
+                            "is_damaged": false,
+                            "package_photos": null,
+                            "location_id": 1,
+                            "received_at": "2025-12-03T00:00:00.000000Z"
+                        }
+                    ],
+                    "user": {
+                        "id": 1,
+                        "full_name": "Thembo Charles",
+                        "email": "ashley7520charles@gmail.com",
+                        "phone": "0787444081",
+                        "email_verified_at": null,
+                        "tin": "110023452",
+                        "passport": "65748",
+                        "address": "Kampala",
+                        "otp": "4782",
+                        "status": "active",
+                        "user_type": "user",
+                        "created_at": "2025-12-05T06:42:09.000000Z",
+                        "updated_at": "2025-12-05T07:58:28.000000Z",
+                        "deleted_at": null
+                    }
+                }
+            }
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/delivery/orders/{id}'
+    metadata:
+      custom: []
+      groupName: 'Delivery Order'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Order Deliver'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      deliveryOrder_id:
+        custom: []
+        name: deliveryOrder_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 2
+      deliveryOrder_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      rider_id:
+        custom: []
+        name: rider_id
+        description: 'The <code>id</code> of an existing record in the user table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      delivery_address:
+        custom: []
+        name: delivery_address
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      delivery_date:
+        custom: []
+        name: delivery_date
+        description: ''
+        required: true
+        example: consequatur
+        type: date
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      pod_signature:
+        custom: []
+        name: pod_signature
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      pod_photo_path:
+        custom: []
+        name: pod_photo_path
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      delivery_notes:
+        custom: []
+        name: delivery_notes
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      delivered_at:
+        custom: []
+        name: delivered_at
+        description: 'Must be a valid date.'
+        required: false
+        example: '2025-12-09T08:52:52'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      delivery_address: consequatur
+      delivery_date: consequatur
+      pod_signature: consequatur
+      pod_photo_path: consequatur
+      delivery_notes: consequatur
+      delivered_at: '2025-12-09T08:52:52'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                "message": "Delivery order updated successfully",
+                "data": {
+                    "order_id": "5",
+                    "delivery_address": "Kasese",
+                    "delivery_date": "2025-12-10",
+                    "delivery_number": "DEL-000001",
+                    "updated_at": "2025-12-09T07:41:36.000000Z",
+                    "created_at": "2025-12-09T07:41:36.000000Z",
+                    "id": 4,
+                    "order": {
+                        "id": 5,
+                        "created_at": "2025-12-05T12:20:11.000000Z",
+                        "updated_at": "2025-12-05T12:20:11.000000Z",
+                        "deleted_at": null,
+                        "tracking_number": "ORD-20251205-00002",
+                        "user_id": 1,
+                        "origin_country": "ITALY",
+                        "receiver_name": "Tom Mboya",
+                        "receiver_phone": "0789887766",
+                        "receiver_email": "tom.mboya@gmail.com",
+                        "receiver_address": "Uganda - Kampala",
+                        "status": "PENDING",
+                        "received_at": null,
+                        "dispatched_at": null,
+                        "arrived_at": null,
+                        "released_at": null,
+                        "delivered_at": null,
+                        "packages": [
+                            {
+                                "id": 1,
+                                "created_at": "2025-12-08T07:19:43.000000Z",
+                                "updated_at": "2025-12-08T07:42:06.000000Z",
+                                "deleted_at": null,
+                                "order_id": 5,
+                                "hwb_number": "HWB-2025128-0002",
+                                "contents": "Computer - Desktop",
+                                "declared_value": "2500000.00",
+                                "weight": "5.00",
+                                "length": "4.00",
+                                "width": "6.00",
+                                "height": "2.00",
+                                "is_fragile": true,
+                                "is_hazardous": false,
+                                "is_damaged": false,
+                                "package_photos": [
+                                    "package_photos/LXHHmhE4YM0YoTn1Lva95FSyQi31i89dskkPv2il.jpg",
+                                    "package_photos/thtdPXJtqtkpECHhbeyXIOAIMSGt564ZFIXBqdcp.jpg",
+                                    "package_photos/Uc34hnpyAPsAT1QINJfca0msaFdudcYfaY2Qs21h.jpg"
+                                ],
+                                "location_id": 1,
+                                "received_at": "2025-12-03T00:00:00.000000Z"
+                            },
+                            {
+                                "id": 2,
+                                "created_at": "2025-12-08T07:32:17.000000Z",
+                                "updated_at": "2025-12-08T07:32:17.000000Z",
+                                "deleted_at": null,
+                                "order_id": 5,
+                                "hwb_number": "HWB-2025128-0021",
+                                "contents": "Computer - Desktop",
+                                "declared_value": "2500000.00",
+                                "weight": "5.00",
+                                "length": "4.00",
+                                "width": "6.00",
+                                "height": "2.00",
+                                "is_fragile": true,
+                                "is_hazardous": false,
+                                "is_damaged": false,
+                                "package_photos": null,
+                                "location_id": 1,
+                                "received_at": "2025-12-03T00:00:00.000000Z"
+                            }
+                        ]
+                    }
+                }
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/delivery/orders/{id}'
+    metadata:
+      custom: []
+      groupName: 'Delivery Order'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Delivery Order'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the order.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      deliveryOrder_id:
+        custom: []
+        name: deliveryOrder_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 2
+      deliveryOrder_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                   "status": "success",
+                    "message": "Delivery order deleted successfully",
+                }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: 'api/delivery/orders/{delivery_order}/upload-pod'
+    metadata:
+      custom: []
+      groupName: 'Delivery Order'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Upload a point of Delivery photo'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      delivery_order:
+        custom: []
+        name: delivery_order
+        description: ''
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      delivery_order_id:
+        custom: []
+        name: delivery_order_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      delivery_order: 2
+      delivery_order_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      pod_photo:
+        custom: []
+        name: pod_photo
+        description: ''
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters: []
+    fileParameters:
+      pod_photo: null
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                "message": "Point Of Delivery photo uploaded successfully",
+                "photo_url": "pod_photos/2akLAes8oj4j5OIxC71O5GxwEN8fSJ1jxtotKyxk.jpg"
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: 'api/delivery/orders/{delivery_order}/upload-signature'
+    metadata:
+      custom: []
+      groupName: 'Delivery Order'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Upload Customer Delivery Signature'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      delivery_order:
+        custom: []
+        name: delivery_order
+        description: ''
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      delivery_order_id:
+        custom: []
+        name: delivery_order_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      delivery_order: 2
+      delivery_order_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      signature:
+        custom: []
+        name: signature
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      signature: consequatur
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                "message": "Signature saved successfully",
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: 'api/delivery/update-orders-status/{delivery_order}'
+    metadata:
+      custom: []
+      groupName: 'Delivery Order'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Delivery Order status'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      delivery_order:
+        custom: []
+        name: delivery_order
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      delivery_order_id:
+        custom: []
+        name: delivery_order_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      delivery_order: consequatur
+      delivery_order_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      status:
+        custom: []
+        name: status
+        description: ''
+        required: true
+        example: 'PENDING,ASSIGNED,OUT_FOR_DELIVERY,DELIVERED,FAILED'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      rider_id:
+        custom: []
+        name: rider_id
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      reason:
+        custom: []
+        name: reason
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      status: 'PENDING,ASSIGNED,OUT_FOR_DELIVERY,DELIVERED,FAILED'
+      rider_id: 17
+      reason: consequatur
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                "message": "Rider assigned successfully",
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/delivery/dashboard
+    metadata:
+      custom: []
+      groupName: 'Delivery Order'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Dashboard
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "total": 1,
+            "pending": 1,
+            "assigned": 0,
+            "out": 0,
+            "delivered": 0,
+            "failed": 0,
+            "today_deliveries": []
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/delivery/riders
+    metadata:
+      custom: []
+      groupName: 'Delivery Order'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: Riders
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                "message": "Riders",
+                "data": [
+                    {
+                        "id": 1,
+                        "full_name": "Thembo Charles",
+                        "phone": "0787444081",
+                        "email": "ashley7520charles@gmail.com"
+                    }
+                ]
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
