@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreOrderStatusHistoryRequest;
+use App\Mail\NotifyCustomer;
 use App\Models\Order;
 use App\Models\OrderStatusHistory;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class OrderStatusHistoryController extends Controller
 {
@@ -53,13 +56,35 @@ class OrderStatusHistoryController extends Controller
 
         $order_history = OrderStatusHistory::create($data);
 
-        $order_history->status = $order_history->status;
+        // $order_history->status = $order_history->status;
+        
+        if($order_history->status == "RECEIVED"){
+            $order_history->received_at = now();
+        }
 
-        $order_history->save();
+        if($order_history->status == "DISPATCHED"){
+            $order_history->dispatched_at = now();
+        }
+
+        if($order_history->status == "ARRIVED"){
+            $order_history->arrived_at = now();
+        }
+
+        if($order_history->status == "RELEASED"){
+            $order_history->released_at = now();
+        }
+
+        if($order_history->status == "DELIVERED"){
+            $order_history->delivered_at = now();
+        }
+
+        $order_history->save();      
+        
+        $order_history->sendNotification($order_history);
 
         return response()->json([
             'status'  => 'success',
-            'message' => 'Order history created successfully.',
+            'message' => 'Order history updated successfully.',
             'data'    => $order_history,
         ], 201);
 

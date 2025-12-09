@@ -426,4 +426,16 @@ class OrderController extends Controller
             'message' => 'Order deleted successfully.',
         ]);
     }
+
+    function tracking_url($tracking_number) {
+
+        $order = Order::with('packages','statusHistory')->where('tracking_number',$tracking_number)->firstOrFail();
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'Order .'.$tracking_number,
+            'data'    => $order
+        ]);
+
+    }
 }

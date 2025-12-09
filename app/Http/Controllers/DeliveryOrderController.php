@@ -4,9 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDeliveryOrderRequest;
 use App\Http\Requests\UpdateDeliveryOrderRequest;
+use App\Mail\NotifyCustomer;
 use App\Models\DeliveryOrder;
+use App\Models\OrderStatusHistory;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 
 class DeliveryOrderController extends Controller
 {
@@ -645,6 +650,17 @@ class DeliveryOrderController extends Controller
                     'delivery_notes' => $request->reason,
                 ]);
 
+                $subject = "New Assigned Delivery - ".$delivery_order->delivery_number;
+
+                $message = "Hello ".$delivery_order->rider->full_name.",  You have been allocated Delivery ".$delivery_order->delivery_number.", Please prepare to pick it up.";
+ 
+                Mail::to($delivery_order->rider->email)
+                ->send(new NotifyCustomer($message, $subject));
+
+                User::sendSms(
+                    $delivery_order->rider->phone,strip_tags($message)
+                );
+
                 return response()->json([
                     'message' => 'Rider assigned successfully',
                     'data' => $delivery_order
@@ -663,6 +679,42 @@ class DeliveryOrderController extends Controller
                     'delivery_notes' => $request->reason,
                 ]);
 
+                // ================== MESSAGE BODY ==========
+
+                $tracking_number = $delivery_order->order->tracking_number;
+
+                $subject = "Order is out for delivery - ".$tracking_number;
+
+                $message = "Hello ".$delivery_order->rider->full_name.",  You have been allocated Delivery ".$delivery_order->delivery_number.", Please prepare to pick it up.";
+                
+                $delivery = $delivery_order;               
+
+                $sms = "Your shipment {$tracking_number} is out for delivery today. Rider: {$delivery_order->rider->full_name}, Phone: {$delivery_order->rider->phone}";
+
+                $message .= "
+                    <p>Your shipment is out for delivery!</p>
+                    <p><strong>Delivery Details:</strong><br>
+                    - Tracking Number: {$tracking_number}<br>
+                    - Delivery Date: {$delivery->delivery_date}<br>
+                    - Delivery Address: {$delivery->delivery_address}</p>
+
+                    <p><strong>Rider Info:</strong><br>
+                    - {$delivery->user->full_name}<br>
+                    - {$delivery->user->phone}</p>
+
+                    <p>Please ensure someone is available to receive the package. A signature will be required.</p>
+                    <p>Best regards,<br>Constell and Co</p>
+                ";
+
+                // ==================================
+
+                Mail::to($delivery_order->rider->email)
+                ->send(new NotifyCustomer($message, $subject));
+
+                User::sendSms(
+                    $delivery_order->rider->phone,strip_tags($sms)
+                );
+
                 return response()->json([
                     'message' => 'Order is now out for delivery',
                     'data' => $delivery_order
@@ -676,6 +728,13 @@ class DeliveryOrderController extends Controller
                     'status' => 'DELIVERED',
                     'delivered_at' => now(),
                     'delivery_notes' => $request->reason,
+                ]);
+
+                Http::post(route('order_status_history.store'), [
+                    'order_id' => $delivery_order->order_id,
+                    'status' => 'DELIVERED',
+                    'notes' => $request->reason,
+                    'user_id' => Auth::id(),
                 ]);
 
                 return response()->json([
