@@ -23,8 +23,8 @@ return new class extends Migration
             $table->date('departure_date');
             $table->enum('status', ['OPEN', 'FINALIZED', 'DEPARTED', 'ARRIVED'])->default('OPEN');
 
-            $table->integer('package_count')->default(0);
-            $table->decimal('total_weight', 10, 2)->default(0);
+            // $table->integer('package_count')->default(0);
+            // $table->decimal('total_weight', 10, 2)->default(0);
             $table->foreignId('created_by')->constrained('users');
             $table->timestamp('finalized_at')->nullable();
             $table->timestamp('departed_at')->nullable();

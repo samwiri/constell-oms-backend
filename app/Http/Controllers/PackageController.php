@@ -32,7 +32,6 @@ class PackageController extends Controller
      * @group Package  
      * @header Bearer Token    
      * @bodyParam order_id integer required
-     * @bodyParam hwb_number string required
      * @bodyParam contents string required
      * @bodyParam declared_value double
      * @bodyParam weight double required
@@ -73,6 +72,8 @@ class PackageController extends Controller
     {
         $data = $request->validated();
 
+        $data['hwb_number'] = Package::generateNumber();       
+      
         $package = Package::create($data);
 
         return response()->json([

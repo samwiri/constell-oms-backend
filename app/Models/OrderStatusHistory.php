@@ -467,7 +467,7 @@ class OrderStatusHistory extends Model
                 ->send(new NotifyCustomer($message, $subject));
 
             User::sendSms(
-                $order_history->order->user->phone,strip_tags($message)
+                $order_history->order->user->phone,strip_tags($sms)
             );
         }
 

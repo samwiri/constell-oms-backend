@@ -214,6 +214,9 @@
                                                                                 <li class="tocify-item level-2" data-unique="invoice-POSTapi-billing-invoices">
                                 <a href="#invoice-POSTapi-billing-invoices">Make an Invoice</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-GETapi-billing-invoices--id-">
+                                <a href="#invoice-GETapi-billing-invoices--id-">Single Invoice Details</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="invoice-PUTapi-billing-invoices--id-">
                                 <a href="#invoice-PUTapi-billing-invoices--id-">Update an Invoice</a>
                             </li>
@@ -240,6 +243,9 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="invoice-DELETEapi-billing-payments--payment_id-">
                                 <a href="#invoice-DELETEapi-billing-payments--payment_id-">Delete Invoice Payment</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="invoice-GETapi-billing-send_invoice--invoice_id-">
+                                <a href="#invoice-GETapi-billing-send_invoice--invoice_id-">Send Invoice Notification</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -288,14 +294,14 @@
                                                     <li class="tocify-item level-2" data-unique="others-GETapi-settings-locations--id-">
                                 <a href="#others-GETapi-settings-locations--id-">Display the specified resource.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="others-GETapi-billing-invoices--id-">
-                                <a href="#others-GETapi-billing-invoices--id-">Display the specified resource.</a>
-                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="others-GETapi-billing-invoice-line-items">
                                 <a href="#others-GETapi-billing-invoice-line-items">Display a listing of the resource.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="others-GETapi-billing-invoice-line-items--id-">
                                 <a href="#others-GETapi-billing-invoice-line-items--id-">Display the specified resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="others-GETapi-activity_logs">
+                                <a href="#others-GETapi-activity_logs">GET api/activity_logs</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -308,7 +314,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: December 9, 2025</li>
+        <li>Last updated: December 10, 2025</li>
     </ul>
 </div>
 
@@ -3336,7 +3342,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/orders/2" \
+    --get "http://localhost/api/orders/17" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -3344,7 +3350,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/orders/2"
+    "http://localhost/api/orders/17"
 );
 
 const headers = {
@@ -3361,7 +3367,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/orders/2';
+$url = 'http://localhost/api/orders/17';
 $response = $client-&gt;get(
     $url,
     [
@@ -3543,10 +3549,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-orders--id-"
-               value="2"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>2</code></p>
+<p>The ID of the order. Example: <code>17</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
@@ -3576,7 +3582,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/orders/2" \
+    "http://localhost/api/orders/17" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3592,7 +3598,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/orders/2"
+    "http://localhost/api/orders/17"
 );
 
 const headers = {
@@ -3618,7 +3624,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/orders/2';
+$url = 'http://localhost/api/orders/17';
 $response = $client-&gt;put(
     $url,
     [
@@ -3749,10 +3755,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-orders--id-"
-               value="2"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>2</code></p>
+<p>The ID of the order. Example: <code>17</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
@@ -3843,7 +3849,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/orders/2" \
+    "http://localhost/api/orders/17" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -3851,7 +3857,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/orders/2"
+    "http://localhost/api/orders/17"
 );
 
 const headers = {
@@ -3868,7 +3874,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/orders/2';
+$url = 'http://localhost/api/orders/17';
 $response = $client-&gt;delete(
     $url,
     [
@@ -3988,10 +3994,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-orders--id-"
-               value="2"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>2</code></p>
+<p>The ID of the order. Example: <code>17</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
@@ -5478,8 +5484,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Bearer: Token" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php508C.tmp" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php509D.tmp" </code></pre></div>
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php88.tmp" \
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php98.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5518,11 +5524,11 @@ $response = $client-&gt;post(
         'multipart' =&gt; [
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php508C.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php88.tmp', 'r')
             ],
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php509D.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php98.tmp', 'r')
             ],
         ],
     ]
@@ -5701,7 +5707,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Example: <code>C:\Users\HP\AppData\Local\Temp\php509D.tmp</code></p>
+<p>Example: <code>C:\Users\HP\AppData\Local\Temp\php98.tmp</code></p>
         </div>
         </form>
 
@@ -6441,9 +6447,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"status\": \"ARRIVED\",
     \"package_count\": 56,
     \"total_weight\": 16,
-    \"finalized_at\": \"2025-12-09T08:52:52\",
-    \"departed_at\": \"2025-12-09T08:52:52\",
-    \"arrived_at\": \"2025-12-09T08:52:52\"
+    \"finalized_at\": \"2025-12-10T09:00:12\",
+    \"departed_at\": \"2025-12-10T09:00:12\",
+    \"arrived_at\": \"2025-12-10T09:00:12\"
 }"
 </code></pre></div>
 
@@ -6467,9 +6473,9 @@ let body = {
     "status": "ARRIVED",
     "package_count": 56,
     "total_weight": 16,
-    "finalized_at": "2025-12-09T08:52:52",
-    "departed_at": "2025-12-09T08:52:52",
-    "arrived_at": "2025-12-09T08:52:52"
+    "finalized_at": "2025-12-10T09:00:12",
+    "departed_at": "2025-12-10T09:00:12",
+    "arrived_at": "2025-12-10T09:00:12"
 };
 
 fetch(url, {
@@ -6498,9 +6504,9 @@ $response = $client-&gt;post(
             'status' =&gt; 'ARRIVED',
             'package_count' =&gt; 56,
             'total_weight' =&gt; 16,
-            'finalized_at' =&gt; '2025-12-09T08:52:52',
-            'departed_at' =&gt; '2025-12-09T08:52:52',
-            'arrived_at' =&gt; '2025-12-09T08:52:52',
+            'finalized_at' =&gt; '2025-12-10T09:00:12',
+            'departed_at' =&gt; '2025-12-10T09:00:12',
+            'arrived_at' =&gt; '2025-12-10T09:00:12',
         ],
     ]
 );
@@ -6736,10 +6742,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="finalized_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-09T08:52:52"
+               value="2025-12-10T09:00:12"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-09T08:52:52</code></p>
+<p>Must be a valid date. Example: <code>2025-12-10T09:00:12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>departed_at</code></b>&nbsp;&nbsp;
@@ -6748,10 +6754,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="departed_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-09T08:52:52"
+               value="2025-12-10T09:00:12"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-09T08:52:52</code></p>
+<p>Must be a valid date. Example: <code>2025-12-10T09:00:12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>arrived_at</code></b>&nbsp;&nbsp;
@@ -6760,10 +6766,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="arrived_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-09T08:52:52"
+               value="2025-12-10T09:00:12"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-09T08:52:52</code></p>
+<p>Must be a valid date. Example: <code>2025-12-10T09:00:12</code></p>
         </div>
         </form>
 
@@ -8230,6 +8236,202 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
+                    <h2 id="invoice-GETapi-billing-invoices--id-">Single Invoice Details</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-billing-invoices--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/billing/invoices/consequatur" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"invoice_id\": 17
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/invoices/consequatur"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "invoice_id": 17
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/invoices/consequatur';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'invoice_id' =&gt; 17,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-billing-invoices--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-billing-invoices--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-billing-invoices--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-billing-invoices--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-billing-invoices--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-billing-invoices--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-billing-invoices--id-" data-method="GET"
+      data-path="api/billing/invoices/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-billing-invoices--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-billing-invoices--id-"
+                    onclick="tryItOut('GETapi-billing-invoices--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-billing-invoices--id-"
+                    onclick="cancelTryOut('GETapi-billing-invoices--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-billing-invoices--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/billing/invoices/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="GETapi-billing-invoices--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-billing-invoices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-billing-invoices--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-billing-invoices--id-"
+               value="consequatur"
+               data-component="url">
+    <br>
+<p>The ID of the invoice. Example: <code>consequatur</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>invoice_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="invoice_id"                data-endpoint="GETapi-billing-invoices--id-"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+        </form>
+
                     <h2 id="invoice-PUTapi-billing-invoices--id-">Update an Invoice</h2>
 
 <p>
@@ -8244,7 +8446,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/billing/invoices/1" \
+    "http://localhost/api/billing/invoices/17" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -8258,7 +8460,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/billing/invoices/1"
+    "http://localhost/api/billing/invoices/17"
 );
 
 const headers = {
@@ -8282,7 +8484,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/billing/invoices/1';
+$url = 'http://localhost/api/billing/invoices/17';
 $response = $client-&gt;put(
     $url,
     [
@@ -8438,10 +8640,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-billing-invoices--id-"
-               value="1"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the invoice. Example: <code>1</code></p>
+<p>The ID of the invoice. Example: <code>17</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -8496,7 +8698,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/billing/invoices/1" \
+    "http://localhost/api/billing/invoices/17" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -8504,7 +8706,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/billing/invoices/1"
+    "http://localhost/api/billing/invoices/17"
 );
 
 const headers = {
@@ -8521,7 +8723,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/billing/invoices/1';
+$url = 'http://localhost/api/billing/invoices/17';
 $response = $client-&gt;delete(
     $url,
     [
@@ -8641,10 +8843,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-billing-invoices--id-"
-               value="1"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the invoice. Example: <code>1</code></p>
+<p>The ID of the invoice. Example: <code>17</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>invoice_id</code></b>&nbsp;&nbsp;
@@ -8674,7 +8876,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/billing/invoices/1/restore" \
+    "http://localhost/api/billing/invoices/17/restore" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -8682,7 +8884,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/billing/invoices/1/restore"
+    "http://localhost/api/billing/invoices/17/restore"
 );
 
 const headers = {
@@ -8699,7 +8901,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/billing/invoices/1/restore';
+$url = 'http://localhost/api/billing/invoices/17/restore';
 $response = $client-&gt;post(
     $url,
     [
@@ -8819,10 +9021,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="POSTapi-billing-invoices--id--restore"
-               value="1"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the invoice. Example: <code>1</code></p>
+<p>The ID of the invoice. Example: <code>17</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>invoice_id</code></b>&nbsp;&nbsp;
@@ -9082,7 +9284,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/billing/invoice-line-items/1" \
+    "http://localhost/api/billing/invoice-line-items/17" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -9097,7 +9299,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/billing/invoice-line-items/1"
+    "http://localhost/api/billing/invoice-line-items/17"
 );
 
 const headers = {
@@ -9122,7 +9324,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/billing/invoice-line-items/1';
+$url = 'http://localhost/api/billing/invoice-line-items/17';
 $response = $client-&gt;put(
     $url,
     [
@@ -9260,10 +9462,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-billing-invoice-line-items--id-"
-               value="1"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the invoice line item. Example: <code>1</code></p>
+<p>The ID of the invoice line item. Example: <code>17</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -9330,7 +9532,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/billing/invoice-line-items/1" \
+    "http://localhost/api/billing/invoice-line-items/17" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -9338,7 +9540,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/billing/invoice-line-items/1"
+    "http://localhost/api/billing/invoice-line-items/17"
 );
 
 const headers = {
@@ -9355,7 +9557,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/billing/invoice-line-items/1';
+$url = 'http://localhost/api/billing/invoice-line-items/17';
 $response = $client-&gt;delete(
     $url,
     [
@@ -9473,10 +9675,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-billing-invoice-line-items--id-"
-               value="1"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the invoice line item. Example: <code>1</code></p>
+<p>The ID of the invoice line item. Example: <code>17</code></p>
             </div>
                     </form>
 
@@ -9494,7 +9696,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/billing/invoice-line-items/1/restore" \
+    "http://localhost/api/billing/invoice-line-items/17/restore" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -9502,7 +9704,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/billing/invoice-line-items/1/restore"
+    "http://localhost/api/billing/invoice-line-items/17/restore"
 );
 
 const headers = {
@@ -9519,7 +9721,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/billing/invoice-line-items/1/restore';
+$url = 'http://localhost/api/billing/invoice-line-items/17/restore';
 $response = $client-&gt;post(
     $url,
     [
@@ -9637,10 +9839,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="POSTapi-billing-invoice-line-items--id--restore"
-               value="1"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the invoice line item. Example: <code>1</code></p>
+<p>The ID of the invoice line item. Example: <code>17</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>invoiceLineItem_id</code></b>&nbsp;&nbsp;
@@ -10097,6 +10299,172 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
+                    <h2 id="invoice-GETapi-billing-send_invoice--invoice_id-">Send Invoice Notification</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-billing-send_invoice--invoice_id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/billing/send_invoice/17" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/billing/send_invoice/17"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/billing/send_invoice/17';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-billing-send_invoice--invoice_id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+         &quot;status&quot;: &quot;success&quot;,
+          &quot;message&quot;: &quot;Invoice Sent successfully&quot;,
+      }
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-billing-send_invoice--invoice_id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-billing-send_invoice--invoice_id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-billing-send_invoice--invoice_id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-billing-send_invoice--invoice_id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-billing-send_invoice--invoice_id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-billing-send_invoice--invoice_id-" data-method="GET"
+      data-path="api/billing/send_invoice/{invoice_id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-billing-send_invoice--invoice_id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-billing-send_invoice--invoice_id-"
+                    onclick="tryItOut('GETapi-billing-send_invoice--invoice_id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-billing-send_invoice--invoice_id-"
+                    onclick="cancelTryOut('GETapi-billing-send_invoice--invoice_id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-billing-send_invoice--invoice_id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/billing/send_invoice/{invoice_id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="GETapi-billing-send_invoice--invoice_id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-billing-send_invoice--invoice_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-billing-send_invoice--invoice_id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>invoice_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="invoice_id"                data-endpoint="GETapi-billing-send_invoice--invoice_id-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                    </form>
+
                 <h1 id="delivery-order">Delivery Order</h1>
 
     
@@ -10369,7 +10737,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"pod_signature\": \"consequatur\",
     \"pod_photo_path\": \"consequatur\",
     \"delivery_notes\": \"consequatur\",
-    \"delivered_at\": \"2025-12-09T08:52:52\"
+    \"delivered_at\": \"2025-12-10T09:00:12\"
 }"
 </code></pre></div>
 
@@ -10393,7 +10761,7 @@ let body = {
     "pod_signature": "consequatur",
     "pod_photo_path": "consequatur",
     "delivery_notes": "consequatur",
-    "delivered_at": "2025-12-09T08:52:52"
+    "delivered_at": "2025-12-10T09:00:12"
 };
 
 fetch(url, {
@@ -10422,7 +10790,7 @@ $response = $client-&gt;post(
             'pod_signature' =&gt; 'consequatur',
             'pod_photo_path' =&gt; 'consequatur',
             'delivery_notes' =&gt; 'consequatur',
-            'delivered_at' =&gt; '2025-12-09T08:52:52',
+            'delivered_at' =&gt; '2025-12-10T09:00:12',
         ],
     ]
 );
@@ -10705,10 +11073,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="delivered_at"                data-endpoint="POSTapi-delivery-orders"
-               value="2025-12-09T08:52:52"
+               value="2025-12-10T09:00:12"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-09T08:52:52</code></p>
+<p>Must be a valid date. Example: <code>2025-12-10T09:00:12</code></p>
         </div>
         </form>
 
@@ -10726,7 +11094,7 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/delivery/orders/2" \
+    --get "http://localhost/api/delivery/orders/17" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -10734,7 +11102,7 @@ Must be one of:
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/delivery/orders/2"
+    "http://localhost/api/delivery/orders/17"
 );
 
 const headers = {
@@ -10751,7 +11119,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/delivery/orders/2';
+$url = 'http://localhost/api/delivery/orders/17';
 $response = $client-&gt;get(
     $url,
     [
@@ -10966,10 +11334,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-delivery-orders--id-"
-               value="2"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>2</code></p>
+<p>The ID of the order. Example: <code>17</code></p>
             </div>
                     </form>
 
@@ -10987,7 +11355,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/delivery/orders/2" \
+    "http://localhost/api/delivery/orders/17" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -10997,14 +11365,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"pod_signature\": \"consequatur\",
     \"pod_photo_path\": \"consequatur\",
     \"delivery_notes\": \"consequatur\",
-    \"delivered_at\": \"2025-12-09T08:52:52\"
+    \"delivered_at\": \"2025-12-10T09:00:12\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/delivery/orders/2"
+    "http://localhost/api/delivery/orders/17"
 );
 
 const headers = {
@@ -11019,7 +11387,7 @@ let body = {
     "pod_signature": "consequatur",
     "pod_photo_path": "consequatur",
     "delivery_notes": "consequatur",
-    "delivered_at": "2025-12-09T08:52:52"
+    "delivered_at": "2025-12-10T09:00:12"
 };
 
 fetch(url, {
@@ -11031,7 +11399,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/delivery/orders/2';
+$url = 'http://localhost/api/delivery/orders/17';
 $response = $client-&gt;put(
     $url,
     [
@@ -11046,7 +11414,7 @@ $response = $client-&gt;put(
             'pod_signature' =&gt; 'consequatur',
             'pod_photo_path' =&gt; 'consequatur',
             'delivery_notes' =&gt; 'consequatur',
-            'delivered_at' =&gt; '2025-12-09T08:52:52',
+            'delivered_at' =&gt; '2025-12-10T09:00:12',
         ],
     ]
 );
@@ -11235,10 +11603,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-delivery-orders--id-"
-               value="2"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>2</code></p>
+<p>The ID of the order. Example: <code>17</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>deliveryOrder_id</code></b>&nbsp;&nbsp;
@@ -11332,10 +11700,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="delivered_at"                data-endpoint="PUTapi-delivery-orders--id-"
-               value="2025-12-09T08:52:52"
+               value="2025-12-10T09:00:12"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-09T08:52:52</code></p>
+<p>Must be a valid date. Example: <code>2025-12-10T09:00:12</code></p>
         </div>
         </form>
 
@@ -11353,7 +11721,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/delivery/orders/2" \
+    "http://localhost/api/delivery/orders/17" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -11361,7 +11729,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/delivery/orders/2"
+    "http://localhost/api/delivery/orders/17"
 );
 
 const headers = {
@@ -11378,7 +11746,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/delivery/orders/2';
+$url = 'http://localhost/api/delivery/orders/17';
 $response = $client-&gt;delete(
     $url,
     [
@@ -11497,10 +11865,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-delivery-orders--id-"
-               value="2"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>2</code></p>
+<p>The ID of the order. Example: <code>17</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>deliveryOrder_id</code></b>&nbsp;&nbsp;
@@ -11530,16 +11898,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/delivery/orders/2/upload-pod" \
+    "http://localhost/api/delivery/orders/17/upload-pod" \
     --header "Bearer: Token" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "pod_photo=@C:\Users\HP\AppData\Local\Temp\php51E8.tmp" </code></pre></div>
+    --form "pod_photo=@C:\Users\HP\AppData\Local\Temp\php36A.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/delivery/orders/2/upload-pod"
+    "http://localhost/api/delivery/orders/17/upload-pod"
 );
 
 const headers = {
@@ -11560,7 +11928,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/delivery/orders/2/upload-pod';
+$url = 'http://localhost/api/delivery/orders/17/upload-pod';
 $response = $client-&gt;post(
     $url,
     [
@@ -11572,7 +11940,7 @@ $response = $client-&gt;post(
         'multipart' =&gt; [
             [
                 'name' =&gt; 'pod_photo',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php51E8.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php36A.tmp', 'r')
             ],
         ],
     ]
@@ -11685,10 +12053,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="delivery_order"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-pod"
-               value="2"
+               value="17"
                data-component="url">
     <br>
-<p>Example: <code>2</code></p>
+<p>Example: <code>17</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>delivery_order_id</code></b>&nbsp;&nbsp;
@@ -11713,7 +12081,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Example: <code>C:\Users\HP\AppData\Local\Temp\php51E8.tmp</code></p>
+<p>Example: <code>C:\Users\HP\AppData\Local\Temp\php36A.tmp</code></p>
         </div>
         </form>
 
@@ -11731,7 +12099,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/delivery/orders/2/upload-signature" \
+    "http://localhost/api/delivery/orders/17/upload-signature" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -11743,7 +12111,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/delivery/orders/2/upload-signature"
+    "http://localhost/api/delivery/orders/17/upload-signature"
 );
 
 const headers = {
@@ -11765,7 +12133,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/delivery/orders/2/upload-signature';
+$url = 'http://localhost/api/delivery/orders/17/upload-signature';
 $response = $client-&gt;post(
     $url,
     [
@@ -11886,10 +12254,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="delivery_order"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-signature"
-               value="2"
+               value="17"
                data-component="url">
     <br>
-<p>Example: <code>2</code></p>
+<p>Example: <code>17</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>delivery_order_id</code></b>&nbsp;&nbsp;
@@ -12482,14 +12850,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/settings/locations/1" \
+    --get "http://localhost/api/settings/locations/17" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/settings/locations/1"
+    "http://localhost/api/settings/locations/17"
 );
 
 const headers = {
@@ -12505,7 +12873,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/settings/locations/1';
+$url = 'http://localhost/api/settings/locations/17';
 $response = $client-&gt;get(
     $url,
     [
@@ -12617,165 +12985,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-settings-locations--id-"
-               value="1"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the location. Example: <code>1</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="others-GETapi-billing-invoices--id-">Display the specified resource.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-billing-invoices--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/billing/invoices/1" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/billing/invoices/1"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-
-<div class="php-example">
-    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/billing/invoices/1';
-$response = $client-&gt;get(
-    $url,
-    [
-        'headers' =&gt; [
-            'Content-Type' =&gt; 'application/json',
-            'Accept' =&gt; 'application/json',
-        ],
-    ]
-);
-$body = $response-&gt;getBody();
-print_r(json_decode((string) $body));</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-billing-invoices--id-">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-billing-invoices--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-billing-invoices--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-billing-invoices--id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-billing-invoices--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-billing-invoices--id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-billing-invoices--id-" data-method="GET"
-      data-path="api/billing/invoices/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-billing-invoices--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-billing-invoices--id-"
-                    onclick="tryItOut('GETapi-billing-invoices--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-billing-invoices--id-"
-                    onclick="cancelTryOut('GETapi-billing-invoices--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-billing-invoices--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/billing/invoices/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-billing-invoices--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-billing-invoices--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-billing-invoices--id-"
-               value="1"
-               data-component="url">
-    <br>
-<p>The ID of the invoice. Example: <code>1</code></p>
+<p>The ID of the location. Example: <code>17</code></p>
             </div>
                     </form>
 
@@ -12934,14 +13147,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/billing/invoice-line-items/1" \
+    --get "http://localhost/api/billing/invoice-line-items/17" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/billing/invoice-line-items/1"
+    "http://localhost/api/billing/invoice-line-items/17"
 );
 
 const headers = {
@@ -12957,7 +13170,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/billing/invoice-line-items/1';
+$url = 'http://localhost/api/billing/invoice-line-items/17';
 $response = $client-&gt;get(
     $url,
     [
@@ -13069,12 +13282,154 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-billing-invoice-line-items--id-"
-               value="1"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the invoice line item. Example: <code>1</code></p>
+<p>The ID of the invoice line item. Example: <code>17</code></p>
             </div>
                     </form>
+
+                    <h2 id="others-GETapi-activity_logs">GET api/activity_logs</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-activity_logs">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/activity_logs" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/activity_logs"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/activity_logs';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-activity_logs">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-activity_logs" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-activity_logs"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-activity_logs"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-activity_logs" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-activity_logs">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-activity_logs" data-method="GET"
+      data-path="api/activity_logs"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-activity_logs', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-activity_logs"
+                    onclick="tryItOut('GETapi-activity_logs');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-activity_logs"
+                    onclick="cancelTryOut('GETapi-activity_logs');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-activity_logs"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/activity_logs</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-activity_logs"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-activity_logs"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
 
             
 

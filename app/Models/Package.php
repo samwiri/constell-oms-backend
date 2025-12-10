@@ -58,6 +58,15 @@ class Package extends Model
         return max($this->weight, $this->volumetric_weight);
     }
 
+
+    public static function generateNumber(){
+
+        $date = now()->format('Ymd');
+        $sequence = Package::withTrashed()->whereDate('created_at', today())->count() + 1;
+        return sprintf('HWB-%s-%05d', $date, $sequence);
+       
+    }
+
       public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()->logFillable();

@@ -56,29 +56,29 @@ class OrderStatusHistoryController extends Controller
 
         $order_history = OrderStatusHistory::create($data);
 
-        // $order_history->status = $order_history->status;
+        $order = $order_history->order;
         
         if($order_history->status == "RECEIVED"){
-            $order_history->received_at = now();
+            $order->received_at = now();
         }
 
         if($order_history->status == "DISPATCHED"){
-            $order_history->dispatched_at = now();
+            $order->dispatched_at = now();
         }
 
         if($order_history->status == "ARRIVED"){
-            $order_history->arrived_at = now();
+            $order->arrived_at = now();
         }
 
         if($order_history->status == "RELEASED"){
-            $order_history->released_at = now();
+            $order->released_at = now();
         }
 
         if($order_history->status == "DELIVERED"){
-            $order_history->delivered_at = now();
+            $order->delivered_at = now();
         }
 
-        $order_history->save();      
+        $order->save();      
         
         $order_history->sendNotification($order_history);
 

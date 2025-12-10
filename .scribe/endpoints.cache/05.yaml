@@ -384,7 +384,7 @@ endpoints:
         name: finalized_at
         description: 'Must be a valid date.'
         required: false
-        example: '2025-12-09T08:52:52'
+        example: '2025-12-10T09:00:12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -395,7 +395,7 @@ endpoints:
         name: departed_at
         description: 'Must be a valid date.'
         required: false
-        example: '2025-12-09T08:52:52'
+        example: '2025-12-10T09:00:12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -406,7 +406,7 @@ endpoints:
         name: arrived_at
         description: 'Must be a valid date.'
         required: false
-        example: '2025-12-09T08:52:52'
+        example: '2025-12-10T09:00:12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -420,9 +420,9 @@ endpoints:
       status: ARRIVED
       package_count: 56
       total_weight: 16
-      finalized_at: '2025-12-09T08:52:52'
-      departed_at: '2025-12-09T08:52:52'
-      arrived_at: '2025-12-09T08:52:52'
+      finalized_at: '2025-12-10T09:00:12'
+      departed_at: '2025-12-10T09:00:12'
+      arrived_at: '2025-12-10T09:00:12'
     fileParameters: []
     responses:
       -

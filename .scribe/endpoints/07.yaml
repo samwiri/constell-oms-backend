@@ -281,6 +281,71 @@ endpoints:
   -
     custom: []
     httpMethods:
+      - GET
+    uri: 'api/billing/invoices/{id}'
+    metadata:
+      custom: []
+      groupName: Invoice
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Single Invoice Details'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the invoice.'
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: consequatur
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      invoice_id:
+        custom: []
+        name: invoice_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      invoice_id: 17
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
       - PUT
       - PATCH
     uri: 'api/billing/invoices/{id}'
@@ -304,14 +369,14 @@ endpoints:
         name: id
         description: 'The ID of the invoice.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -422,7 +487,7 @@ endpoints:
         name: id
         description: 'The ID of the invoice.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -440,7 +505,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
       invoice_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -489,7 +554,7 @@ endpoints:
         name: id
         description: 'The ID of the invoice.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -507,7 +572,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
       invoice_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -655,14 +720,14 @@ endpoints:
         name: id
         description: 'The ID of the invoice line item.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -766,14 +831,14 @@ endpoints:
         name: id
         description: 'The ID of the invoice line item.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -819,7 +884,7 @@ endpoints:
         name: id
         description: 'The ID of the invoice line item.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -837,7 +902,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
       invoiceLineItem_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -1041,6 +1106,61 @@ endpoints:
         content: |-
           {
                 "message": "Payment deleted successfully",
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/billing/send_invoice/{invoice_id}'
+    metadata:
+      custom: []
+      groupName: Invoice
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Send Invoice Notification'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      invoice_id:
+        custom: []
+        name: invoice_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      invoice_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                   "status": "success",
+                    "message": "Invoice Sent successfully",
+                }
             }
         headers: []
         description: ''

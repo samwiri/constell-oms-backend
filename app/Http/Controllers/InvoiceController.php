@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreInvoiceRequest;
 use App\Http\Requests\UpdateInvoiceRequest;
+use App\Mail\InvoiceMail;
 use App\Models\Invoice;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class InvoiceController extends Controller
 {
@@ -230,15 +233,27 @@ class InvoiceController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Invoice $invoice)
+     /** 
+     * Single Invoice Details
+     * 
+     * @group Invoice  
+     * @header Bearer Token    
+     * @bodyParam invoice_id integer required
+     * 
+     * @authenticated
+     * 
+     * */
+
+    public function show($invoice_id)
     {
+
+        $invoice = Invoice::with('lineItems','order','order.packages')->findOrFail($invoice_id);
+
         return response()->json([
             'message' => 'Invoice fetched successfully',
             'data'    => $invoice
         ]);
+
     }
 
     /**
@@ -352,5 +367,36 @@ class InvoiceController extends Controller
             'message' => 'Invoice restored successfully',
             'data'    => $invoice
         ]);
+    }
+
+
+    /** 
+     * Send Invoice Notification
+     * 
+     * @group Invoice  
+     * @header Bearer Token
+     * @urlParam invoice_id integer required
+     * @authenticated
+     * @response  {
+     *          "status": "success", 
+     *           "message": "Invoice Sent successfully",            
+     *       }
+     *   } 
+     * 
+    **/
+
+    function sendInvoice($invoice_id) {
+
+        $invoice = Invoice::with('lineItems','order','order.packages')->findOrFail($invoice_id);
+ 
+        $pdf = Pdf::loadView('emails.invoice_pdf', compact('invoice'))->output();
+   
+        Mail::to($invoice->order->receiver_email)->send(new InvoiceMail($invoice, $pdf));   
+
+        return response()->json([
+            'message' => 'Invoice sent',
+            'data'    => $invoice
+        ]);
+        
     }
 }

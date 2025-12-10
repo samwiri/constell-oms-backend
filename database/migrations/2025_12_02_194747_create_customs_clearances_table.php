@@ -30,7 +30,7 @@ return new class extends Migration
 
             $table->enum('status', ['PENDING', 'CLEARED', 'HELD'])->default('PENDING');
             $table->text('notes')->nullable();
-            $table->foreignId('cleared_by')->nullable()->constrained('user')->nullOnDelete();
+            $table->foreignId('cleared_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamp('cleared_at')->nullable();
             
             

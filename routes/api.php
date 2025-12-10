@@ -66,7 +66,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::post('invoice-line-items/{id}/restore', [InvoiceLineItemController::class, 'restore']);
 
         Route::post('payments', [PaymentController::class, 'store']);
-        Route::delete('payments/{payment}', [PaymentController::class, 'destroy']);    
+        Route::delete('payments/{payment}', [PaymentController::class, 'destroy']);
+        
+        Route::get('send_invoice/{invoice_id}',[InvoiceController::class,'sendInvoice']);
     });
 
     Route::prefix('delivery')->group(function() {

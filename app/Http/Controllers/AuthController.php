@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateUserRequest;
 use App\Mail\SendOtp;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -390,43 +391,18 @@ class AuthController extends Controller
      *       }
      *   } 
      * 
-    **/
-
+    **/ 
  
- 
+    function updateUser(UpdateUserRequest $request)
+    { 
 
-function updateUser(Request $request)
-{
-    $user = Auth::user();
+        Auth::user()->update($request->validated());
 
-    $rules = [
-        'full_name' => 'required|string|max:255',
-        'phone'     => 'required|string|max:20|unique:users,phone,' . $user->id,
-        'tin'       => 'nullable|string|max:50',
-        'passport'  => 'nullable|string|max:50',
-        'address'   => 'nullable|string|max:255',
-    ];
-
-    $message = User::getValidationMessage($request,$rules);
-
-    if(!empty($message))
-
-        return  response()->json(['status' => 'failed', 'message' => $message],422); 
-     
-        $user->update([
-            'full_name' => $request->full_name,
-            'phone'     => $request->phone,
-            'tin'       => $request->tin,
-            'passport'  => $request->passport,
-            'address'   => $request->address,
-        ]);
-
-    return response()->json([
-            'status'  => 'success',
-            'message' => 'Account Profile updated',
-            'data'    => $user,
-        ], 200);
+        return response()->json([
+                'status'  => 'success',
+                'message' => 'Account Profile updated',
+                'data'    => Auth::user(),
+            ], 200);
+        }
+        
     }
-
-  
-}

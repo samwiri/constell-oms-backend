@@ -16,11 +16,11 @@ class StoreOrderStatusHistoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'order_id'  => 'required',
-            'status'    => 'required|in:PENDING,RECEIVED,CONSOLIDATED,DISPATCHED,IN_TRANSIT,ARRIVED,READY_FOR_RELEASE,RELEASED,DELIVERED',
-            'location'  => 'nullable|string',
-            'notes'     => 'nullable|string',
-            'user_id'   => 'integer' 
+            'order_id'  => 'sometimes',
+            'status'    => 'sometimes|in:PENDING,RECEIVED,CONSOLIDATED,DISPATCHED,IN_TRANSIT,ARRIVED,READY_FOR_RELEASE,RELEASED,DELIVERED',
+            'location'  => 'sometimes|string',
+            'notes'     => 'sometimes|string',
+            'user_id'   => 'sometimes|integer' 
         ];
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreWarehouseLocationRequest;
+use App\Http\Requests\UpdateWarehouseLocationRequest;
 use App\Models\User;
 use App\Models\WarehouseLocation;
 use Illuminate\Http\Request;
@@ -86,26 +88,10 @@ class WarehouseLocationController extends Controller
      * 
     **/
 
-    public function store(Request $request)
+    public function store(StoreWarehouseLocationRequest $request)
     {
 
-        $rules = [
-            'code'=>'required|unique:warehouse_locations',
-        ];
-
-        $message = User::getValidationMessage($request,$rules);
-
-        if(!empty($message))
-
-            return  response()->json(['status' => 'failed', 'message' => $message],422);
-
-        $saveWarehouseLocation = new WarehouseLocation();
-        $saveWarehouseLocation->code = $request->code;
-        $saveWarehouseLocation->zone = $request->zone;
-        $saveWarehouseLocation->rack = $request->rack;
-        $saveWarehouseLocation->bay = $request->bay;
-        $saveWarehouseLocation->shelf = $request->shelf;
-        $saveWarehouseLocation->save();
+       $saveWarehouseLocation = WarehouseLocation::create($request->validated()); 
 
         $data = [
             'status' => 'success',
@@ -162,25 +148,12 @@ class WarehouseLocationController extends Controller
      * 
     **/
 
-    public function update(Request $request, $warehouseLocation_id)
+    public function update(UpdateWarehouseLocationRequest $request, $warehouseLocation_id)
     {
-        $rules = [
-            'code'=>'required|unique:warehouse_locations,code,'.$warehouseLocation_id,
-        ];
-
-        $message = User::getValidationMessage($request,$rules);
-
-        if(!empty($message))
-
-            return  response()->json(['status' => 'failed', 'message' => $message],422);
 
         $updateWarehouseLocation = WarehouseLocation::find($warehouseLocation_id);
-        $updateWarehouseLocation->code = $request->code;
-        $updateWarehouseLocation->zone = $request->zone;
-        $updateWarehouseLocation->rack = $request->rack;
-        $updateWarehouseLocation->bay = $request->bay;
-        $updateWarehouseLocation->shelf = $request->shelf;
-        $updateWarehouseLocation->save();
+
+        $updateWarehouseLocation->update($request->validated()); 
 
         $data = [
             'status' => 'success',

@@ -20,7 +20,7 @@ class ConsolidationBatche extends Model
     ];
 
     protected $casts = [
-        'departure_date' => 'date',
+        'departure_date' => 'datetime',
         'finalized_at' => 'datetime',
         'departed_at' => 'datetime',
         'arrived_at' => 'datetime',
