@@ -387,9 +387,8 @@ class AuthController extends Controller
      * @authenticated
      * @response  {
      *          "status": "success", 
-     *           "message": "Successfully logged out",            
+     *          "message": "Successfully logged out",            
      *       }
-     *   } 
      * 
     **/ 
  
