@@ -15,12 +15,13 @@ return new class extends Migration
 
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
             
             $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
             $table->string('status');
             $table->text('notes')->nullable();
             $table->string('location')->nullable();
-            $table->foreignId('staff_id')->nullable()->constrained('staff')->nullOnDelete();            
+            $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();            
             
             $table->index('order_id');
             $table->index('created_at');

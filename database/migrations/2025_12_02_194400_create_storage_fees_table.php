@@ -15,6 +15,7 @@ return new class extends Migration
             
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreignId('package_id')->constrained('packages')->onDelete('cascade');
             $table->date('free_period_end_date');

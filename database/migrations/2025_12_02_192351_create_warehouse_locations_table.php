@@ -15,12 +15,13 @@ return new class extends Migration
 
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
 
-            $table->string('code', 20)->unique()->comment('e.g., A-01-B-03');
-            $table->string('zone', 10);
-            $table->string('rack', 10);
-            $table->string('bay', 10);
-            $table->string('shelf', 10);
+            $table->string('code')->unique()->comment('e.g., A-01-B-03');
+            $table->string('zone')->nullable();
+            $table->string('rack')->nullable();
+            $table->string('bay')->nullable();
+            $table->string('shelf')->nullable();
             $table->boolean('is_occupied')->default(false);
        
             $table->index('code');

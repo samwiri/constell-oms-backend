@@ -15,18 +15,14 @@ return new class extends Migration
             
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
             
             $table->string('invoice_number', 50)->unique();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('order_id')->nullable()->constrained('orders')->nullOnDelete();
-            $table->enum('type', ['FREIGHT', 'STORAGE', 'CUSTOMS', 'OTHER']);
-            $table->decimal('subtotal', 10, 2);
-            $table->decimal('tax', 10, 2)->default(0);
-            $table->decimal('total', 10, 2);
+            $table->enum('type', ['FREIGHT', 'STORAGE', 'CUSTOMS', 'OTHER']);                   
             $table->enum('status', ['UNPAID', 'PAID', 'OVERDUE', 'CANCELLED'])->default('UNPAID');
-
-            $table->date('due_date');
-            $table->timestamp('paid_at')->nullable();
+            $table->date('due_date')->nullable();         
             
             $table->index('invoice_number');
             $table->index('user_id');

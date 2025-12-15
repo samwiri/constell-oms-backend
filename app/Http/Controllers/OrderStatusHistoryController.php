@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreOrderStatusHistoryRequest;
+use App\Mail\NotifyCustomer;
+use App\Models\Order;
 use App\Models\OrderStatusHistory;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class OrderStatusHistoryController extends Controller
 {
@@ -23,12 +29,65 @@ class OrderStatusHistoryController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    /** 
+     * Update Order status
+     * 
+     * @group Orders  
+     * @header Bearer Token    
+     * @bodyParam order_id integer required
+     * @bodyParam status string required e.g PENDING,RECEIVED,CONSOLIDATED,DISPATCHED,IN_TRANSIT,ARRIVED,READY_FOR_RELEASE,RELEASED,DELIVERED
+     * @bodyParam notes string required
+     * @bodyParam location string
+     * @authenticated
+     * @response  {
+     *          "status": "success", 
+     *           "message": "Order history created successfully.",            
+     *       }   
+     * 
+    **/
+
+    public function store(StoreOrderStatusHistoryRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        $data['user_id'] = Auth::id();
+
+        $data['order_id'] = $request->order_id;
+
+        $order_history = OrderStatusHistory::create($data);
+
+        $order = $order_history->order;
+        
+        if($order_history->status == "RECEIVED"){
+            $order->received_at = now();
+        }
+
+        if($order_history->status == "DISPATCHED"){
+            $order->dispatched_at = now();
+        }
+
+        if($order_history->status == "ARRIVED"){
+            $order->arrived_at = now();
+        }
+
+        if($order_history->status == "RELEASED"){
+            $order->released_at = now();
+        }
+
+        if($order_history->status == "DELIVERED"){
+            $order->delivered_at = now();
+        }
+
+        $order->save();      
+        
+        $order_history->sendNotification($order_history);
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'Order history updated successfully.',
+            'data'    => $order_history,
+        ], 201);
+
     }
 
     /**
@@ -55,11 +114,27 @@ class OrderStatusHistoryController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    /** 
+     * Delete Order status history
+     * 
+     * @group Orders  
+     * @header Bearer Token    
+     * @urlParam orderStatusHistory_id integer required 
+     * @authenticated
+     * @response  {
+     *          "status": "success", 
+     *           "message": "Order status history deleted.",            
+     *       }
+     *   } 
+     * 
+    **/
     public function destroy(OrderStatusHistory $orderStatusHistory)
     {
-        //
+        $orderStatusHistory->delete();
+
+        return response()->json([
+            'status'  => 'success',
+            'message' => 'Order status history deleted.',
+        ]);
     }
 }

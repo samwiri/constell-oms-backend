@@ -15,6 +15,7 @@ return new class extends Migration
 
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
             
             $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
             $table->decimal('original_value', 10, 2);
@@ -29,7 +30,7 @@ return new class extends Migration
 
             $table->enum('status', ['PENDING', 'CLEARED', 'HELD'])->default('PENDING');
             $table->text('notes')->nullable();
-            $table->foreignId('cleared_by')->nullable()->constrained('staff')->nullOnDelete();
+            $table->foreignId('cleared_by')->nullable()->constrained('users')->nullOnDelete();
             $table->timestamp('cleared_at')->nullable();
             
             
