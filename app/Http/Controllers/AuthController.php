@@ -386,9 +386,9 @@ class AuthController extends Controller
      * @bodyParam address string
      * @authenticated
      * @response  {
-     *          "status": "success", 
-     *          "message": "Successfully logged out",            
-     *       }
+     *   "status": "success", 
+     *   "message": "Successfully logged out",            
+     * }
      * 
     **/ 
  
