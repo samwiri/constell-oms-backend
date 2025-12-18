@@ -105,7 +105,9 @@ class AuthController extends Controller
 
             return  response()->json(['status' => 'failed', 'message' => $message],422);
 
-        $user = User::where('email',$request->validation_text)->orWhere('phone',$request->validation_text)->firstOrFail();
+        $user = User::where('email',$request->validation_text)
+                        ->orWhere('phone',$request->validation_text)
+                        ->firstOrFail();
         
         if(empty($user)){
 
@@ -119,13 +121,26 @@ class AuthController extends Controller
 
         $userMessage = "Hello ".$user->full_name." Your OTP is ".$user->otp;
 
-        Mail::to($user->email)->send(new SendOtp($userMessage));
+        $message = "";
 
-        User::sendSms($user->phone, $userMessage);
+        if (filter_var($request->validation_text, FILTER_VALIDATE_EMAIL)) {
+
+            Mail::to($user->email)->send(new SendOtp($userMessage));
+
+            $message = "An OTP has been sent to your email ".$request->validation_text;
+        }
+
+        if (preg_match('/^\+?[0-9]{9,15}$/', $request->validation_text)) {
+
+            User::sendSms($user->phone, $userMessage);
+
+            $message = "An OTP has been sent to your Phone number ".$request->validation_text;
+            
+        }
 
         $data = [
             'status' => 'success',
-            'message' => 'An OTP has been sent to your phone and email',      
+            'message' => $message,      
         ];
 
         return response()->json(($data),200);
@@ -386,6 +401,10 @@ class AuthController extends Controller
      * @bodyParam passport string
      * @bodyParam address string
      * @authenticated
+     * @response  {
+     *   "status": "success", 
+     *   "message": "Successfully logged out",            
+     * }
      * 
     **/ 
  
