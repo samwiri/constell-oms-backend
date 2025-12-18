@@ -49,7 +49,8 @@ class AuthController extends Controller
         $rules = [
             'full_name'=>'required',
             'email'=>'required|unique:users',
-            'phone'=>'required|unique:users',     
+            'phone'=>'required|unique:users',
+            'password' => 'required|string|confirmed',
         ];
 
         $message = User::getValidationMessage($request,$rules);
@@ -58,7 +59,7 @@ class AuthController extends Controller
 
             return  response()->json(['status' => 'failed', 'message' => $message],422);
 
-        $user = User::createUser($request->full_name,$request->email,$request->phone,$password=Str::random(12),$request->tin,$request->passport,$request->address);
+        $user = User::createUser($request->full_name,$request->email,$request->phone,$request->password,$request->tin,$request->passport,$request->address);
         
         $userMessage = "Hello $user->full_name Your account has been created successfully. Start shipping now!";
 
