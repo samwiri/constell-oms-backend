@@ -69,6 +69,8 @@ class WarehouseLocationController extends Controller
      * @bodyParam rack string required
      * @bodyParam bay string
      * @bodyParam shelf string
+     * @bodyParam name string
+     * @bodyParam country string
      * 
      * @response  {
      *       "status": "success",
@@ -129,6 +131,8 @@ class WarehouseLocationController extends Controller
      * @bodyParam rack string required
      * @bodyParam bay string
      * @bodyParam shelf string
+     * @bodyParam name string
+     * @bodyParam country string
      * 
      * @response  {
      *       "status": "success",

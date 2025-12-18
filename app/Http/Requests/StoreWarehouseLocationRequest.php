@@ -21,6 +21,8 @@ class StoreWarehouseLocationRequest extends FormRequest
            'rack'=>'nullable|string',
            'bay' => 'nullable|string',
            'shelf' => 'nullable|string',
+           'name' => 'nullable|string',
+           'country' => 'nullable|string'
         ];
     }
 }

@@ -361,7 +361,7 @@ class OrderController extends Controller
        
         return response()->json([
             'status' => 'success',
-            'data'   => $order->load('statusHistory','statusHistory.user','user'),
+            'data'   => $order->load('statusHistory','statusHistory.user','user','packages'),
         ]);
     }
 

@@ -21,6 +21,8 @@ class UpdateWarehouseLocationRequest extends FormRequest
            'rack'   =>'sometimes|string',
            'bay'    =>'sometimes|string',
            'shelf'  =>'sometimes|string',
+           'name'  =>'sometimes|string',
+           'country'  =>'sometimes|string',
         ];
     }
 }

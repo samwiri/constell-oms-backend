@@ -17,11 +17,11 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         
-        $user = Auth::user();
+        // $user = Auth::user();
 
         return [
             'full_name' => 'sometimes|string|max:255',
-            'phone'     => 'sometimes|string|max:20|unique:users,phone,' . $user->id,
+            'phone'     => 'sometimes|string|max:20|unique:users,phone,' . $this->id,
             'tin'       => 'sometimes|string|max:50',
             'passport'  => 'sometimes|string|max:50',
             'address'   => 'sometimes|string|max:255',

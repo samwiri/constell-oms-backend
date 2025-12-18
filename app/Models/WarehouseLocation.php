@@ -12,7 +12,7 @@ class WarehouseLocation extends Model
 {
     use HasFactory, LogsActivity, SoftDeletes;
 
-    protected $fillable = ['code','zone','rack','bay','shelf'];
+    protected $fillable = ['code','zone','rack','bay','shelf','name','country'];
 
     public function getActivitylogOptions(): LogOptions
     {
