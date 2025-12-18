@@ -188,6 +188,9 @@ class AuthController extends Controller
             return  response()->json(['status' => 'failed', 'message' => "Account not found"],404);
        }
 
+       $user->otp = null;//expire otp
+       $user->save();
+
         $data = [
             'status'  => 'success',
             'message' => 'Account Authenticity verified',
