@@ -140,7 +140,7 @@ endpoints:
       package_photos:
         custom: []
         name: package_photos
-        description: ''
+        description: 'Request parameter: package_photos.'
         required: false
         example: null
         type: object
@@ -269,9 +269,9 @@ endpoints:
       order_id:
         custom: []
         name: order_id
-        description: 'The <code>id</code> of an existing record in the orders table.'
+        description: 'Request parameter: order_id. The <code>id</code> of an existing record in the orders table.'
         required: false
-        example: null
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -390,7 +390,7 @@ endpoints:
       package_photos:
         custom: []
         name: package_photos
-        description: ''
+        description: 'Request parameter: package_photos.'
         required: false
         example: null
         type: object
@@ -421,6 +421,7 @@ endpoints:
         nullable: true
         deprecated: false
     cleanBodyParameters:
+      order_id: 'example value'
       hwb_number: consequatur
       contents: consequatur
       declared_value: 11613.31890586

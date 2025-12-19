@@ -2,11 +2,14 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Requests\Concerns\AutoBodyParameters;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
 class UpdateUserRequest extends FormRequest
 {
+
+    use AutoBodyParameters;
      
     public function authorize(): bool
     {

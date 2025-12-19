@@ -4132,7 +4132,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"status\": \"consequatur\",
     \"location\": \"consequatur\",
     \"notes\": \"consequatur\",
-    \"user_id\": 17
+    \"user_id\": 1000
 }"
 </code></pre></div>
 
@@ -4153,7 +4153,7 @@ let body = {
     "status": "consequatur",
     "location": "consequatur",
     "notes": "consequatur",
-    "user_id": 17
+    "user_id": 1000
 };
 
 fetch(url, {
@@ -4179,7 +4179,7 @@ $response = $client-&gt;post(
             'status' =&gt; 'consequatur',
             'location' =&gt; 'consequatur',
             'notes' =&gt; 'consequatur',
-            'user_id' =&gt; 17,
+            'user_id' =&gt; 1000,
         ],
     ]
 );
@@ -4339,10 +4339,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="user_id"                data-endpoint="POSTapi-order_status_hisory"
-               value="17"
+               value="1000"
                data-component="body">
     <br>
-<p>Example: <code>17</code></p>
+<p>Request parameter: user_id. Example: <code>1000</code></p>
         </div>
         </form>
 
@@ -4902,7 +4902,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-
+<p>Request parameter: package_photos.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>location_id</code></b>&nbsp;&nbsp;
@@ -4949,6 +4949,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
+    \"order_id\": \"example value\",
     \"hwb_number\": \"consequatur\",
     \"contents\": \"consequatur\",
     \"declared_value\": 11613.31890586,
@@ -4977,6 +4978,7 @@ const headers = {
 };
 
 let body = {
+    "order_id": "example value",
     "hwb_number": "consequatur",
     "contents": "consequatur",
     "declared_value": 11613.31890586,
@@ -5010,6 +5012,7 @@ $response = $client-&gt;put(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
+            'order_id' =&gt; 'example value',
             'hwb_number' =&gt; 'consequatur',
             'contents' =&gt; 'consequatur',
             'declared_value' =&gt; 11613.31890586,
@@ -5176,10 +5179,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="order_id"                data-endpoint="PUTapi-packages--id-"
-               value=""
+               value="example value"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the orders table.</p>
+<p>Request parameter: order_id. The <code>id</code> of an existing record in the orders table. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>hwb_number</code></b>&nbsp;&nbsp;
@@ -5341,7 +5344,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-
+<p>Request parameter: package_photos.</p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>location_id</code></b>&nbsp;&nbsp;
@@ -5565,8 +5568,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Bearer: Token" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpC39.tmp" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpC3A.tmp" </code></pre></div>
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpB095.tmp" \
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpB096.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5605,11 +5608,11 @@ $response = $client-&gt;post(
         'multipart' =&gt; [
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpC39.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpB095.tmp', 'r')
             ],
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpC3A.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpB096.tmp', 'r')
             ],
         ],
     ]
@@ -5788,7 +5791,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Example: <code>C:\Users\HP\AppData\Local\Temp\phpC3A.tmp</code></p>
+<p>Example: <code>C:\Users\HP\AppData\Local\Temp\phpB096.tmp</code></p>
         </div>
         </form>
 
@@ -6525,12 +6528,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"transport_mode\": \"consequatur\",
     \"container_flight_number\": \"consequatur\",
     \"departure_date\": \"consequatur\",
-    \"status\": \"ARRIVED\",
-    \"package_count\": 56,
-    \"total_weight\": 16,
-    \"finalized_at\": \"2025-12-19T15:09:48\",
-    \"departed_at\": \"2025-12-19T15:09:48\",
-    \"arrived_at\": \"2025-12-19T15:09:48\"
+    \"status\": \"example value\",
+    \"package_count\": 1000,
+    \"total_weight\": 1000,
+    \"created_by\": \"example value\",
+    \"finalized_at\": \"example value\",
+    \"departed_at\": \"example value\",
+    \"arrived_at\": \"example value\"
 }"
 </code></pre></div>
 
@@ -6551,12 +6555,13 @@ let body = {
     "transport_mode": "consequatur",
     "container_flight_number": "consequatur",
     "departure_date": "consequatur",
-    "status": "ARRIVED",
-    "package_count": 56,
-    "total_weight": 16,
-    "finalized_at": "2025-12-19T15:09:48",
-    "departed_at": "2025-12-19T15:09:48",
-    "arrived_at": "2025-12-19T15:09:48"
+    "status": "example value",
+    "package_count": 1000,
+    "total_weight": 1000,
+    "created_by": "example value",
+    "finalized_at": "example value",
+    "departed_at": "example value",
+    "arrived_at": "example value"
 };
 
 fetch(url, {
@@ -6582,12 +6587,13 @@ $response = $client-&gt;post(
             'transport_mode' =&gt; 'consequatur',
             'container_flight_number' =&gt; 'consequatur',
             'departure_date' =&gt; 'consequatur',
-            'status' =&gt; 'ARRIVED',
-            'package_count' =&gt; 56,
-            'total_weight' =&gt; 16,
-            'finalized_at' =&gt; '2025-12-19T15:09:48',
-            'departed_at' =&gt; '2025-12-19T15:09:48',
-            'arrived_at' =&gt; '2025-12-19T15:09:48',
+            'status' =&gt; 'example value',
+            'package_count' =&gt; 1000,
+            'total_weight' =&gt; 1000.0,
+            'created_by' =&gt; 'example value',
+            'finalized_at' =&gt; 'example value',
+            'departed_at' =&gt; 'example value',
+            'arrived_at' =&gt; 'example value',
         ],
     ]
 );
@@ -6773,10 +6779,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="POSTapi-consolidation-batches"
-               value="ARRIVED"
+               value="example value"
                data-component="body">
     <br>
-<p>Example: <code>ARRIVED</code></p>
+<p>Request parameter: status. Example: <code>example value</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>OPEN</code></li> <li><code>FINALIZED</code></li> <li><code>DEPARTED</code></li> <li><code>ARRIVED</code></li></ul>
         </div>
@@ -6787,10 +6793,10 @@ Must be one of:
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="package_count"                data-endpoint="POSTapi-consolidation-batches"
-               value="56"
+               value="1000"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>56</code></p>
+<p>Request parameter: package_count. Must be at least 0. Example: <code>1000</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>total_weight</code></b>&nbsp;&nbsp;
@@ -6799,10 +6805,10 @@ Must be one of:
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="total_weight"                data-endpoint="POSTapi-consolidation-batches"
-               value="16"
+               value="1000"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>16</code></p>
+<p>Request parameter: total_weight. Must be at least 0. Example: <code>1000</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>created_by</code></b>&nbsp;&nbsp;
@@ -6811,10 +6817,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="created_by"                data-endpoint="POSTapi-consolidation-batches"
-               value=""
+               value="example value"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the users table.</p>
+<p>Request parameter: created_by. The <code>id</code> of an existing record in the users table. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>finalized_at</code></b>&nbsp;&nbsp;
@@ -6823,10 +6829,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="finalized_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-19T15:09:48"
+               value="example value"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-19T15:09:48</code></p>
+<p>Request parameter: finalized_at. Must be a valid date. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>departed_at</code></b>&nbsp;&nbsp;
@@ -6835,10 +6841,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="departed_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-19T15:09:48"
+               value="example value"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-19T15:09:48</code></p>
+<p>Request parameter: departed_at. Must be a valid date. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>arrived_at</code></b>&nbsp;&nbsp;
@@ -6847,10 +6853,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="arrived_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-19T15:09:48"
+               value="example value"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-19T15:09:48</code></p>
+<p>Request parameter: arrived_at. Must be a valid date. Example: <code>example value</code></p>
         </div>
         </form>
 
@@ -6878,8 +6884,9 @@ Must be one of:
     \"container_flight_number\": \"consequatur\",
     \"departure_date\": \"consequatur\",
     \"status\": \"consequatur\",
-    \"package_count\": 56,
-    \"total_weight\": 16,
+    \"package_count\": 1000,
+    \"total_weight\": 1000,
+    \"created_by\": \"example value\",
     \"finalized_at\": \"consequatur\",
     \"departed_at\": \"consequatur\",
     \"arrived_at\": \"consequatur\"
@@ -6904,8 +6911,9 @@ let body = {
     "container_flight_number": "consequatur",
     "departure_date": "consequatur",
     "status": "consequatur",
-    "package_count": 56,
-    "total_weight": 16,
+    "package_count": 1000,
+    "total_weight": 1000,
+    "created_by": "example value",
     "finalized_at": "consequatur",
     "departed_at": "consequatur",
     "arrived_at": "consequatur"
@@ -6935,8 +6943,9 @@ $response = $client-&gt;put(
             'container_flight_number' =&gt; 'consequatur',
             'departure_date' =&gt; 'consequatur',
             'status' =&gt; 'consequatur',
-            'package_count' =&gt; 56,
-            'total_weight' =&gt; 16,
+            'package_count' =&gt; 1000,
+            'total_weight' =&gt; 1000.0,
+            'created_by' =&gt; 'example value',
             'finalized_at' =&gt; 'consequatur',
             'departed_at' =&gt; 'consequatur',
             'arrived_at' =&gt; 'consequatur',
@@ -7162,10 +7171,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="package_count"                data-endpoint="PUTapi-consolidation-batches--id-"
-               value="56"
+               value="1000"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>56</code></p>
+<p>Request parameter: package_count. Must be at least 0. Example: <code>1000</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>total_weight</code></b>&nbsp;&nbsp;
@@ -7174,10 +7183,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="total_weight"                data-endpoint="PUTapi-consolidation-batches--id-"
-               value="16"
+               value="1000"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>16</code></p>
+<p>Request parameter: total_weight. Must be at least 0. Example: <code>1000</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>created_by</code></b>&nbsp;&nbsp;
@@ -7186,10 +7195,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="created_by"                data-endpoint="PUTapi-consolidation-batches--id-"
-               value=""
+               value="example value"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the users table.</p>
+<p>Request parameter: created_by. The <code>id</code> of an existing record in the users table. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>finalized_at</code></b>&nbsp;&nbsp;
@@ -9962,9 +9971,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"assisted_shopping_id\": 17,
     \"amount\": 11613.31890586,
     \"method\": \"MOBILE_MONEY,CARD,BANK_TRANSFER,CASH\",
-    \"transaction_reference\": \"consequatur\",
-    \"gateway_reference\": \"consequatur\",
-    \"status\": \"PENDING\",
+    \"transaction_reference\": \"example value\",
+    \"gateway_reference\": \"example value\",
+    \"status\": \"example value\",
     \"paid_at\": \"consequatur\"
 }"
 </code></pre></div>
@@ -9986,9 +9995,9 @@ let body = {
     "assisted_shopping_id": 17,
     "amount": 11613.31890586,
     "method": "MOBILE_MONEY,CARD,BANK_TRANSFER,CASH",
-    "transaction_reference": "consequatur",
-    "gateway_reference": "consequatur",
-    "status": "PENDING",
+    "transaction_reference": "example value",
+    "gateway_reference": "example value",
+    "status": "example value",
     "paid_at": "consequatur"
 };
 
@@ -10015,9 +10024,9 @@ $response = $client-&gt;post(
             'assisted_shopping_id' =&gt; 17,
             'amount' =&gt; 11613.31890586,
             'method' =&gt; 'MOBILE_MONEY,CARD,BANK_TRANSFER,CASH',
-            'transaction_reference' =&gt; 'consequatur',
-            'gateway_reference' =&gt; 'consequatur',
-            'status' =&gt; 'PENDING',
+            'transaction_reference' =&gt; 'example value',
+            'gateway_reference' =&gt; 'example value',
+            'status' =&gt; 'example value',
             'paid_at' =&gt; 'consequatur',
         ],
     ]
@@ -10186,10 +10195,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="transaction_reference"                data-endpoint="POSTapi-billing-payments"
-               value="consequatur"
+               value="example value"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Request parameter: transaction_reference. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gateway_reference</code></b>&nbsp;&nbsp;
@@ -10198,10 +10207,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="gateway_reference"                data-endpoint="POSTapi-billing-payments"
-               value="consequatur"
+               value="example value"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Request parameter: gateway_reference. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -10210,10 +10219,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="POSTapi-billing-payments"
-               value="PENDING"
+               value="example value"
                data-component="body">
     <br>
-<p>Example: <code>PENDING</code></p>
+<p>Request parameter: status. Example: <code>example value</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>PENDING</code></li> <li><code>COMPLETED</code></li> <li><code>FAILED</code></li></ul>
         </div>
@@ -10827,13 +10836,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"order_id\": 17,
+    \"rider_id\": \"example value\",
     \"delivery_address\": \"consequatur\",
     \"delivery_date\": \"consequatur\",
-    \"status\": \"ASSIGNED\",
-    \"pod_signature\": \"consequatur\",
-    \"pod_photo_path\": \"consequatur\",
+    \"status\": \"example value\",
+    \"pod_signature\": \"example value\",
+    \"pod_photo_path\": \"example value\",
     \"delivery_notes\": \"consequatur\",
-    \"delivered_at\": \"2025-12-19T15:09:49\"
+    \"delivered_at\": \"example value\"
 }"
 </code></pre></div>
 
@@ -10851,13 +10861,14 @@ const headers = {
 
 let body = {
     "order_id": 17,
+    "rider_id": "example value",
     "delivery_address": "consequatur",
     "delivery_date": "consequatur",
-    "status": "ASSIGNED",
-    "pod_signature": "consequatur",
-    "pod_photo_path": "consequatur",
+    "status": "example value",
+    "pod_signature": "example value",
+    "pod_photo_path": "example value",
     "delivery_notes": "consequatur",
-    "delivered_at": "2025-12-19T15:09:49"
+    "delivered_at": "example value"
 };
 
 fetch(url, {
@@ -10880,13 +10891,14 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'order_id' =&gt; 17,
+            'rider_id' =&gt; 'example value',
             'delivery_address' =&gt; 'consequatur',
             'delivery_date' =&gt; 'consequatur',
-            'status' =&gt; 'ASSIGNED',
-            'pod_signature' =&gt; 'consequatur',
-            'pod_photo_path' =&gt; 'consequatur',
+            'status' =&gt; 'example value',
+            'pod_signature' =&gt; 'example value',
+            'pod_photo_path' =&gt; 'example value',
             'delivery_notes' =&gt; 'consequatur',
-            'delivered_at' =&gt; '2025-12-19T15:09:49',
+            'delivered_at' =&gt; 'example value',
         ],
     ]
 );
@@ -11083,10 +11095,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="rider_id"                data-endpoint="POSTapi-delivery-orders"
-               value=""
+               value="example value"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the users table.</p>
+<p>Request parameter: rider_id. The <code>id</code> of an existing record in the users table. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>delivery_address</code></b>&nbsp;&nbsp;
@@ -11119,10 +11131,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="POSTapi-delivery-orders"
-               value="ASSIGNED"
+               value="example value"
                data-component="body">
     <br>
-<p>Example: <code>ASSIGNED</code></p>
+<p>Request parameter: status. Example: <code>example value</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>PENDING</code></li> <li><code>ASSIGNED</code></li> <li><code>OUT_FOR_DELIVERY</code></li> <li><code>DELIVERED</code></li> <li><code>FAILED</code></li></ul>
         </div>
@@ -11133,10 +11145,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="pod_signature"                data-endpoint="POSTapi-delivery-orders"
-               value="consequatur"
+               value="example value"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Request parameter: pod_signature. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>pod_photo_path</code></b>&nbsp;&nbsp;
@@ -11145,10 +11157,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="pod_photo_path"                data-endpoint="POSTapi-delivery-orders"
-               value="consequatur"
+               value="example value"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Request parameter: pod_photo_path. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>delivery_notes</code></b>&nbsp;&nbsp;
@@ -11169,10 +11181,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="delivered_at"                data-endpoint="POSTapi-delivery-orders"
-               value="2025-12-19T15:09:49"
+               value="example value"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-19T15:09:49</code></p>
+<p>Request parameter: delivered_at. Must be a valid date. Example: <code>example value</code></p>
         </div>
         </form>
 
@@ -11456,12 +11468,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
+    \"rider_id\": \"example value\",
     \"delivery_address\": \"consequatur\",
     \"delivery_date\": \"consequatur\",
-    \"pod_signature\": \"consequatur\",
-    \"pod_photo_path\": \"consequatur\",
+    \"pod_signature\": \"example value\",
+    \"pod_photo_path\": \"example value\",
     \"delivery_notes\": \"consequatur\",
-    \"delivered_at\": \"2025-12-19T15:09:49\"
+    \"delivered_at\": \"example value\"
 }"
 </code></pre></div>
 
@@ -11478,12 +11491,13 @@ const headers = {
 };
 
 let body = {
+    "rider_id": "example value",
     "delivery_address": "consequatur",
     "delivery_date": "consequatur",
-    "pod_signature": "consequatur",
-    "pod_photo_path": "consequatur",
+    "pod_signature": "example value",
+    "pod_photo_path": "example value",
     "delivery_notes": "consequatur",
-    "delivered_at": "2025-12-19T15:09:49"
+    "delivered_at": "example value"
 };
 
 fetch(url, {
@@ -11505,12 +11519,13 @@ $response = $client-&gt;put(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
+            'rider_id' =&gt; 'example value',
             'delivery_address' =&gt; 'consequatur',
             'delivery_date' =&gt; 'consequatur',
-            'pod_signature' =&gt; 'consequatur',
-            'pod_photo_path' =&gt; 'consequatur',
+            'pod_signature' =&gt; 'example value',
+            'pod_photo_path' =&gt; 'example value',
             'delivery_notes' =&gt; 'consequatur',
-            'delivered_at' =&gt; '2025-12-19T15:09:49',
+            'delivered_at' =&gt; 'example value',
         ],
     ]
 );
@@ -11724,10 +11739,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="rider_id"                data-endpoint="PUTapi-delivery-orders--id-"
-               value=""
+               value="example value"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the user table.</p>
+<p>Request parameter: rider_id. The <code>id</code> of an existing record in the user table. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>delivery_address</code></b>&nbsp;&nbsp;
@@ -11760,10 +11775,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="pod_signature"                data-endpoint="PUTapi-delivery-orders--id-"
-               value="consequatur"
+               value="example value"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Request parameter: pod_signature. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>pod_photo_path</code></b>&nbsp;&nbsp;
@@ -11772,10 +11787,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="pod_photo_path"                data-endpoint="PUTapi-delivery-orders--id-"
-               value="consequatur"
+               value="example value"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Request parameter: pod_photo_path. Example: <code>example value</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>delivery_notes</code></b>&nbsp;&nbsp;
@@ -11796,10 +11811,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="delivered_at"                data-endpoint="PUTapi-delivery-orders--id-"
-               value="2025-12-19T15:09:49"
+               value="example value"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-19T15:09:49</code></p>
+<p>Request parameter: delivered_at. Must be a valid date. Example: <code>example value</code></p>
         </div>
         </form>
 
@@ -11998,7 +12013,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Bearer: Token" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "pod_photo=@C:\Users\HP\AppData\Local\Temp\phpD37.tmp" </code></pre></div>
+    --form "pod_photo=@C:\Users\HP\AppData\Local\Temp\phpB174.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -12036,7 +12051,7 @@ $response = $client-&gt;post(
         'multipart' =&gt; [
             [
                 'name' =&gt; 'pod_photo',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpD37.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpB174.tmp', 'r')
             ],
         ],
     ]
@@ -12177,7 +12192,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Example: <code>C:\Users\HP\AppData\Local\Temp\phpD37.tmp</code></p>
+<p>Example: <code>C:\Users\HP\AppData\Local\Temp\phpB174.tmp</code></p>
         </div>
         </form>
 
@@ -14060,7 +14075,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"name\": \"consequatur\",
     \"url\": \"http:\\/\\/kunze.biz\\/iste-laborum-eius-est-dolor.html\",
     \"quantity\": 17,
-    \"status\": \"paid\",
+    \"status\": \"example value\",
     \"notes\": \"consequatur\"
 }"
 </code></pre></div>
@@ -14081,7 +14096,7 @@ let body = {
     "name": "consequatur",
     "url": "http:\/\/kunze.biz\/iste-laborum-eius-est-dolor.html",
     "quantity": 17,
-    "status": "paid",
+    "status": "example value",
     "notes": "consequatur"
 };
 
@@ -14107,7 +14122,7 @@ $response = $client-&gt;post(
             'name' =&gt; 'consequatur',
             'url' =&gt; 'http://kunze.biz/iste-laborum-eius-est-dolor.html',
             'quantity' =&gt; 17,
-            'status' =&gt; 'paid',
+            'status' =&gt; 'example value',
             'notes' =&gt; 'consequatur',
         ],
     ]
@@ -14264,10 +14279,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="POSTapi-assisted_shopping"
-               value="paid"
+               value="example value"
                data-component="body">
     <br>
-<p>Example: <code>paid</code></p>
+<p>Request parameter: status. Example: <code>example value</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>requested</code></li> <li><code>quoted</code></li> <li><code>paid</code></li> <li><code>declined</code></li></ul>
         </div>

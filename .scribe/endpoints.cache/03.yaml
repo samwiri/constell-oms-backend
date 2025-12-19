@@ -742,9 +742,9 @@ endpoints:
       user_id:
         custom: []
         name: user_id
-        description: ''
+        description: 'Request parameter: user_id.'
         required: false
-        example: 17
+        example: 1000
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -755,7 +755,7 @@ endpoints:
       status: consequatur
       location: consequatur
       notes: consequatur
-      user_id: 17
+      user_id: 1000
     fileParameters: []
     responses:
       -

@@ -173,9 +173,9 @@ endpoints:
       rider_id:
         custom: []
         name: rider_id
-        description: 'The <code>id</code> of an existing record in the users table.'
+        description: 'Request parameter: rider_id. The <code>id</code> of an existing record in the users table.'
         required: false
-        example: null
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -206,9 +206,9 @@ endpoints:
       status:
         custom: []
         name: status
-        description: ''
+        description: 'Request parameter: status.'
         required: false
-        example: ASSIGNED
+        example: 'example value'
         type: string
         enumValues:
           - PENDING
@@ -222,9 +222,9 @@ endpoints:
       pod_signature:
         custom: []
         name: pod_signature
-        description: ''
+        description: 'Request parameter: pod_signature.'
         required: false
-        example: consequatur
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -233,9 +233,9 @@ endpoints:
       pod_photo_path:
         custom: []
         name: pod_photo_path
-        description: ''
+        description: 'Request parameter: pod_photo_path.'
         required: false
-        example: consequatur
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -255,9 +255,9 @@ endpoints:
       delivered_at:
         custom: []
         name: delivered_at
-        description: 'Must be a valid date.'
+        description: 'Request parameter: delivered_at. Must be a valid date.'
         required: false
-        example: '2025-12-19T15:09:49'
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -265,13 +265,14 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       order_id: 17
+      rider_id: 'example value'
       delivery_address: consequatur
       delivery_date: consequatur
-      status: ASSIGNED
-      pod_signature: consequatur
-      pod_photo_path: consequatur
+      status: 'example value'
+      pod_signature: 'example value'
+      pod_photo_path: 'example value'
       delivery_notes: consequatur
-      delivered_at: '2025-12-19T15:09:49'
+      delivered_at: 'example value'
     fileParameters: []
     responses:
       -
@@ -564,9 +565,9 @@ endpoints:
       rider_id:
         custom: []
         name: rider_id
-        description: 'The <code>id</code> of an existing record in the user table.'
+        description: 'Request parameter: rider_id. The <code>id</code> of an existing record in the user table.'
         required: false
-        example: null
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -597,9 +598,9 @@ endpoints:
       pod_signature:
         custom: []
         name: pod_signature
-        description: ''
+        description: 'Request parameter: pod_signature.'
         required: false
-        example: consequatur
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -608,9 +609,9 @@ endpoints:
       pod_photo_path:
         custom: []
         name: pod_photo_path
-        description: ''
+        description: 'Request parameter: pod_photo_path.'
         required: false
-        example: consequatur
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -630,21 +631,22 @@ endpoints:
       delivered_at:
         custom: []
         name: delivered_at
-        description: 'Must be a valid date.'
+        description: 'Request parameter: delivered_at. Must be a valid date.'
         required: false
-        example: '2025-12-19T15:09:49'
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         deprecated: false
     cleanBodyParameters:
+      rider_id: 'example value'
       delivery_address: consequatur
       delivery_date: consequatur
-      pod_signature: consequatur
-      pod_photo_path: consequatur
+      pod_signature: 'example value'
+      pod_photo_path: 'example value'
       delivery_notes: consequatur
-      delivered_at: '2025-12-19T15:09:49'
+      delivered_at: 'example value'
     fileParameters: []
     responses:
       -

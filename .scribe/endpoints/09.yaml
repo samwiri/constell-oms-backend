@@ -161,9 +161,9 @@ endpoints:
       status:
         custom: []
         name: status
-        description: ''
+        description: 'Request parameter: status.'
         required: false
-        example: paid
+        example: 'example value'
         type: string
         enumValues:
           - requested
@@ -188,7 +188,7 @@ endpoints:
       name: consequatur
       url: 'http://kunze.biz/iste-laborum-eius-est-dolor.html'
       quantity: 17
-      status: paid
+      status: 'example value'
       notes: consequatur
     fileParameters: []
     responses:

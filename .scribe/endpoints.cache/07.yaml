@@ -997,9 +997,9 @@ endpoints:
       transaction_reference:
         custom: []
         name: transaction_reference
-        description: ''
+        description: 'Request parameter: transaction_reference.'
         required: false
-        example: consequatur
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1008,9 +1008,9 @@ endpoints:
       gateway_reference:
         custom: []
         name: gateway_reference
-        description: ''
+        description: 'Request parameter: gateway_reference.'
         required: false
-        example: consequatur
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1019,9 +1019,9 @@ endpoints:
       status:
         custom: []
         name: status
-        description: ''
+        description: 'Request parameter: status.'
         required: false
-        example: PENDING
+        example: 'example value'
         type: string
         enumValues:
           - PENDING
@@ -1046,9 +1046,9 @@ endpoints:
       assisted_shopping_id: 17
       amount: 11613.31890586
       method: 'MOBILE_MONEY,CARD,BANK_TRANSFER,CASH'
-      transaction_reference: consequatur
-      gateway_reference: consequatur
-      status: PENDING
+      transaction_reference: 'example value'
+      gateway_reference: 'example value'
+      status: 'example value'
       paid_at: consequatur
     fileParameters: []
     responses:

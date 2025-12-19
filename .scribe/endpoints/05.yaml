@@ -332,9 +332,9 @@ endpoints:
       status:
         custom: []
         name: status
-        description: ''
+        description: 'Request parameter: status.'
         required: false
-        example: ARRIVED
+        example: 'example value'
         type: string
         enumValues:
           - OPEN
@@ -347,9 +347,9 @@ endpoints:
       package_count:
         custom: []
         name: package_count
-        description: 'Must be at least 0.'
+        description: 'Request parameter: package_count. Must be at least 0.'
         required: false
-        example: 56
+        example: 1000
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -358,9 +358,9 @@ endpoints:
       total_weight:
         custom: []
         name: total_weight
-        description: 'Must be at least 0.'
+        description: 'Request parameter: total_weight. Must be at least 0.'
         required: false
-        example: 16
+        example: 1000.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -369,9 +369,9 @@ endpoints:
       created_by:
         custom: []
         name: created_by
-        description: 'The <code>id</code> of an existing record in the users table.'
+        description: 'Request parameter: created_by. The <code>id</code> of an existing record in the users table.'
         required: false
-        example: null
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -380,9 +380,9 @@ endpoints:
       finalized_at:
         custom: []
         name: finalized_at
-        description: 'Must be a valid date.'
+        description: 'Request parameter: finalized_at. Must be a valid date.'
         required: false
-        example: '2025-12-19T15:09:48'
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -391,9 +391,9 @@ endpoints:
       departed_at:
         custom: []
         name: departed_at
-        description: 'Must be a valid date.'
+        description: 'Request parameter: departed_at. Must be a valid date.'
         required: false
-        example: '2025-12-19T15:09:48'
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -402,9 +402,9 @@ endpoints:
       arrived_at:
         custom: []
         name: arrived_at
-        description: 'Must be a valid date.'
+        description: 'Request parameter: arrived_at. Must be a valid date.'
         required: false
-        example: '2025-12-19T15:09:48'
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -415,12 +415,13 @@ endpoints:
       transport_mode: consequatur
       container_flight_number: consequatur
       departure_date: consequatur
-      status: ARRIVED
-      package_count: 56
-      total_weight: 16
-      finalized_at: '2025-12-19T15:09:48'
-      departed_at: '2025-12-19T15:09:48'
-      arrived_at: '2025-12-19T15:09:48'
+      status: 'example value'
+      package_count: 1000
+      total_weight: 1000.0
+      created_by: 'example value'
+      finalized_at: 'example value'
+      departed_at: 'example value'
+      arrived_at: 'example value'
     fileParameters: []
     responses:
       -
@@ -570,9 +571,9 @@ endpoints:
       package_count:
         custom: []
         name: package_count
-        description: 'Must be at least 0.'
+        description: 'Request parameter: package_count. Must be at least 0.'
         required: false
-        example: 56
+        example: 1000
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -581,9 +582,9 @@ endpoints:
       total_weight:
         custom: []
         name: total_weight
-        description: 'Must be at least 0.'
+        description: 'Request parameter: total_weight. Must be at least 0.'
         required: false
-        example: 16
+        example: 1000.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -592,9 +593,9 @@ endpoints:
       created_by:
         custom: []
         name: created_by
-        description: 'The <code>id</code> of an existing record in the users table.'
+        description: 'Request parameter: created_by. The <code>id</code> of an existing record in the users table.'
         required: false
-        example: null
+        example: 'example value'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -639,8 +640,9 @@ endpoints:
       container_flight_number: consequatur
       departure_date: consequatur
       status: consequatur
-      package_count: 56
-      total_weight: 16
+      package_count: 1000
+      total_weight: 1000.0
+      created_by: 'example value'
       finalized_at: consequatur
       departed_at: consequatur
       arrived_at: consequatur
