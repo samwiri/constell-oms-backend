@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AssistedShoppingController;
+use App\Http\Controllers\AssistedShoppingQuoteController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BatchPackageController;
 use App\Http\Controllers\ConsolidationBatcheController;
@@ -78,7 +80,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::post('update-orders-status/{delivery_order}', [DeliveryOrderController::class, 'updateStatus']);
         Route::get('dashboard', [DeliveryOrderController::class, 'dashboard']);
         Route::get('riders',[DeliveryOrderController::class,'riders']);
-    });
+    });     
+
+    Route::apiResource('assisted_shopping', AssistedShoppingController::class);
+    Route::apiResource('assisted_shopping_quote', AssistedShoppingQuoteController::class);
 
     Route::get('activity_logs',[NotificationController::class,'activityLogs']);
 

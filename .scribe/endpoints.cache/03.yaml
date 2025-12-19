@@ -372,7 +372,7 @@ endpoints:
         name: id
         description: 'The ID of the order.'
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -390,7 +390,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 17
+      id: 1
       order_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -502,7 +502,7 @@ endpoints:
         name: id
         description: 'The ID of the order.'
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -520,7 +520,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 17
+      id: 1
       order_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -629,7 +629,7 @@ endpoints:
         name: id
         description: 'The ID of the order.'
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -647,7 +647,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 17
+      id: 1
       order_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -726,7 +726,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: true
+        nullable: false
         deprecated: false
       notes:
         custom: []
@@ -737,7 +737,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: true
+        nullable: false
         deprecated: false
       user_id:
         custom: []
@@ -798,7 +798,7 @@ endpoints:
         name: id
         description: 'The ID of the order status hisory.'
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -816,7 +816,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 17
+      id: 1
       orderStatusHistory_id: 17
     queryParameters: []
     cleanQueryParameters: []

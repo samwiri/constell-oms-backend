@@ -1,0 +1,724 @@
+name: AssistedShopping
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/assisted_shopping
+    metadata:
+      custom: []
+      groupName: AssistedShopping
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Assisted shopping lists'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "message": "Assisted Shoppings",
+            "data": {
+                "current_page": 1,
+                "data": [
+                    {
+                        "id": 3,
+                        "created_at": "2025-12-19T14:05:32.000000Z",
+                        "updated_at": "2025-12-19T14:05:32.000000Z",
+                        "deleted_at": null,
+                        "name": "iPhones 16",
+                        "url": "https://www.jumia.ug/mlp-oraimo-store/",
+                        "quantity": 1,
+                        "status": "requested",
+                        "notes": "All packages are in good condition",
+                        "user_id": 1,
+                        "user": {
+                            "id": 1,
+                            "full_name": "Samson Tusiime",
+                            "email": "tusiimesam@gmail.com",
+                            "phone": "+256775926572",
+                            "tin": null,
+                            "passport": null,
+                            "address": "Kampala",
+                            "status": "active",
+                            "user_type": "super_user",
+                            "created_at": "2025-12-10T08:58:27.000000Z",
+                            "updated_at": "2025-12-10T08:58:27.000000Z",
+                            "deleted_at": null
+                        }
+                    },
+
+                ],
+                "first_page_url": "http://127.0.0.1:8000/api/assisted_shopping?page=1",
+                "from": 1,
+                "last_page": 1,
+                "last_page_url": "http://127.0.0.1:8000/api/assisted_shopping?page=1",
+                "links": [
+                    {
+                        "url": null,
+                        "label": "&laquo; Previous",
+                        "active": false
+                    },
+                    {
+                        "url": "http://127.0.0.1:8000/api/assisted_shopping?page=1",
+                        "label": "1",
+                        "active": true
+                    },
+                    {
+                        "url": null,
+                        "label": "Next &raquo;",
+                        "active": false
+                    }
+                ],
+                "next_page_url": null,
+                "path": "http://127.0.0.1:8000/api/assisted_shopping",
+                "per_page": 20,
+                "prev_page_url": null,
+                "to": 4,
+                "total": 4
+            }
+          }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/assisted_shopping
+    metadata:
+      custom: []
+      groupName: AssistedShopping
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Add Assisted shopping'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      url:
+        custom: []
+        name: url
+        description: ''
+        required: true
+        example: 'http://kunze.biz/iste-laborum-eius-est-dolor.html'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      quantity:
+        custom: []
+        name: quantity
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      status:
+        custom: []
+        name: status
+        description: ''
+        required: false
+        example: paid
+        type: string
+        enumValues:
+          - requested
+          - quoted
+          - paid
+          - declined
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      notes:
+        custom: []
+        name: notes
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      name: consequatur
+      url: 'http://kunze.biz/iste-laborum-eius-est-dolor.html'
+      quantity: 17
+      status: paid
+      notes: consequatur
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                "message": "Assisted Shopping item added to successfully",
+                "data": {
+                    "name": "Phones",
+                    "url": "https://www.jumia.ug/mlp-oraimo-store/",
+                    "notes": "All packages are in good condition",
+                    "user_id": 1,
+                    "updated_at": "2025-12-19T13:58:47.000000Z",
+                    "created_at": "2025-12-19T13:58:47.000000Z",
+                    "id": 1
+                }
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/assisted_shopping/{id}'
+    metadata:
+      custom: []
+      groupName: AssistedShopping
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Assisted shopping'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the assisted shopping.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      assistedShopping_id:
+        custom: []
+        name: assistedShopping_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+      assistedShopping_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/assisted_shopping/{id}'
+    metadata:
+      custom: []
+      groupName: AssistedShopping
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Updated Assisted shopping'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the assisted shopping.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      assistedShopping_id:
+        custom: []
+        name: assistedShopping_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+      assistedShopping_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      url:
+        custom: []
+        name: url
+        description: ''
+        required: false
+        example: 'http://kunze.biz/iste-laborum-eius-est-dolor.html'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      quantity:
+        custom: []
+        name: quantity
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      status:
+        custom: []
+        name: status
+        description: ''
+        required: false
+        example: "['requested','quoted','paid','declined']"
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      notes:
+        custom: []
+        name: notes
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name: consequatur
+      url: 'http://kunze.biz/iste-laborum-eius-est-dolor.html'
+      quantity: 17
+      status: "['requested','quoted','paid','declined']"
+      notes: consequatur
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                "message": "Assisted Shopping item added to successfully",
+                "data": {
+                    "name": "Phones",
+                    "url": "https://www.jumia.ug/mlp-oraimo-store/",
+                    "notes": "All packages are in good condition",
+                    "user_id": 1,
+                    "updated_at": "2025-12-19T13:58:47.000000Z",
+                    "created_at": "2025-12-19T13:58:47.000000Z",
+                    "id": 1
+                }
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/assisted_shopping/{id}'
+    metadata:
+      custom: []
+      groupName: AssistedShopping
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Updated Assisted shopping'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the assisted shopping.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      assistedShopping_id:
+        custom: []
+        name: assistedShopping_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+      assistedShopping_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+                "message": "Assisted Shopping item deleted to successfully",
+
+            }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/assisted_shopping_quote
+    metadata:
+      custom: []
+      groupName: AssistedShopping
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Add Assistedshopping Quote Item'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      item_name:
+        custom: []
+        name: item_name
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      quantity:
+        custom: []
+        name: quantity
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      unit_price:
+        custom: []
+        name: unit_price
+        description: ''
+        required: true
+        example: 11613.31890586
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      assisted_shopping_id:
+        custom: []
+        name: assisted_shopping_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      item_name: consequatur
+      quantity: 17
+      unit_price: 11613.31890586
+      assisted_shopping_id: 17
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/assisted_shopping_quote/{id}'
+    metadata:
+      custom: []
+      groupName: AssistedShopping
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Assisted shopping Quote'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the assisted shopping quote.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      assistedShoppingQuote_id:
+        custom: []
+        name: assistedShoppingQuote_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 2
+      assistedShoppingQuote_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      item_name:
+        custom: []
+        name: item_name
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      quantity:
+        custom: []
+        name: quantity
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      unit_price:
+        custom: []
+        name: unit_price
+        description: ''
+        required: false
+        example: 11613.31890586
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      assisted_shopping_id:
+        custom: []
+        name: assisted_shopping_id
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      item_name: consequatur
+      quantity: 17
+      unit_price: 11613.31890586
+      assisted_shopping_id: 17
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/assisted_shopping_quote/{id}'
+    metadata:
+      custom: []
+      groupName: AssistedShopping
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Assisted shopping Quote item'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Bearer: Token
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the assisted shopping quote.'
+        required: true
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      assistedShoppingQuote_id:
+        custom: []
+        name: assistedShoppingQuote_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 2
+      assistedShoppingQuote_id: 17
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

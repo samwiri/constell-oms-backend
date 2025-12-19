@@ -99,7 +99,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
         deprecated: false
       rack:
         custom: []
@@ -110,7 +110,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
         deprecated: false
       bay:
         custom: []
@@ -121,7 +121,7 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
         deprecated: false
       shelf:
         custom: []
@@ -132,7 +132,29 @@ endpoints:
         type: string
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
+        deprecated: false
+      name:
+        custom: []
+        name: name
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      country:
+        custom: []
+        name: country
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
         deprecated: false
     cleanBodyParameters:
       code: consequatur
@@ -140,6 +162,8 @@ endpoints:
       rack: consequatur
       bay: consequatur
       shelf: consequatur
+      name: consequatur
+      country: consequatur
     fileParameters: []
     responses:
       -
@@ -259,12 +283,36 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      name:
+        custom: []
+        name: name
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      country:
+        custom: []
+        name: country
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
     cleanBodyParameters:
       code: consequatur
       zone: consequatur
       rack: consequatur
       bay: consequatur
       shelf: consequatur
+      name: consequatur
+      country: consequatur
     fileParameters: []
     responses:
       -

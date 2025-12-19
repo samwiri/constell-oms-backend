@@ -5,15 +5,28 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePaymentRequest;
 use App\Models\Payment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    /** 
+     * Payments
+     * 
+     * @group Invoice  
+     * @header Bearer Token    
+     *  
+     * @authenticated
+     *  
+     * 
+    **/
     public function index()
     {
-        //
+        $payments = Payment::with('invoice','invoice.order','assisted_shopping','user')->paginate(50);
+
+        return response()->json([
+            'message' => 'Payments',
+            'data'    => $payments
+        ], 201);
     }
 
     /**
@@ -30,7 +43,8 @@ class PaymentController extends Controller
      * 
      * @group Invoice  
      * @header Bearer Token    
-     * @bodyParam invoice_id string required
+     * @bodyParam invoice_id integer
+     * @bodyParam assisted_shopping_id integer
      * @bodyParam amount double required
      * @bodyParam method string required Example: MOBILE_MONEY,CARD,BANK_TRANSFER,CASH
      * @bodyParam paid_at date required
@@ -52,7 +66,12 @@ class PaymentController extends Controller
  
     public function store(StorePaymentRequest $request)
     {
-        $payment = Payment::create($request->validated());
+
+        $data = $request->validated();
+
+        $data['user_id'] = Auth::id();
+
+        $payment = Payment::create($data);
 
         return response()->json([
             'message' => 'Payment recorded successfully',

@@ -537,9 +537,9 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      phone:
+      full_name:
         custom: []
-        name: phone
+        name: full_name
         description: ''
         required: true
         example: consequatur
@@ -548,9 +548,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      full_name:
+      phone:
         custom: []
-        name: full_name
+        name: phone
         description: ''
         required: true
         example: consequatur
@@ -593,8 +593,8 @@ endpoints:
         nullable: false
         deprecated: false
     cleanBodyParameters:
-      phone: consequatur
       full_name: consequatur
+      phone: consequatur
       tin: consequatur
       passport: consequatur
       address: consequatur
@@ -605,10 +605,9 @@ endpoints:
         status: 200
         content: |-
           {
-                   "status": "success",
-                    "message": "Successfully logged out",
-                }
-            }
+            "status": "success",
+            "message": "Successfully logged out",
+          }
         headers: []
         description: ''
     responseFields: []

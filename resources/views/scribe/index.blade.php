@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Laravel API Documentation</title>
+    <title>Constell API Documentation</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -300,8 +300,45 @@
                                                                                 <li class="tocify-item level-2" data-unique="others-GETapi-billing-invoice-line-items--id-">
                                 <a href="#others-GETapi-billing-invoice-line-items--id-">Display the specified resource.</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="others-GETapi-assisted_shopping_quote">
+                                <a href="#others-GETapi-assisted_shopping_quote">Display a listing of the resource.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="others-GETapi-assisted_shopping_quote--id-">
+                                <a href="#others-GETapi-assisted_shopping_quote--id-">Display the specified resource.</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="others-GETapi-activity_logs">
                                 <a href="#others-GETapi-activity_logs">GET api/activity_logs</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-assistedshopping" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="assistedshopping">
+                    <a href="#assistedshopping">AssistedShopping</a>
+                </li>
+                                    <ul id="tocify-subheader-assistedshopping" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="assistedshopping-GETapi-assisted_shopping">
+                                <a href="#assistedshopping-GETapi-assisted_shopping">Assisted shopping lists</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="assistedshopping-POSTapi-assisted_shopping">
+                                <a href="#assistedshopping-POSTapi-assisted_shopping">Add Assisted shopping</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="assistedshopping-GETapi-assisted_shopping--id-">
+                                <a href="#assistedshopping-GETapi-assisted_shopping--id-">Assisted shopping</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="assistedshopping-PUTapi-assisted_shopping--id-">
+                                <a href="#assistedshopping-PUTapi-assisted_shopping--id-">Updated Assisted shopping</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="assistedshopping-DELETEapi-assisted_shopping--id-">
+                                <a href="#assistedshopping-DELETEapi-assisted_shopping--id-">Updated Assisted shopping</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="assistedshopping-POSTapi-assisted_shopping_quote">
+                                <a href="#assistedshopping-POSTapi-assisted_shopping_quote">Add Assistedshopping Quote Item</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="assistedshopping-PUTapi-assisted_shopping_quote--id-">
+                                <a href="#assistedshopping-PUTapi-assisted_shopping_quote--id-">Update Assisted shopping Quote</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="assistedshopping-DELETEapi-assisted_shopping_quote--id-">
+                                <a href="#assistedshopping-DELETEapi-assisted_shopping_quote--id-">Delete Assisted shopping Quote item</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -314,7 +351,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: December 10, 2025</li>
+        <li>Last updated: December 19, 2025</li>
     </ul>
 </div>
 
@@ -1716,8 +1753,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"phone\": \"consequatur\",
     \"full_name\": \"consequatur\",
+    \"phone\": \"consequatur\",
     \"tin\": \"consequatur\",
     \"passport\": \"consequatur\",
     \"address\": \"consequatur\"
@@ -1737,8 +1774,8 @@ const headers = {
 };
 
 let body = {
-    "phone": "consequatur",
     "full_name": "consequatur",
+    "phone": "consequatur",
     "tin": "consequatur",
     "passport": "consequatur",
     "address": "consequatur"
@@ -1763,8 +1800,8 @@ $response = $client-&gt;put(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'phone' =&gt; 'consequatur',
             'full_name' =&gt; 'consequatur',
+            'phone' =&gt; 'consequatur',
             'tin' =&gt; 'consequatur',
             'passport' =&gt; 'consequatur',
             'address' =&gt; 'consequatur',
@@ -1783,10 +1820,9 @@ print_r(json_decode((string) $body));</code></pre></div>
                 <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-         &quot;status&quot;: &quot;success&quot;,
-          &quot;message&quot;: &quot;Successfully logged out&quot;,
-      }
-  }</code>
+  &quot;status&quot;: &quot;success&quot;,
+  &quot;message&quot;: &quot;Successfully logged out&quot;,
+}</code>
  </pre>
     </span>
 <span id="execution-results-PUTapi-auth-update_user" hidden>
@@ -1874,24 +1910,24 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="phone"                data-endpoint="PUTapi-auth-update_user"
-               value="consequatur"
-               data-component="body">
-    <br>
-<p>Example: <code>consequatur</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>full_name</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
  &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
                               name="full_name"                data-endpoint="PUTapi-auth-update_user"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>phone</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="phone"                data-endpoint="PUTapi-auth-update_user"
                value="consequatur"
                data-component="body">
     <br>
@@ -2112,7 +2148,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"zone\": \"consequatur\",
     \"rack\": \"consequatur\",
     \"bay\": \"consequatur\",
-    \"shelf\": \"consequatur\"
+    \"shelf\": \"consequatur\",
+    \"name\": \"consequatur\",
+    \"country\": \"consequatur\"
 }"
 </code></pre></div>
 
@@ -2132,7 +2170,9 @@ let body = {
     "zone": "consequatur",
     "rack": "consequatur",
     "bay": "consequatur",
-    "shelf": "consequatur"
+    "shelf": "consequatur",
+    "name": "consequatur",
+    "country": "consequatur"
 };
 
 fetch(url, {
@@ -2158,6 +2198,8 @@ $response = $client-&gt;post(
             'rack' =&gt; 'consequatur',
             'bay' =&gt; 'consequatur',
             'shelf' =&gt; 'consequatur',
+            'name' =&gt; 'consequatur',
+            'country' =&gt; 'consequatur',
         ],
     ]
 );
@@ -2321,6 +2363,30 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>consequatur</code></p>
         </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-settings-locations"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>country</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="country"                data-endpoint="POSTapi-settings-locations"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
         </form>
 
                     <h2 id="warehouse-location-PUTapi-settings-locations--id-">Update Warehouse Location</h2>
@@ -2345,7 +2411,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"zone\": \"consequatur\",
     \"rack\": \"consequatur\",
     \"bay\": \"consequatur\",
-    \"shelf\": \"consequatur\"
+    \"shelf\": \"consequatur\",
+    \"name\": \"consequatur\",
+    \"country\": \"consequatur\"
 }"
 </code></pre></div>
 
@@ -2365,7 +2433,9 @@ let body = {
     "zone": "consequatur",
     "rack": "consequatur",
     "bay": "consequatur",
-    "shelf": "consequatur"
+    "shelf": "consequatur",
+    "name": "consequatur",
+    "country": "consequatur"
 };
 
 fetch(url, {
@@ -2391,6 +2461,8 @@ $response = $client-&gt;put(
             'rack' =&gt; 'consequatur',
             'bay' =&gt; 'consequatur',
             'shelf' =&gt; 'consequatur',
+            'name' =&gt; 'consequatur',
+            'country' =&gt; 'consequatur',
         ],
     ]
 );
@@ -2566,6 +2638,30 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="shelf"                data-endpoint="PUTapi-settings-locations--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="PUTapi-settings-locations--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>country</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="country"                data-endpoint="PUTapi-settings-locations--id-"
                value="consequatur"
                data-component="body">
     <br>
@@ -3342,7 +3438,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/orders/17" \
+    --get "http://localhost/api/orders/1" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -3350,7 +3446,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/orders/17"
+    "http://localhost/api/orders/1"
 );
 
 const headers = {
@@ -3367,7 +3463,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/orders/17';
+$url = 'http://localhost/api/orders/1';
 $response = $client-&gt;get(
     $url,
     [
@@ -3549,10 +3645,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-orders--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>17</code></p>
+<p>The ID of the order. Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
@@ -3582,7 +3678,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/orders/17" \
+    "http://localhost/api/orders/1" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3598,7 +3694,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/orders/17"
+    "http://localhost/api/orders/1"
 );
 
 const headers = {
@@ -3624,7 +3720,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/orders/17';
+$url = 'http://localhost/api/orders/1';
 $response = $client-&gt;put(
     $url,
     [
@@ -3755,10 +3851,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-orders--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>17</code></p>
+<p>The ID of the order. Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
@@ -3849,7 +3945,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/orders/17" \
+    "http://localhost/api/orders/1" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -3857,7 +3953,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/orders/17"
+    "http://localhost/api/orders/1"
 );
 
 const headers = {
@@ -3874,7 +3970,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/orders/17';
+$url = 'http://localhost/api/orders/1';
 $response = $client-&gt;delete(
     $url,
     [
@@ -3994,10 +4090,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-orders--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>17</code></p>
+<p>The ID of the order. Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>order_id</code></b>&nbsp;&nbsp;
@@ -4264,7 +4360,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/order_status_hisory/17" \
+    "http://localhost/api/order_status_hisory/1" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -4272,7 +4368,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/order_status_hisory/17"
+    "http://localhost/api/order_status_hisory/1"
 );
 
 const headers = {
@@ -4289,7 +4385,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/order_status_hisory/17';
+$url = 'http://localhost/api/order_status_hisory/1';
 $response = $client-&gt;delete(
     $url,
     [
@@ -4409,10 +4505,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-order_status_hisory--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the order status hisory. Example: <code>17</code></p>
+<p>The ID of the order status hisory. Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>orderStatusHistory_id</code></b>&nbsp;&nbsp;
@@ -4452,7 +4548,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"order_id\": 17,
-    \"hwb_number\": \"consequatur\",
     \"contents\": \"consequatur\",
     \"declared_value\": 11613.31890586,
     \"weight\": 11613.31890586,
@@ -4481,7 +4576,6 @@ const headers = {
 
 let body = {
     "order_id": 17,
-    "hwb_number": "consequatur",
     "contents": "consequatur",
     "declared_value": 11613.31890586,
     "weight": 11613.31890586,
@@ -4515,7 +4609,6 @@ $response = $client-&gt;post(
         ],
         'json' =&gt; [
             'order_id' =&gt; 17,
-            'hwb_number' =&gt; 'consequatur',
             'contents' =&gt; 'consequatur',
             'declared_value' =&gt; 11613.31890586,
             'weight' =&gt; 11613.31890586,
@@ -4660,18 +4753,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Example: <code>17</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>hwb_number</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="hwb_number"                data-endpoint="POSTapi-packages"
-               value="consequatur"
-               data-component="body">
-    <br>
-<p>Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>contents</code></b>&nbsp;&nbsp;
@@ -5484,8 +5565,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Bearer: Token" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php88.tmp" \
-    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\php98.tmp" </code></pre></div>
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpC39.tmp" \
+    --form "photos[]=@C:\Users\HP\AppData\Local\Temp\phpC3A.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5524,11 +5605,11 @@ $response = $client-&gt;post(
         'multipart' =&gt; [
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php88.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpC39.tmp', 'r')
             ],
             [
                 'name' =&gt; 'photos[]',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php98.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpC3A.tmp', 'r')
             ],
         ],
     ]
@@ -5707,7 +5788,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Example: <code>C:\Users\HP\AppData\Local\Temp\php98.tmp</code></p>
+<p>Example: <code>C:\Users\HP\AppData\Local\Temp\phpC3A.tmp</code></p>
         </div>
         </form>
 
@@ -6447,9 +6528,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"status\": \"ARRIVED\",
     \"package_count\": 56,
     \"total_weight\": 16,
-    \"finalized_at\": \"2025-12-10T09:00:12\",
-    \"departed_at\": \"2025-12-10T09:00:12\",
-    \"arrived_at\": \"2025-12-10T09:00:12\"
+    \"finalized_at\": \"2025-12-19T15:09:48\",
+    \"departed_at\": \"2025-12-19T15:09:48\",
+    \"arrived_at\": \"2025-12-19T15:09:48\"
 }"
 </code></pre></div>
 
@@ -6473,9 +6554,9 @@ let body = {
     "status": "ARRIVED",
     "package_count": 56,
     "total_weight": 16,
-    "finalized_at": "2025-12-10T09:00:12",
-    "departed_at": "2025-12-10T09:00:12",
-    "arrived_at": "2025-12-10T09:00:12"
+    "finalized_at": "2025-12-19T15:09:48",
+    "departed_at": "2025-12-19T15:09:48",
+    "arrived_at": "2025-12-19T15:09:48"
 };
 
 fetch(url, {
@@ -6504,9 +6585,9 @@ $response = $client-&gt;post(
             'status' =&gt; 'ARRIVED',
             'package_count' =&gt; 56,
             'total_weight' =&gt; 16,
-            'finalized_at' =&gt; '2025-12-10T09:00:12',
-            'departed_at' =&gt; '2025-12-10T09:00:12',
-            'arrived_at' =&gt; '2025-12-10T09:00:12',
+            'finalized_at' =&gt; '2025-12-19T15:09:48',
+            'departed_at' =&gt; '2025-12-19T15:09:48',
+            'arrived_at' =&gt; '2025-12-19T15:09:48',
         ],
     ]
 );
@@ -6742,10 +6823,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="finalized_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-10T09:00:12"
+               value="2025-12-19T15:09:48"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-10T09:00:12</code></p>
+<p>Must be a valid date. Example: <code>2025-12-19T15:09:48</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>departed_at</code></b>&nbsp;&nbsp;
@@ -6754,10 +6835,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="departed_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-10T09:00:12"
+               value="2025-12-19T15:09:48"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-10T09:00:12</code></p>
+<p>Must be a valid date. Example: <code>2025-12-19T15:09:48</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>arrived_at</code></b>&nbsp;&nbsp;
@@ -6766,10 +6847,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="arrived_at"                data-endpoint="POSTapi-consolidation-batches"
-               value="2025-12-10T09:00:12"
+               value="2025-12-19T15:09:48"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-10T09:00:12</code></p>
+<p>Must be a valid date. Example: <code>2025-12-19T15:09:48</code></p>
         </div>
         </form>
 
@@ -9877,7 +9958,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"invoice_id\": \"consequatur\",
+    \"invoice_id\": 17,
+    \"assisted_shopping_id\": 17,
     \"amount\": 11613.31890586,
     \"method\": \"MOBILE_MONEY,CARD,BANK_TRANSFER,CASH\",
     \"transaction_reference\": \"consequatur\",
@@ -9900,7 +9982,8 @@ const headers = {
 };
 
 let body = {
-    "invoice_id": "consequatur",
+    "invoice_id": 17,
+    "assisted_shopping_id": 17,
     "amount": 11613.31890586,
     "method": "MOBILE_MONEY,CARD,BANK_TRANSFER,CASH",
     "transaction_reference": "consequatur",
@@ -9928,7 +10011,8 @@ $response = $client-&gt;post(
             'Accept' =&gt; 'application/json',
         ],
         'json' =&gt; [
-            'invoice_id' =&gt; 'consequatur',
+            'invoice_id' =&gt; 17,
+            'assisted_shopping_id' =&gt; 17,
             'amount' =&gt; 11613.31890586,
             'method' =&gt; 'MOBILE_MONEY,CARD,BANK_TRANSFER,CASH',
             'transaction_reference' =&gt; 'consequatur',
@@ -10049,15 +10133,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>invoice_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
  &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="invoice_id"                data-endpoint="POSTapi-billing-payments"
-               value="consequatur"
+                <input type="number" style="display: none"
+               step="any"               name="invoice_id"                data-endpoint="POSTapi-billing-payments"
+               value="17"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>assisted_shopping_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="assisted_shopping_id"                data-endpoint="POSTapi-billing-payments"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
@@ -10737,7 +10833,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"pod_signature\": \"consequatur\",
     \"pod_photo_path\": \"consequatur\",
     \"delivery_notes\": \"consequatur\",
-    \"delivered_at\": \"2025-12-10T09:00:12\"
+    \"delivered_at\": \"2025-12-19T15:09:49\"
 }"
 </code></pre></div>
 
@@ -10761,7 +10857,7 @@ let body = {
     "pod_signature": "consequatur",
     "pod_photo_path": "consequatur",
     "delivery_notes": "consequatur",
-    "delivered_at": "2025-12-10T09:00:12"
+    "delivered_at": "2025-12-19T15:09:49"
 };
 
 fetch(url, {
@@ -10790,7 +10886,7 @@ $response = $client-&gt;post(
             'pod_signature' =&gt; 'consequatur',
             'pod_photo_path' =&gt; 'consequatur',
             'delivery_notes' =&gt; 'consequatur',
-            'delivered_at' =&gt; '2025-12-10T09:00:12',
+            'delivered_at' =&gt; '2025-12-19T15:09:49',
         ],
     ]
 );
@@ -11073,10 +11169,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="delivered_at"                data-endpoint="POSTapi-delivery-orders"
-               value="2025-12-10T09:00:12"
+               value="2025-12-19T15:09:49"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-10T09:00:12</code></p>
+<p>Must be a valid date. Example: <code>2025-12-19T15:09:49</code></p>
         </div>
         </form>
 
@@ -11094,7 +11190,7 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/delivery/orders/17" \
+    --get "http://localhost/api/delivery/orders/1" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -11102,7 +11198,7 @@ Must be one of:
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/delivery/orders/17"
+    "http://localhost/api/delivery/orders/1"
 );
 
 const headers = {
@@ -11119,7 +11215,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/delivery/orders/17';
+$url = 'http://localhost/api/delivery/orders/1';
 $response = $client-&gt;get(
     $url,
     [
@@ -11334,10 +11430,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-delivery-orders--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>17</code></p>
+<p>The ID of the order. Example: <code>1</code></p>
             </div>
                     </form>
 
@@ -11355,7 +11451,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/delivery/orders/17" \
+    "http://localhost/api/delivery/orders/1" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -11365,14 +11461,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"pod_signature\": \"consequatur\",
     \"pod_photo_path\": \"consequatur\",
     \"delivery_notes\": \"consequatur\",
-    \"delivered_at\": \"2025-12-10T09:00:12\"
+    \"delivered_at\": \"2025-12-19T15:09:49\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/delivery/orders/17"
+    "http://localhost/api/delivery/orders/1"
 );
 
 const headers = {
@@ -11387,7 +11483,7 @@ let body = {
     "pod_signature": "consequatur",
     "pod_photo_path": "consequatur",
     "delivery_notes": "consequatur",
-    "delivered_at": "2025-12-10T09:00:12"
+    "delivered_at": "2025-12-19T15:09:49"
 };
 
 fetch(url, {
@@ -11399,7 +11495,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/delivery/orders/17';
+$url = 'http://localhost/api/delivery/orders/1';
 $response = $client-&gt;put(
     $url,
     [
@@ -11414,7 +11510,7 @@ $response = $client-&gt;put(
             'pod_signature' =&gt; 'consequatur',
             'pod_photo_path' =&gt; 'consequatur',
             'delivery_notes' =&gt; 'consequatur',
-            'delivered_at' =&gt; '2025-12-10T09:00:12',
+            'delivered_at' =&gt; '2025-12-19T15:09:49',
         ],
     ]
 );
@@ -11603,10 +11699,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-delivery-orders--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>17</code></p>
+<p>The ID of the order. Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>deliveryOrder_id</code></b>&nbsp;&nbsp;
@@ -11700,10 +11796,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="delivered_at"                data-endpoint="PUTapi-delivery-orders--id-"
-               value="2025-12-10T09:00:12"
+               value="2025-12-19T15:09:49"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2025-12-10T09:00:12</code></p>
+<p>Must be a valid date. Example: <code>2025-12-19T15:09:49</code></p>
         </div>
         </form>
 
@@ -11721,7 +11817,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/delivery/orders/17" \
+    "http://localhost/api/delivery/orders/1" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -11729,7 +11825,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/delivery/orders/17"
+    "http://localhost/api/delivery/orders/1"
 );
 
 const headers = {
@@ -11746,7 +11842,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/delivery/orders/17';
+$url = 'http://localhost/api/delivery/orders/1';
 $response = $client-&gt;delete(
     $url,
     [
@@ -11865,10 +11961,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-delivery-orders--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the order. Example: <code>17</code></p>
+<p>The ID of the order. Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>deliveryOrder_id</code></b>&nbsp;&nbsp;
@@ -11898,16 +11994,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/delivery/orders/17/upload-pod" \
+    "http://localhost/api/delivery/orders/1/upload-pod" \
     --header "Bearer: Token" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "pod_photo=@C:\Users\HP\AppData\Local\Temp\php36A.tmp" </code></pre></div>
+    --form "pod_photo=@C:\Users\HP\AppData\Local\Temp\phpD37.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/delivery/orders/17/upload-pod"
+    "http://localhost/api/delivery/orders/1/upload-pod"
 );
 
 const headers = {
@@ -11928,7 +12024,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/delivery/orders/17/upload-pod';
+$url = 'http://localhost/api/delivery/orders/1/upload-pod';
 $response = $client-&gt;post(
     $url,
     [
@@ -11940,7 +12036,7 @@ $response = $client-&gt;post(
         'multipart' =&gt; [
             [
                 'name' =&gt; 'pod_photo',
-                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\php36A.tmp', 'r')
+                'contents' =&gt; fopen('C:\Users\HP\AppData\Local\Temp\phpD37.tmp', 'r')
             ],
         ],
     ]
@@ -12053,10 +12149,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="delivery_order"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-pod"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>Example: <code>17</code></p>
+<p>Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>delivery_order_id</code></b>&nbsp;&nbsp;
@@ -12081,7 +12177,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Example: <code>C:\Users\HP\AppData\Local\Temp\php36A.tmp</code></p>
+<p>Example: <code>C:\Users\HP\AppData\Local\Temp\phpD37.tmp</code></p>
         </div>
         </form>
 
@@ -12099,7 +12195,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/delivery/orders/17/upload-signature" \
+    "http://localhost/api/delivery/orders/1/upload-signature" \
     --header "Bearer: Token" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -12111,7 +12207,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/delivery/orders/17/upload-signature"
+    "http://localhost/api/delivery/orders/1/upload-signature"
 );
 
 const headers = {
@@ -12133,7 +12229,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/delivery/orders/17/upload-signature';
+$url = 'http://localhost/api/delivery/orders/1/upload-signature';
 $response = $client-&gt;post(
     $url,
     [
@@ -12254,10 +12350,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="delivery_order"                data-endpoint="POSTapi-delivery-orders--delivery_order--upload-signature"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>Example: <code>17</code></p>
+<p>Example: <code>1</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>delivery_order_id</code></b>&nbsp;&nbsp;
@@ -12850,14 +12946,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/settings/locations/17" \
+    --get "http://localhost/api/settings/locations/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/settings/locations/17"
+    "http://localhost/api/settings/locations/1"
 );
 
 const headers = {
@@ -12873,7 +12969,7 @@ fetch(url, {
 
 <div class="php-example">
     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'http://localhost/api/settings/locations/17';
+$url = 'http://localhost/api/settings/locations/1';
 $response = $client-&gt;get(
     $url,
     [
@@ -12985,10 +13081,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-settings-locations--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the location. Example: <code>17</code></p>
+<p>The ID of the location. Example: <code>1</code></p>
             </div>
                     </form>
 
@@ -13289,6 +13385,303 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
+                    <h2 id="others-GETapi-assisted_shopping_quote">Display a listing of the resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-assisted_shopping_quote">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/assisted_shopping_quote" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/assisted_shopping_quote"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/assisted_shopping_quote';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-assisted_shopping_quote">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-assisted_shopping_quote" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-assisted_shopping_quote"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-assisted_shopping_quote"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-assisted_shopping_quote" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-assisted_shopping_quote">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-assisted_shopping_quote" data-method="GET"
+      data-path="api/assisted_shopping_quote"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-assisted_shopping_quote', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-assisted_shopping_quote"
+                    onclick="tryItOut('GETapi-assisted_shopping_quote');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-assisted_shopping_quote"
+                    onclick="cancelTryOut('GETapi-assisted_shopping_quote');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-assisted_shopping_quote"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/assisted_shopping_quote</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-assisted_shopping_quote"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-assisted_shopping_quote"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="others-GETapi-assisted_shopping_quote--id-">Display the specified resource.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-assisted_shopping_quote--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/assisted_shopping_quote/2" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/assisted_shopping_quote/2"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/assisted_shopping_quote/2';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-assisted_shopping_quote--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-assisted_shopping_quote--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-assisted_shopping_quote--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-assisted_shopping_quote--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-assisted_shopping_quote--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-assisted_shopping_quote--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-assisted_shopping_quote--id-" data-method="GET"
+      data-path="api/assisted_shopping_quote/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-assisted_shopping_quote--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-assisted_shopping_quote--id-"
+                    onclick="tryItOut('GETapi-assisted_shopping_quote--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-assisted_shopping_quote--id-"
+                    onclick="cancelTryOut('GETapi-assisted_shopping_quote--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-assisted_shopping_quote--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/assisted_shopping_quote/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-assisted_shopping_quote--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-assisted_shopping_quote--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-assisted_shopping_quote--id-"
+               value="2"
+               data-component="url">
+    <br>
+<p>The ID of the assisted shopping quote. Example: <code>2</code></p>
+            </div>
+                    </form>
+
                     <h2 id="others-GETapi-activity_logs">GET api/activity_logs</h2>
 
 <p>
@@ -13430,6 +13823,1721 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>application/json</code></p>
             </div>
                         </form>
+
+                <h1 id="assistedshopping">AssistedShopping</h1>
+
+    
+
+                                <h2 id="assistedshopping-GETapi-assisted_shopping">Assisted shopping lists</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-assisted_shopping">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/assisted_shopping" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/assisted_shopping"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/assisted_shopping';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-assisted_shopping">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+  &quot;message&quot;: &quot;Assisted Shoppings&quot;,
+  &quot;data&quot;: {
+      &quot;current_page&quot;: 1,
+      &quot;data&quot;: [
+          {
+              &quot;id&quot;: 3,
+              &quot;created_at&quot;: &quot;2025-12-19T14:05:32.000000Z&quot;,
+              &quot;updated_at&quot;: &quot;2025-12-19T14:05:32.000000Z&quot;,
+              &quot;deleted_at&quot;: null,
+              &quot;name&quot;: &quot;iPhones 16&quot;,
+              &quot;url&quot;: &quot;https://www.jumia.ug/mlp-oraimo-store/&quot;,
+              &quot;quantity&quot;: 1,
+              &quot;status&quot;: &quot;requested&quot;,
+              &quot;notes&quot;: &quot;All packages are in good condition&quot;,
+              &quot;user_id&quot;: 1,
+              &quot;user&quot;: {
+                  &quot;id&quot;: 1,
+                  &quot;full_name&quot;: &quot;Samson Tusiime&quot;,
+                  &quot;email&quot;: &quot;tusiimesam@gmail.com&quot;,
+                  &quot;phone&quot;: &quot;+256775926572&quot;,
+                  &quot;tin&quot;: null,
+                  &quot;passport&quot;: null,
+                  &quot;address&quot;: &quot;Kampala&quot;,
+                  &quot;status&quot;: &quot;active&quot;,
+                  &quot;user_type&quot;: &quot;super_user&quot;,
+                  &quot;created_at&quot;: &quot;2025-12-10T08:58:27.000000Z&quot;,
+                  &quot;updated_at&quot;: &quot;2025-12-10T08:58:27.000000Z&quot;,
+                  &quot;deleted_at&quot;: null
+              }
+          },
+
+      ],
+      &quot;first_page_url&quot;: &quot;http://127.0.0.1:8000/api/assisted_shopping?page=1&quot;,
+      &quot;from&quot;: 1,
+      &quot;last_page&quot;: 1,
+      &quot;last_page_url&quot;: &quot;http://127.0.0.1:8000/api/assisted_shopping?page=1&quot;,
+      &quot;links&quot;: [
+          {
+              &quot;url&quot;: null,
+              &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+              &quot;active&quot;: false
+          },
+          {
+              &quot;url&quot;: &quot;http://127.0.0.1:8000/api/assisted_shopping?page=1&quot;,
+              &quot;label&quot;: &quot;1&quot;,
+              &quot;active&quot;: true
+          },
+          {
+              &quot;url&quot;: null,
+              &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+              &quot;active&quot;: false
+          }
+      ],
+      &quot;next_page_url&quot;: null,
+      &quot;path&quot;: &quot;http://127.0.0.1:8000/api/assisted_shopping&quot;,
+      &quot;per_page&quot;: 20,
+      &quot;prev_page_url&quot;: null,
+      &quot;to&quot;: 4,
+      &quot;total&quot;: 4
+  }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-assisted_shopping" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-assisted_shopping"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-assisted_shopping"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-assisted_shopping" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-assisted_shopping">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-assisted_shopping" data-method="GET"
+      data-path="api/assisted_shopping"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-assisted_shopping', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-assisted_shopping"
+                    onclick="tryItOut('GETapi-assisted_shopping');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-assisted_shopping"
+                    onclick="cancelTryOut('GETapi-assisted_shopping');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-assisted_shopping"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/assisted_shopping</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="GETapi-assisted_shopping"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-assisted_shopping"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-assisted_shopping"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="assistedshopping-POSTapi-assisted_shopping">Add Assisted shopping</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-assisted_shopping">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/assisted_shopping" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"consequatur\",
+    \"url\": \"http:\\/\\/kunze.biz\\/iste-laborum-eius-est-dolor.html\",
+    \"quantity\": 17,
+    \"status\": \"paid\",
+    \"notes\": \"consequatur\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/assisted_shopping"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "consequatur",
+    "url": "http:\/\/kunze.biz\/iste-laborum-eius-est-dolor.html",
+    "quantity": 17,
+    "status": "paid",
+    "notes": "consequatur"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/assisted_shopping';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'consequatur',
+            'url' =&gt; 'http://kunze.biz/iste-laborum-eius-est-dolor.html',
+            'quantity' =&gt; 17,
+            'status' =&gt; 'paid',
+            'notes' =&gt; 'consequatur',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-assisted_shopping">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Assisted Shopping item added to successfully&quot;,
+    &quot;data&quot;: {
+        &quot;name&quot;: &quot;Phones&quot;,
+        &quot;url&quot;: &quot;https://www.jumia.ug/mlp-oraimo-store/&quot;,
+        &quot;notes&quot;: &quot;All packages are in good condition&quot;,
+        &quot;user_id&quot;: 1,
+        &quot;updated_at&quot;: &quot;2025-12-19T13:58:47.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-19T13:58:47.000000Z&quot;,
+        &quot;id&quot;: 1
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-assisted_shopping" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-assisted_shopping"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-assisted_shopping"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-assisted_shopping" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-assisted_shopping">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-assisted_shopping" data-method="POST"
+      data-path="api/assisted_shopping"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-assisted_shopping', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-assisted_shopping"
+                    onclick="tryItOut('POSTapi-assisted_shopping');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-assisted_shopping"
+                    onclick="cancelTryOut('POSTapi-assisted_shopping');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-assisted_shopping"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/assisted_shopping</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-assisted_shopping"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-assisted_shopping"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-assisted_shopping"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-assisted_shopping"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>url</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="url"                data-endpoint="POSTapi-assisted_shopping"
+               value="http://kunze.biz/iste-laborum-eius-est-dolor.html"
+               data-component="body">
+    <br>
+<p>Example: <code>http://kunze.biz/iste-laborum-eius-est-dolor.html</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="quantity"                data-endpoint="POSTapi-assisted_shopping"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="POSTapi-assisted_shopping"
+               value="paid"
+               data-component="body">
+    <br>
+<p>Example: <code>paid</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>requested</code></li> <li><code>quoted</code></li> <li><code>paid</code></li> <li><code>declined</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="POSTapi-assisted_shopping"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+        </form>
+
+                    <h2 id="assistedshopping-GETapi-assisted_shopping--id-">Assisted shopping</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-assisted_shopping--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/assisted_shopping/1" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/assisted_shopping/1"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/assisted_shopping/1';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-assisted_shopping--id-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-assisted_shopping--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-assisted_shopping--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-assisted_shopping--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-assisted_shopping--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-assisted_shopping--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-assisted_shopping--id-" data-method="GET"
+      data-path="api/assisted_shopping/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-assisted_shopping--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-assisted_shopping--id-"
+                    onclick="tryItOut('GETapi-assisted_shopping--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-assisted_shopping--id-"
+                    onclick="cancelTryOut('GETapi-assisted_shopping--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-assisted_shopping--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/assisted_shopping/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="GETapi-assisted_shopping--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-assisted_shopping--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-assisted_shopping--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-assisted_shopping--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the assisted shopping. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>assistedShopping_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="assistedShopping_id"                data-endpoint="GETapi-assisted_shopping--id-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="assistedshopping-PUTapi-assisted_shopping--id-">Updated Assisted shopping</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-assisted_shopping--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/assisted_shopping/1" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"consequatur\",
+    \"url\": \"http:\\/\\/kunze.biz\\/iste-laborum-eius-est-dolor.html\",
+    \"quantity\": 17,
+    \"status\": \"[\'requested\',\'quoted\',\'paid\',\'declined\']\",
+    \"notes\": \"consequatur\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/assisted_shopping/1"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "consequatur",
+    "url": "http:\/\/kunze.biz\/iste-laborum-eius-est-dolor.html",
+    "quantity": 17,
+    "status": "['requested','quoted','paid','declined']",
+    "notes": "consequatur"
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/assisted_shopping/1';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'name' =&gt; 'consequatur',
+            'url' =&gt; 'http://kunze.biz/iste-laborum-eius-est-dolor.html',
+            'quantity' =&gt; 17,
+            'status' =&gt; '[\'requested\',\'quoted\',\'paid\',\'declined\']',
+            'notes' =&gt; 'consequatur',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-assisted_shopping--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Assisted Shopping item added to successfully&quot;,
+    &quot;data&quot;: {
+        &quot;name&quot;: &quot;Phones&quot;,
+        &quot;url&quot;: &quot;https://www.jumia.ug/mlp-oraimo-store/&quot;,
+        &quot;notes&quot;: &quot;All packages are in good condition&quot;,
+        &quot;user_id&quot;: 1,
+        &quot;updated_at&quot;: &quot;2025-12-19T13:58:47.000000Z&quot;,
+        &quot;created_at&quot;: &quot;2025-12-19T13:58:47.000000Z&quot;,
+        &quot;id&quot;: 1
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-assisted_shopping--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-assisted_shopping--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-assisted_shopping--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-assisted_shopping--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-assisted_shopping--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-assisted_shopping--id-" data-method="PUT"
+      data-path="api/assisted_shopping/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-assisted_shopping--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-assisted_shopping--id-"
+                    onclick="tryItOut('PUTapi-assisted_shopping--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-assisted_shopping--id-"
+                    onclick="cancelTryOut('PUTapi-assisted_shopping--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-assisted_shopping--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/assisted_shopping/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/assisted_shopping/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="PUTapi-assisted_shopping--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-assisted_shopping--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-assisted_shopping--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="PUTapi-assisted_shopping--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the assisted shopping. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>assistedShopping_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="assistedShopping_id"                data-endpoint="PUTapi-assisted_shopping--id-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="PUTapi-assisted_shopping--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>url</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="url"                data-endpoint="PUTapi-assisted_shopping--id-"
+               value="http://kunze.biz/iste-laborum-eius-est-dolor.html"
+               data-component="body">
+    <br>
+<p>Example: <code>http://kunze.biz/iste-laborum-eius-est-dolor.html</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="quantity"                data-endpoint="PUTapi-assisted_shopping--id-"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="PUTapi-assisted_shopping--id-"
+               value="['requested','quoted','paid','declined']"
+               data-component="body">
+    <br>
+<p>Example: <code>['requested','quoted','paid','declined']</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="PUTapi-assisted_shopping--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+        </form>
+
+                    <h2 id="assistedshopping-DELETEapi-assisted_shopping--id-">Updated Assisted shopping</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-assisted_shopping--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/assisted_shopping/1" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/assisted_shopping/1"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/assisted_shopping/1';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-assisted_shopping--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+      &quot;message&quot;: &quot;Assisted Shopping item deleted to successfully&quot;,
+
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-assisted_shopping--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-assisted_shopping--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-assisted_shopping--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-assisted_shopping--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-assisted_shopping--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-assisted_shopping--id-" data-method="DELETE"
+      data-path="api/assisted_shopping/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-assisted_shopping--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-assisted_shopping--id-"
+                    onclick="tryItOut('DELETEapi-assisted_shopping--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-assisted_shopping--id-"
+                    onclick="cancelTryOut('DELETEapi-assisted_shopping--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-assisted_shopping--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/assisted_shopping/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="DELETEapi-assisted_shopping--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-assisted_shopping--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-assisted_shopping--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-assisted_shopping--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the assisted shopping. Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>assistedShopping_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="assistedShopping_id"                data-endpoint="DELETEapi-assisted_shopping--id-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="assistedshopping-POSTapi-assisted_shopping_quote">Add Assistedshopping Quote Item</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-assisted_shopping_quote">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/assisted_shopping_quote" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"item_name\": \"consequatur\",
+    \"quantity\": 17,
+    \"unit_price\": 11613.31890586,
+    \"assisted_shopping_id\": 17
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/assisted_shopping_quote"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "item_name": "consequatur",
+    "quantity": 17,
+    "unit_price": 11613.31890586,
+    "assisted_shopping_id": 17
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/assisted_shopping_quote';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'item_name' =&gt; 'consequatur',
+            'quantity' =&gt; 17,
+            'unit_price' =&gt; 11613.31890586,
+            'assisted_shopping_id' =&gt; 17,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-assisted_shopping_quote">
+</span>
+<span id="execution-results-POSTapi-assisted_shopping_quote" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-assisted_shopping_quote"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-assisted_shopping_quote"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-assisted_shopping_quote" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-assisted_shopping_quote">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-assisted_shopping_quote" data-method="POST"
+      data-path="api/assisted_shopping_quote"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-assisted_shopping_quote', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-assisted_shopping_quote"
+                    onclick="tryItOut('POSTapi-assisted_shopping_quote');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-assisted_shopping_quote"
+                    onclick="cancelTryOut('POSTapi-assisted_shopping_quote');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-assisted_shopping_quote"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/assisted_shopping_quote</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="POSTapi-assisted_shopping_quote"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-assisted_shopping_quote"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-assisted_shopping_quote"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>item_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="item_name"                data-endpoint="POSTapi-assisted_shopping_quote"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="quantity"                data-endpoint="POSTapi-assisted_shopping_quote"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>unit_price</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="unit_price"                data-endpoint="POSTapi-assisted_shopping_quote"
+               value="11613.31890586"
+               data-component="body">
+    <br>
+<p>Example: <code>11613.31890586</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>assisted_shopping_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="assisted_shopping_id"                data-endpoint="POSTapi-assisted_shopping_quote"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+        </form>
+
+                    <h2 id="assistedshopping-PUTapi-assisted_shopping_quote--id-">Update Assisted shopping Quote</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-assisted_shopping_quote--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/assisted_shopping_quote/2" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"item_name\": \"consequatur\",
+    \"quantity\": 17,
+    \"unit_price\": 11613.31890586,
+    \"assisted_shopping_id\": 17
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/assisted_shopping_quote/2"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "item_name": "consequatur",
+    "quantity": 17,
+    "unit_price": 11613.31890586,
+    "assisted_shopping_id": 17
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/assisted_shopping_quote/2';
+$response = $client-&gt;put(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'item_name' =&gt; 'consequatur',
+            'quantity' =&gt; 17,
+            'unit_price' =&gt; 11613.31890586,
+            'assisted_shopping_id' =&gt; 17,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-assisted_shopping_quote--id-">
+</span>
+<span id="execution-results-PUTapi-assisted_shopping_quote--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-assisted_shopping_quote--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-assisted_shopping_quote--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-assisted_shopping_quote--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-assisted_shopping_quote--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-assisted_shopping_quote--id-" data-method="PUT"
+      data-path="api/assisted_shopping_quote/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-assisted_shopping_quote--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-assisted_shopping_quote--id-"
+                    onclick="tryItOut('PUTapi-assisted_shopping_quote--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-assisted_shopping_quote--id-"
+                    onclick="cancelTryOut('PUTapi-assisted_shopping_quote--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-assisted_shopping_quote--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/assisted_shopping_quote/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/assisted_shopping_quote/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="PUTapi-assisted_shopping_quote--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-assisted_shopping_quote--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-assisted_shopping_quote--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="PUTapi-assisted_shopping_quote--id-"
+               value="2"
+               data-component="url">
+    <br>
+<p>The ID of the assisted shopping quote. Example: <code>2</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>assistedShoppingQuote_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="assistedShoppingQuote_id"                data-endpoint="PUTapi-assisted_shopping_quote--id-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>item_name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="item_name"                data-endpoint="PUTapi-assisted_shopping_quote--id-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>quantity</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="quantity"                data-endpoint="PUTapi-assisted_shopping_quote--id-"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>unit_price</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="unit_price"                data-endpoint="PUTapi-assisted_shopping_quote--id-"
+               value="11613.31890586"
+               data-component="body">
+    <br>
+<p>Example: <code>11613.31890586</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>assisted_shopping_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="assisted_shopping_id"                data-endpoint="PUTapi-assisted_shopping_quote--id-"
+               value="17"
+               data-component="body">
+    <br>
+<p>Example: <code>17</code></p>
+        </div>
+        </form>
+
+                    <h2 id="assistedshopping-DELETEapi-assisted_shopping_quote--id-">Delete Assisted shopping Quote item</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-assisted_shopping_quote--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/assisted_shopping_quote/2" \
+    --header "Bearer: Token" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/assisted_shopping_quote/2"
+);
+
+const headers = {
+    "Bearer": "Token",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://localhost/api/assisted_shopping_quote/2';
+$response = $client-&gt;delete(
+    $url,
+    [
+        'headers' =&gt; [
+            'Bearer' =&gt; 'Token',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-assisted_shopping_quote--id-">
+</span>
+<span id="execution-results-DELETEapi-assisted_shopping_quote--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-assisted_shopping_quote--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-assisted_shopping_quote--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-assisted_shopping_quote--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-assisted_shopping_quote--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-assisted_shopping_quote--id-" data-method="DELETE"
+      data-path="api/assisted_shopping_quote/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-assisted_shopping_quote--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-assisted_shopping_quote--id-"
+                    onclick="tryItOut('DELETEapi-assisted_shopping_quote--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-assisted_shopping_quote--id-"
+                    onclick="cancelTryOut('DELETEapi-assisted_shopping_quote--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-assisted_shopping_quote--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/assisted_shopping_quote/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Bearer"                data-endpoint="DELETEapi-assisted_shopping_quote--id-"
+               value="Token"
+               data-component="header">
+    <br>
+<p>Example: <code>Token</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-assisted_shopping_quote--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-assisted_shopping_quote--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-assisted_shopping_quote--id-"
+               value="2"
+               data-component="url">
+    <br>
+<p>The ID of the assisted shopping quote. Example: <code>2</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>assistedShoppingQuote_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="assistedShoppingQuote_id"                data-endpoint="DELETEapi-assisted_shopping_quote--id-"
+               value="17"
+               data-component="url">
+    <br>
+<p>Example: <code>17</code></p>
+            </div>
+                    </form>
 
             
 

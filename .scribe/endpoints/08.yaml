@@ -255,7 +255,7 @@ endpoints:
         name: delivered_at
         description: 'Must be a valid date.'
         required: false
-        example: '2025-12-10T09:00:12'
+        example: '2025-12-19T15:09:49'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -269,7 +269,7 @@ endpoints:
       pod_signature: consequatur
       pod_photo_path: consequatur
       delivery_notes: consequatur
-      delivered_at: '2025-12-10T09:00:12'
+      delivered_at: '2025-12-19T15:09:49'
     fileParameters: []
     responses:
       -
@@ -385,14 +385,14 @@ endpoints:
         name: id
         description: 'The ID of the order.'
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 17
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -536,7 +536,7 @@ endpoints:
         name: id
         description: 'The ID of the order.'
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -554,7 +554,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 17
+      id: 1
       deliveryOrder_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -630,7 +630,7 @@ endpoints:
         name: delivered_at
         description: 'Must be a valid date.'
         required: false
-        example: '2025-12-10T09:00:12'
+        example: '2025-12-19T15:09:49'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -642,7 +642,7 @@ endpoints:
       pod_signature: consequatur
       pod_photo_path: consequatur
       delivery_notes: consequatur
-      delivered_at: '2025-12-10T09:00:12'
+      delivered_at: '2025-12-19T15:09:49'
     fileParameters: []
     responses:
       -
@@ -758,7 +758,7 @@ endpoints:
         name: id
         description: 'The ID of the order.'
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -776,7 +776,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 17
+      id: 1
       deliveryOrder_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -824,7 +824,7 @@ endpoints:
         name: delivery_order
         description: ''
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -842,7 +842,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      delivery_order: 17
+      delivery_order: 1
       delivery_order_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -902,7 +902,7 @@ endpoints:
         name: delivery_order
         description: ''
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -920,7 +920,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      delivery_order: 17
+      delivery_order: 1
       delivery_order_id: 17
     queryParameters: []
     cleanQueryParameters: []

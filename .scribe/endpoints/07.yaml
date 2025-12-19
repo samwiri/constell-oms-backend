@@ -952,12 +952,23 @@ endpoints:
         custom: []
         name: invoice_id
         description: ''
-        required: true
-        example: consequatur
-        type: string
+        required: false
+        example: 17
+        type: integer
         enumValues: []
         exampleWasSpecified: false
-        nullable: false
+        nullable: true
+        deprecated: false
+      assisted_shopping_id:
+        custom: []
+        name: assisted_shopping_id
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
         deprecated: false
       amount:
         custom: []
@@ -1029,7 +1040,8 @@ endpoints:
         nullable: false
         deprecated: false
     cleanBodyParameters:
-      invoice_id: consequatur
+      invoice_id: 17
+      assisted_shopping_id: 17
       amount: 11613.31890586
       method: 'MOBILE_MONEY,CARD,BANK_TRANSFER,CASH'
       transaction_reference: consequatur

@@ -36,17 +36,6 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      hwb_number:
-        custom: []
-        name: hwb_number
-        description: ''
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
       contents:
         custom: []
         name: contents
@@ -181,7 +170,6 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       order_id: 17
-      hwb_number: consequatur
       contents: consequatur
       declared_value: 11613.31890586
       weight: 11613.31890586

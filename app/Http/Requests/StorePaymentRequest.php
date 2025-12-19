@@ -15,7 +15,8 @@ class StorePaymentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'invoice_id'            => 'required|exists:invoices,id',
+            'invoice_id'            => 'nullable|exists:invoices,id',
+            'assisted_shopping_id'  => 'nullable|exists:assisted_shoppings,id',
             'amount'                => 'required|numeric|min:0.01',
             'method'                => 'required|in:MOBILE_MONEY,CARD,BANK_TRANSFER,CASH',
             'transaction_reference' => 'nullable|string',
