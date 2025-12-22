@@ -106,7 +106,6 @@ class PackageController extends Controller
      * @group Package  
      * @header Bearer Token    
      * @urlParam package_id integer required
-     * @bodyParam hwb_number string required
      * @bodyParam contents string required
      * @bodyParam declared_value double
      * @bodyParam weight double required

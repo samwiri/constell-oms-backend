@@ -19,11 +19,8 @@ class UpdatePackageRequest extends FormRequest
     public function rules(): array
     {
 
-        $id = $this->route('id');
-
         return [
             'order_id'       => 'sometimes|exists:orders,id',
-            'hwb_number'     => "sometimes|string|max:50|unique:packages,hwb_number,{$id}",
             'contents'       => 'sometimes|string',
             'declared_value' => 'sometimes|numeric',
             'weight'         => 'sometimes|numeric',
