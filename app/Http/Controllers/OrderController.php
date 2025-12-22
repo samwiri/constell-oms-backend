@@ -438,4 +438,48 @@ class OrderController extends Controller
         ]);
 
     }
+
+    /** 
+     * Get Order By Tracking Number
+     * 
+     * @group Orders
+     * @urlParam tracking_number string required The tracking number of the order.
+     * @response {
+     *   "status": "success",
+     *   "data": {
+     *       "id": 5,
+     *       "created_at": "2025-12-05T12:20:11.000000Z",
+     *       "updated_at": "2025-12-05T12:20:11.000000Z",
+     *       "deleted_at": null,
+     *       "tracking_number": "ORD-20251205-00002",
+     *       "user_id": 1,
+     *       "origin_country": "ITALY",
+     *       "receiver_name": "Tom Mboya",
+     *       "receiver_phone": "0789887766",
+     *       "receiver_email": "tom.mboya@gmail.com",
+     *       "receiver_address": "Uganda - Kampala",
+     *       "status": "PENDING",
+     *       "received_at": null,
+     *       "dispatched_at": null,
+     *       "arrived_at": null,
+     *       "released_at": null,
+     *       "delivered_at": null,
+     *       "status_history": [],
+     *       "user": {},
+     *       "packages": []
+     *   }
+     * }
+     * @response 404 {
+     *  "message": "No query results for model [App\\Models\\Order]."
+     * }
+    **/
+    public function getOrderByTrackingNumber($tracking_number)
+    {
+        $order = Order::where('tracking_number', $tracking_number)->firstOrFail();
+
+        return response()->json([
+            'status' => 'success',
+            'data'   => $order->load('statusHistory','statusHistory.user','user','packages'),
+        ]);
+    }
 }
