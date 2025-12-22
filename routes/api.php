@@ -42,6 +42,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     });   
 
     Route::apiResource('orders', OrderController::class);
+    Route::get('orders/tracking/{tracking_number}', [OrderController::class, 'getOrderByTrackingNumber']);
     Route::post('order_status_hisory',[OrderStatusHistoryController::class,'store'])->name('order_status_history.store');
     Route::delete('order_status_hisory/{id}',[OrderStatusHistoryController::class,'destroy']);
 
