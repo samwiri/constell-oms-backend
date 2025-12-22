@@ -115,8 +115,8 @@ class PackageController extends Controller
      * @bodyParam is_fragile boolean
      * @bodyParam is_hazardous boolean
      * @bodyParam is_damaged boolean
-     * @bodyParam warehouse_rack_id
-     * @bodyParam received_at required
+     * @bodyParam warehouse_rack_id integer
+     * @bodyParam received_at date required
      * @authenticated
      * @response   {
      *   "status": "success",

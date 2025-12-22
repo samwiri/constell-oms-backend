@@ -240,7 +240,7 @@ endpoints:
         name: id
         description: 'The ID of the assisted shopping.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -258,7 +258,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
       assistedShopping_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -306,7 +306,7 @@ endpoints:
         name: id
         description: 'The ID of the assisted shopping.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -324,7 +324,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
       assistedShopping_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -440,7 +440,7 @@ endpoints:
         name: id
         description: 'The ID of the assisted shopping.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -458,7 +458,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
       assistedShopping_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -587,7 +587,7 @@ endpoints:
         name: id
         description: 'The ID of the assisted shopping quote.'
         required: true
-        example: 2
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -605,7 +605,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 2
+      id: 17
       assistedShoppingQuote_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -691,7 +691,7 @@ endpoints:
         name: id
         description: 'The ID of the assisted shopping quote.'
         required: true
-        example: 2
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -709,7 +709,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 2
+      id: 17
       assistedShoppingQuote_id: 17
     queryParameters: []
     cleanQueryParameters: []

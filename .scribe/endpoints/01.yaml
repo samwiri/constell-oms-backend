@@ -40,11 +40,9 @@ endpoints:
                         "created_at": "2025-12-05T09:12:00.000000Z",
                         "updated_at": "2025-12-05T09:12:00.000000Z",
                         "deleted_at": null,
-                        "code": "A-01-B-03",
-                        "zone": "A",
-                        "rack": "01",
-                        "bay": "B",
-                        "shelf": "03",
+                        "country": "Uganda",
+                        "address": "A",
+                        "rack_count": "01",
                         "is_occupied": 0
                     }
                 ]
@@ -90,9 +88,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      zone:
+      address:
         custom: []
-        name: zone
+        name: address
         description: ''
         required: true
         example: consequatur
@@ -101,33 +99,33 @@ endpoints:
         exampleWasSpecified: false
         nullable: true
         deprecated: false
-      rack:
+      manager:
         custom: []
-        name: rack
+        name: manager
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Request parameter: active.'
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      rack_count:
+        custom: []
+        name: rack_count
         description: ''
         required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      bay:
-        custom: []
-        name: bay
-        description: ''
-        required: false
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      shelf:
-        custom: []
-        name: shelf
-        description: ''
-        required: false
         example: consequatur
         type: string
         enumValues: []
@@ -158,35 +156,14 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       code: consequatur
-      zone: consequatur
-      rack: consequatur
-      bay: consequatur
-      shelf: consequatur
+      address: consequatur
+      manager: consequatur
+      active: false
+      rack_count: consequatur
       name: consequatur
       country: consequatur
     fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: |-
-          {
-                "status": "success",
-                "message": "Account created successfully",
-                "data": {
-                    "full_name": "Thembo Charles",
-                    "email": "ashley7520charles@gmail.com",
-                    "phone": "0787444081",
-                    "tin": "110023452",
-                    "passport": "65748",
-                    "address": "Kampala",
-                    "updated_at": "2025-12-05T06:42:09.000000Z",
-                    "created_at": "2025-12-05T06:42:09.000000Z",
-                    "id": 1
-                }
-            }
-        headers: []
-        description: ''
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -223,8 +200,20 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      warehouseLocation_id:
+        custom: []
+        name: warehouseLocation_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
     cleanUrlParameters:
       id: consequatur
+      warehouseLocation_id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -239,9 +228,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      zone:
+      address:
         custom: []
-        name: zone
+        name: address
         description: ''
         required: true
         example: consequatur
@@ -250,33 +239,33 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      rack:
+      manager:
         custom: []
-        name: rack
+        name: manager
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Request parameter: active.'
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      rack_count:
+        custom: []
+        name: rack_count
         description: ''
         required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      bay:
-        custom: []
-        name: bay
-        description: ''
-        required: false
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      shelf:
-        custom: []
-        name: shelf
-        description: ''
-        required: false
         example: consequatur
         type: string
         enumValues: []
@@ -307,35 +296,14 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       code: consequatur
-      zone: consequatur
-      rack: consequatur
-      bay: consequatur
-      shelf: consequatur
+      address: consequatur
+      manager: consequatur
+      active: false
+      rack_count: consequatur
       name: consequatur
       country: consequatur
     fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: |-
-          {
-                "status": "success",
-                "message": "Account created successfully",
-                "data": {
-                    "full_name": "Thembo Charles",
-                    "email": "ashley7520charles@gmail.com",
-                    "phone": "0787444081",
-                    "tin": "110023452",
-                    "passport": "65748",
-                    "address": "Kampala",
-                    "updated_at": "2025-12-05T06:42:09.000000Z",
-                    "created_at": "2025-12-05T06:42:09.000000Z",
-                    "id": 1
-                }
-            }
-        headers: []
-        description: ''
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -401,6 +369,292 @@ endpoints:
             }
         headers: []
         description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/settings/warehouse_racks
+    metadata:
+      custom: []
+      groupName: 'Warehouse Location'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create Warehouse Rack'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      zone_name:
+        custom: []
+        name: zone_name
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      bin_start:
+        custom: []
+        name: bin_start
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      bin_end:
+        custom: []
+        name: bin_end
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      capacity:
+        custom: []
+        name: capacity
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      type:
+        custom: []
+        name: type
+        description: 'Example SHELF,PALLET,COLD,FRAGILE'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      warehouse_location_id:
+        custom: []
+        name: warehouse_location_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      zone_name: consequatur
+      bin_start: consequatur
+      bin_end: consequatur
+      capacity: consequatur
+      type: consequatur
+      warehouse_location_id: 17
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/settings/warehouse_racks/{id}'
+    metadata:
+      custom: []
+      groupName: 'Warehouse Location'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update Warehouse Rack'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the warehouse rack.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      zone_name:
+        custom: []
+        name: zone_name
+        description: sometimes
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      bin_start:
+        custom: []
+        name: bin_start
+        description: sometimes
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      bin_end:
+        custom: []
+        name: bin_end
+        description: sometimes
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      capacity:
+        custom: []
+        name: capacity
+        description: sometimes
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      type:
+        custom: []
+        name: type
+        description: 'sometimes Example SHELF,PALLET,COLD,FRAGILE'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      warehouse_location_id:
+        custom: []
+        name: warehouse_location_id
+        description: 'The <code>id</code> of an existing record in the warehouse_locations table.'
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      warehouseRack_id:
+        custom: []
+        name: warehouseRack_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      zone_name: consequatur
+      bin_start: consequatur
+      bin_end: consequatur
+      capacity: consequatur
+      type: consequatur
+      warehouse_location_id: 17
+      warehouseRack_id: 17
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/settings/warehouse_racks/{id}'
+    metadata:
+      custom: []
+      groupName: 'Warehouse Location'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete Warehouse Rack'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the warehouse rack.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      warehouseRack_id:
+        custom: []
+        name: warehouseRack_id
+        description: ''
+        required: true
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      warehouseRack_id: 17
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null

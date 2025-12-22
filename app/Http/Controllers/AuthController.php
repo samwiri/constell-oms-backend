@@ -398,11 +398,17 @@ class AuthController extends Controller
      * 
      * @group User profile  
      * @header Bearer Token 
+     * 
      * @bodyParam phone string required 
      * @bodyParam full_name string required 
      * @bodyParam tin string 
      * @bodyParam passport string
      * @bodyParam address string
+     * @bodyParam street string
+     * @bodyParam city string
+     * @bodyParam region string
+     * @bodyParam country string
+     * 
      * @authenticated
      * @response  {
      *   "status": "success", 
@@ -411,16 +417,27 @@ class AuthController extends Controller
      * 
     **/ 
  
+ 
     function updateUser(UpdateUserRequest $request)
     { 
 
-        Auth::user()->update($request->validated());
+        $data = $request->validated();
 
-        return response()->json([
+        $data['delivery_address'] = [
+            'street'  => $request->street,
+            'city'    => $request->city,
+            'region'  => $request->region,
+            'country' => $request->country,
+        ];
+
+        Auth::user()->update($data);
+
+            return response()->json([
                 'status'  => 'success',
                 'message' => 'Account Profile updated',
                 'data'    => Auth::user(),
             ], 200);
+
         }
         
     }

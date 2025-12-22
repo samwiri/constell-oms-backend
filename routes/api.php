@@ -47,7 +47,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::delete('order_status_hisory/{id}',[OrderStatusHistoryController::class,'destroy']);
 
     Route::post('packages', [PackageController::class, 'store']);
-    Route::put('packages/{id}', [PackageController::class, 'update']);
+    Route::put('packages/{package_id}', [PackageController::class, 'update']);
     Route::delete('packages/{id}', [PackageController::class, 'destroy']);
     Route::post('packages/{id}/package-photos', [PackageController::class, 'storePackagePhotos']);
     Route::delete('packages/{id}/package-photos', [PackageController::class, 'deletePackagePhotos']);

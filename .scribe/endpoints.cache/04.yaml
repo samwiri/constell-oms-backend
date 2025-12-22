@@ -148,9 +148,9 @@ endpoints:
         exampleWasSpecified: false
         nullable: true
         deprecated: false
-      location_id:
+      warehouse_rack_id:
         custom: []
-        name: location_id
+        name: warehouse_rack_id
         description: ''
         required: false
         example: consequatur
@@ -181,7 +181,7 @@ endpoints:
       is_fragile: false
       is_hazardous: false
       is_damaged: false
-      location_id: consequatur
+      warehouse_rack_id: consequatur
       received_at: consequatur
     fileParameters: []
     responses:
@@ -222,7 +222,7 @@ endpoints:
     custom: []
     httpMethods:
       - PUT
-    uri: 'api/packages/{id}'
+    uri: 'api/packages/{package_id}'
     metadata:
       custom: []
       groupName: Package
@@ -238,17 +238,6 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        custom: []
-        name: id
-        description: 'The ID of the package.'
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
       package_id:
         custom: []
         name: package_id
@@ -261,7 +250,6 @@ endpoints:
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: consequatur
       package_id: 17
     queryParameters: []
     cleanQueryParameters: []
@@ -272,17 +260,6 @@ endpoints:
         description: 'Request parameter: order_id. The <code>id</code> of an existing record in the orders table.'
         required: false
         example: 'example value'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      hwb_number:
-        custom: []
-        name: hwb_number
-        description: ''
-        required: true
-        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -398,31 +375,30 @@ endpoints:
         exampleWasSpecified: false
         nullable: true
         deprecated: false
-      location_id:
-        custom: []
-        name: location_id
-        description: ''
-        required: false
-        example: consequatur
-        type: required
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
       received_at:
         custom: []
         name: received_at
         description: ''
-        required: false
+        required: true
         example: consequatur
-        type: required
+        type: date
         enumValues: []
         exampleWasSpecified: false
         nullable: true
         deprecated: false
+      warehouse_rack_id:
+        custom: []
+        name: warehouse_rack_id
+        description: ''
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
     cleanBodyParameters:
       order_id: 'example value'
-      hwb_number: consequatur
       contents: consequatur
       declared_value: 11613.31890586
       weight: 11613.31890586
@@ -432,8 +408,8 @@ endpoints:
       is_fragile: false
       is_hazardous: false
       is_damaged: false
-      location_id: consequatur
       received_at: consequatur
+      warehouse_rack_id: 17
     fileParameters: []
     responses:
       -

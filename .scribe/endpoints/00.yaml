@@ -592,12 +592,60 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      street:
+        custom: []
+        name: street
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      city:
+        custom: []
+        name: city
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      region:
+        custom: []
+        name: region
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      country:
+        custom: []
+        name: country
+        description: ''
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
     cleanBodyParameters:
       full_name: consequatur
       phone: consequatur
       tin: consequatur
       passport: consequatur
       address: consequatur
+      street: consequatur
+      city: consequatur
+      region: consequatur
+      country: consequatur
     fileParameters: []
     responses:
       -

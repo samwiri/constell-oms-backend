@@ -30,8 +30,7 @@ class UpdatePackageRequest extends FormRequest
             'is_fragile'     => 'boolean',
             'is_hazardous'   => 'boolean',
             'is_damaged'     => 'boolean',
-            'package_photos'  => 'nullable|array',
-            'location_id'    => 'nullable|exists:warehouse_locations,id',
+            'package_photos'  => 'nullable|array',        
             'received_at'    => 'nullable|date',
         ];
     }
