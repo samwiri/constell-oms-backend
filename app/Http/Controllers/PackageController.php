@@ -41,7 +41,7 @@ class PackageController extends Controller
      * @bodyParam is_fragile boolean
      * @bodyParam is_hazardous boolean
      * @bodyParam is_damaged boolean
-     * @bodyParam location_id required
+     * @bodyParam warehouse_rack_id required
      * @bodyParam received_at required
      * @authenticated
      * @response   {
@@ -79,7 +79,7 @@ class PackageController extends Controller
         return response()->json([
             'status'  => 'success',
             'message' => 'Package created successfully.',
-            'data'    => $package,
+            'data'    => $package->load('rack','rack.wareHouse','order'),
         ], 201);
 
     }
@@ -116,7 +116,7 @@ class PackageController extends Controller
      * @bodyParam is_fragile boolean
      * @bodyParam is_hazardous boolean
      * @bodyParam is_damaged boolean
-     * @bodyParam location_id required
+     * @bodyParam warehouse_rack_id
      * @bodyParam received_at required
      * @authenticated
      * @response   {
@@ -313,8 +313,7 @@ class PackageController extends Controller
             Storage::disk('public')->delete($photo);
 
         }
-
-        // Remove from array
+       
         $updatedPhotos = array_filter($existingPhotos, fn ($p) => $p !== $photo);
 
         $package->package_photos = array_values($updatedPhotos);

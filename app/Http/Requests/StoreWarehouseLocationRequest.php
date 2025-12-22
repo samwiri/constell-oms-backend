@@ -20,10 +20,10 @@ class StoreWarehouseLocationRequest extends FormRequest
     {
         return [
            'code'=>'required|unique:warehouse_locations',
-           'zone'=>'nullable|string',
-           'rack'=>'nullable|string',
-           'bay' => 'nullable|string',
-           'shelf' => 'nullable|string',
+           'address'=>'nullable|string',
+           'manager'=>'nullable|string',
+           'active' => 'sometimes|boolean',
+           'rack_count' => 'nullable|numeric',
            'name' => 'nullable|string',
            'country' => 'nullable|string'
         ];

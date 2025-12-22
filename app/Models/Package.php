@@ -17,7 +17,7 @@ class Package extends Model
         'order_id', 'hwb_number', 'contents', 'declared_value',
         'weight', 'length', 'width', 'height',
         'is_fragile', 'is_hazardous', 'is_damaged', 'package_photos',
-        'location_id', 'received_at'
+        'warehouse_rack_id', 'received_at'
     ];
 
     protected $casts = [
@@ -33,9 +33,9 @@ class Package extends Model
         return $this->belongsTo(Order::class);
     }
 
-    public function location()
+    public function rack()
     {
-        return $this->belongsTo(WarehouseLocation::class, 'location_id');
+        return $this->belongsTo(WarehouseRack::class, 'warehouse_rack_id');
     }
 
     public function batches()

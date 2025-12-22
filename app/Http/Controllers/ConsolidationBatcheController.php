@@ -109,7 +109,7 @@ class ConsolidationBatcheController extends Controller
 
     public function index()
     {
-        return ConsolidationBatche::with('packages','packages.order','packages.order.user')->latest()->get();
+        return ConsolidationBatche::with('packages','packages.order','packages.order.user','packages.rack')->latest()->get();
     }
 
     /**
@@ -279,7 +279,7 @@ class ConsolidationBatcheController extends Controller
  
     public function show($consolidationBatch_id)
     {
-       return ConsolidationBatche::with('packages','packages.order','packages.order.user')->findOrFail($consolidationBatch_id);
+       return ConsolidationBatche::with('packages','packages.order','packages.order.user','packages.rack')->findOrFail($consolidationBatch_id);
     }
 
  

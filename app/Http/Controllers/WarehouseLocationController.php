@@ -26,11 +26,9 @@ class WarehouseLocationController extends Controller
      *               "created_at": "2025-12-05T09:12:00.000000Z",
      *               "updated_at": "2025-12-05T09:12:00.000000Z",
      *               "deleted_at": null,
-     *               "code": "A-01-B-03",
-     *               "zone": "A",
-     *               "rack": "01",
-     *               "bay": "B",
-     *               "shelf": "03",
+     *               "country": "Uganda",
+     *               "address": "A",
+     *               "rack_count": "01",
      *               "is_occupied": 0
      *           }
      *       ]
@@ -40,7 +38,7 @@ class WarehouseLocationController extends Controller
 
     public function index()
     {
-        $warehouses = WarehouseLocation::get();
+        $warehouses = WarehouseLocation::with('racks')->get();
 
         $data = [
             'status' => 'success', 
@@ -65,28 +63,12 @@ class WarehouseLocationController extends Controller
      * @group Warehouse Location
      * @authenticated
      * @bodyParam code string required
-     * @bodyParam zone string required   
-     * @bodyParam rack string required
-     * @bodyParam bay string
-     * @bodyParam shelf string
+     * @bodyParam address string required   
+     * @bodyParam rack_count string required
+     * @bodyParam manager string
      * @bodyParam name string
      * @bodyParam country string
      * 
-     * @response  {
-     *       "status": "success",
-     *       "message": "Account created successfully",
-     *       "data": {
-     *           "full_name": "Thembo Charles",
-     *           "email": "ashley7520charles@gmail.com",
-     *           "phone": "0787444081",
-     *           "tin": "110023452",
-     *           "passport": "65748",
-     *           "address": "Kampala",
-     *           "updated_at": "2025-12-05T06:42:09.000000Z",
-     *           "created_at": "2025-12-05T06:42:09.000000Z",
-     *           "id": 1
-     *       }
-     *   }
      * 
     **/
 
@@ -108,9 +90,17 @@ class WarehouseLocationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(WarehouseLocation $warehouseLocation)
+    public function show($warehouseLocation_id)
     {
-        //
+        $warehouses = WarehouseLocation::with('racks')->find($warehouseLocation_id);
+
+        $data = [
+            'status' => 'success', 
+            'message'=>'Warehouse Locations',           
+            'data'=>$warehouses,              
+        ];
+
+        return response()->json(($data),200);
     }
 
     /**
@@ -127,33 +117,17 @@ class WarehouseLocationController extends Controller
      * @group Warehouse Location
      * @authenticated
      * @bodyParam code string required
-     * @bodyParam zone string required   
-     * @bodyParam rack string required
-     * @bodyParam bay string
-     * @bodyParam shelf string
+     * @bodyParam address string required   
+     * @bodyParam rack_count string required
+     * @bodyParam manager string
      * @bodyParam name string
      * @bodyParam country string
-     * 
-     * @response  {
-     *       "status": "success",
-     *       "message": "Account created successfully",
-     *       "data": {
-     *           "full_name": "Thembo Charles",
-     *           "email": "ashley7520charles@gmail.com",
-     *           "phone": "0787444081",
-     *           "tin": "110023452",
-     *           "passport": "65748",
-     *           "address": "Kampala",
-     *           "updated_at": "2025-12-05T06:42:09.000000Z",
-     *           "created_at": "2025-12-05T06:42:09.000000Z",
-     *           "id": 1
-     *       }
-     *   }
-     * 
+     * @urlParam warehouseLocation_id integer required
+     *    
     **/
 
     public function update(UpdateWarehouseLocationRequest $request, $warehouseLocation_id)
-    {
+    {     
 
         $updateWarehouseLocation = WarehouseLocation::find($warehouseLocation_id);
 
@@ -161,7 +135,7 @@ class WarehouseLocationController extends Controller
 
         $data = [
             'status' => 'success',
-            'message' => 'Warehouse Location created successfully',
+            'message' => 'Warehouse Location updated successfully',
             'data'=>$updateWarehouseLocation,
         ];
 

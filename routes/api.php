@@ -14,6 +14,7 @@ use App\Http\Controllers\OrderStatusHistoryController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\WarehouseLocationController;
+use App\Http\Controllers\WarehouseRackController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -37,8 +38,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::prefix('settings')->group(function() {
         Route::apiResource('locations', WarehouseLocationController::class);
-    });
-   
+        Route::apiResource('warehouse_racks',WarehouseRackController::class);
+    });   
 
     Route::apiResource('orders', OrderController::class);
     Route::post('order_status_hisory',[OrderStatusHistoryController::class,'store'])->name('order_status_history.store');

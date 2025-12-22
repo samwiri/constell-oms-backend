@@ -32,12 +32,12 @@ return new class extends Migration
             $table->boolean('is_damaged')->default(false);
 
             $table->json('package_photos')->nullable();
-            $table->foreignId('location_id')->nullable()->constrained('warehouse_locations')->nullOnDelete();
+            $table->foreignId('warehouse_rack_id')->nullable()->constrained('warehouse_racks')->nullOnDelete();
             $table->timestamp('received_at')->nullable();          
             
             $table->index('hwb_number');
             $table->index('order_id');
-            $table->index('location_id');
+            $table->index('warehouse_rack_id');
 
         });
     }

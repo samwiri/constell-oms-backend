@@ -17,17 +17,16 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->string('code')->unique()->comment('e.g., A-01-B-03');
-            $table->string('zone')->nullable();
-            $table->string('rack')->nullable();
-            $table->string('bay')->nullable();
-            $table->string('shelf')->nullable();
-            $table->boolean('is_occupied')->default(false);
-       
-            $table->index('code');
-            $table->index('is_occupied');
-            
+            $table->string('code')->unique();
+            $table->string('name')->nullable();
+            $table->string('address')->nullable();
+            $table->string('manager')->nullable();
+            $table->boolean('active')->default(true);
+            $table->string('rack_count')->nullable();
+            $table->string('country')->nullable();
+
         });
+ 
     }
 
     /**

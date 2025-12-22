@@ -30,7 +30,7 @@ class PackageRequest extends FormRequest
             'is_hazardous'   => 'boolean',
             'is_damaged'     => 'boolean',
             'package_photos'  => 'nullable|array',
-            'location_id'    => 'nullable|exists:warehouse_locations,id',
+            'warehouse_rack_id'    => 'nullable|exists:warehouse_racks,id',
             'received_at'    => 'nullable|date',
         ];
     }

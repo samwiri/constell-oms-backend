@@ -6,24 +6,24 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
         Schema::table('payments', function (Blueprint $table) {
-            $table->foreignId('assisted_shopping_id')->nullable()->constrained('assisted_shoppings')->onDelete('cascade');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-
+            $table->foreignId('assisted_shopping_id')->nullable()->constrained('assisted_shoppings')->cascadeOnDelete();
         });
     }
 
-     
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::table('payments', function (Blueprint $table) {
-
             $table->dropForeign(['assisted_shopping_id']);
             $table->dropColumn('assisted_shopping_id');
-            $table->dropColumn('user_id');
         });
     }
 };
