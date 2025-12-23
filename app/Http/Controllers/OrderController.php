@@ -204,7 +204,7 @@ class OrderController extends Controller
 
         else {
 
-            $orders =  Order::with('statusHistory','statusHistory.user','user','packages')->where('user_id',$user_id)->latest()->paginate(20);
+            $orders =  Order::with('statusHistory','statusHistory.user','user','packages')->where('user_id',$user->id)->latest()->paginate(20);
 
         }
         return response()->json([
