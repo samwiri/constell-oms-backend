@@ -573,9 +573,9 @@ endpoints:
       warehouse_location_id:
         custom: []
         name: warehouse_location_id
-        description: 'The <code>id</code> of an existing record in the warehouse_locations table.'
+        description: 'Request parameter: warehouse_location_id. The <code>id</code> of an existing record in the warehouse_locations table.'
         required: false
-        example: 17
+        example: 1000
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -598,7 +598,7 @@ endpoints:
       bin_end: consequatur
       capacity: consequatur
       type: consequatur
-      warehouse_location_id: 17
+      warehouse_location_id: 1000
       warehouseRack_id: 17
     fileParameters: []
     responses: []

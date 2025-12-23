@@ -33,7 +33,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::prefix('auth')->group(function() {
         Route::post('logout',[AuthController::class,'userLogout']);
         Route::get('user',[AuthController::class,'userProfile']);
-        Route::put('update_user',[AuthController::class,'updateUser']);       
+        Route::put('update_user',[AuthController::class,'updateUser']);  
+        Route::get('all_profiles',[AuthController::class,'users']);  
     });
 
     Route::prefix('settings')->group(function() {

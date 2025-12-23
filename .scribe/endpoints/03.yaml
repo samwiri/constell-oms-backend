@@ -293,12 +293,24 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      user_id:
+        custom: []
+        name: user_id
+        description: optional
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
     cleanBodyParameters:
       origin_country: consequatur
       receiver_name: consequatur
       receiver_phone: consequatur
       receiver_email: qkunze@example.com
       receiver_address: consequatur
+      user_id: 17
     fileParameters: []
     responses:
       -
@@ -672,89 +684,6 @@ endpoints:
   -
     custom: []
     httpMethods:
-      - GET
-    uri: 'api/orders/tracking/{tracking_number}'
-    metadata:
-      custom: []
-      groupName: Orders
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Get Order By Tracking Number'
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      tracking_number:
-        custom: []
-        name: tracking_number
-        description: 'The tracking number of the order.'
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      tracking_number: consequatur
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 200
-        content: |-
-          {
-            "status": "success",
-            "data": {
-                "id": 5,
-                "created_at": "2025-12-05T12:20:11.000000Z",
-                "updated_at": "2025-12-05T12:20:11.000000Z",
-                "deleted_at": null,
-                "tracking_number": "ORD-20251205-00002",
-                "user_id": 1,
-                "origin_country": "ITALY",
-                "receiver_name": "Tom Mboya",
-                "receiver_phone": "0789887766",
-                "receiver_email": "tom.mboya@gmail.com",
-                "receiver_address": "Uganda - Kampala",
-                "status": "PENDING",
-                "received_at": null,
-                "dispatched_at": null,
-                "arrived_at": null,
-                "released_at": null,
-                "delivered_at": null,
-                "status_history": [],
-                "user": {},
-                "packages": []
-            }
-          }
-        headers: []
-        description: ''
-      -
-        custom: []
-        status: 404
-        content: |-
-          {
-           "message": "No query results for model [App\\Models\\Order]."
-          }
-        headers: []
-        description: ''
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
       - POST
     uri: api/order_status_hisory
     metadata:
@@ -914,6 +843,89 @@ endpoints:
                     "message": "Order status history deleted.",
                 }
             }
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/orders/tracking/{tracking_number}'
+    metadata:
+      custom: []
+      groupName: Orders
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Get Order By Tracking Number'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      tracking_number:
+        custom: []
+        name: tracking_number
+        description: 'The tracking number of the order.'
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      tracking_number: consequatur
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: |-
+          {
+            "status": "success",
+            "data": {
+                "id": 5,
+                "created_at": "2025-12-05T12:20:11.000000Z",
+                "updated_at": "2025-12-05T12:20:11.000000Z",
+                "deleted_at": null,
+                "tracking_number": "ORD-20251205-00002",
+                "user_id": 1,
+                "origin_country": "ITALY",
+                "receiver_name": "Tom Mboya",
+                "receiver_phone": "0789887766",
+                "receiver_email": "tom.mboya@gmail.com",
+                "receiver_address": "Uganda - Kampala",
+                "status": "PENDING",
+                "received_at": null,
+                "dispatched_at": null,
+                "arrived_at": null,
+                "released_at": null,
+                "delivered_at": null,
+                "status_history": [],
+                "user": {},
+                "packages": []
+            }
+          }
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: |-
+          {
+           "message": "No query results for model [App\\Models\\Order]."
+          }
         headers: []
         description: ''
     responseFields: []

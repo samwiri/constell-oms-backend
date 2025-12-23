@@ -439,5 +439,42 @@ class AuthController extends Controller
             ], 200);
 
         }
+
+
+
+        /** 
+         * Account profiles
+         * 
+         * @group User profile  
+         * @header Bearer Token 
+         
+        * 
+        * @authenticated
+        
+        * 
+        **/ 
+
+
+        function users() {
+
+            $user = Auth::user();
+
+            if($user->user_type=="super_user" || $user->user_type=="staff"){
+
+                $users = User::get();
+
+            }else{
+
+                $users = User::where('id',Auth::id())->get();
+
+            }            
+
+            return response()->json([
+                'status'  => 'success',
+                'message' => 'Account Profiles',
+                'data'    => $users,
+            ], 200);
+            
+        }
         
     }
