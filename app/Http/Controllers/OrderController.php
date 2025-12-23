@@ -232,6 +232,7 @@ class OrderController extends Controller
      * @bodyParam receiver_phone string required
      * @bodyParam receiver_email string
      * @bodyParam receiver_address string
+     * @bodyParam user_id integer optional
      * @authenticated
      * @response  {
      *       "status": "success",
@@ -276,7 +277,7 @@ class OrderController extends Controller
 
        $data['tracking_number'] = Order::generateOrderNumber();
 
-       $data['user_id'] = Auth::id();
+       $data['user_id'] = is_null($request->user_id) ? Auth::id():$request->user_id;
 
        $order = Order::create($data);
 
