@@ -196,8 +196,17 @@ class OrderController extends Controller
     public function index()
     {
 
-        $orders =  Order::with('statusHistory','statusHistory.user','user','packages')->latest()->paginate(20);
+        $user = Auth::user();
 
+        if($user->user_type=="super_user" || $user->user_type=="staff")
+
+            $orders =  Order::with('statusHistory','statusHistory.user','user','packages')->latest()->paginate(20);
+
+        else {
+
+            $orders =  Order::with('statusHistory','statusHistory.user','user','packages')->where('user_id',$user_id)->latest()->paginate(20);
+
+        }
         return response()->json([
             'status' => 'success',
             'data'   =>$orders,
