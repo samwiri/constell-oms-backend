@@ -89,7 +89,17 @@ class AssistedShoppingController extends Controller
     public function index()
     {
 
-        $assisted_shoppings = AssistedShopping::with('user','quoteItems','payments')->latest()->paginate(20);
+        $user = Auth::user();
+
+        if($user->user_type=="super_user" || $user->user_type=="staff"){
+
+            $assisted_shoppings = AssistedShopping::with('user','quoteItems','payments')->latest()->paginate(20);
+
+        }else{
+            $assisted_shoppings = AssistedShopping::with('user','quoteItems','payments')->where('user_id',$user->id)->latest()->paginate(20);
+        }
+
+        
 
         return response()->json([
             'message' => 'Assisted Shoppings',

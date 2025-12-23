@@ -6,6 +6,7 @@ use App\Http\Requests\StoreInvoiceRequest;
 use App\Http\Requests\UpdateInvoiceRequest;
 use App\Mail\InvoiceMail;
 use App\Models\Invoice;
+use App\Models\Order;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -156,7 +157,21 @@ class InvoiceController extends Controller
     **/
     public function index()
     {
-        $invoices = Invoice::latest()->with('order','order.user','lineItems','payments')->paginate(20);
+
+        
+        $user = Auth::user();
+
+        if($user->user_type=="super_user" || $user->user_type=="staff"){
+
+            $invoices = Invoice::with('order','order.user','lineItems','payments')->latest()->paginate(20);
+
+        }else{
+
+            $orders = Order::where('user_id',$user->id)->pluck('order_id')->toArray();
+
+            $invoices = Invoice::with('order','order.user','lineItems','payments')->whereIn('order_id',$orders)->latest()->paginate(20);
+
+        }
 
         return response()->json([
             'message' => 'Invoices fetched successfully',
