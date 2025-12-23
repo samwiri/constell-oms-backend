@@ -71,6 +71,8 @@ class PaymentController extends Controller
 
         $data['user_id'] = Auth::id();
 
+        $data['paid_at'] = now();
+
         $payment = Payment::create($data);
 
         return response()->json([

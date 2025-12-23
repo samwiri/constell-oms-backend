@@ -25,7 +25,7 @@ class StorePaymentRequest extends FormRequest
             'transaction_reference' => 'nullable|string',
             'gateway_reference'     => 'nullable|string',
             'status'                => 'nullable|in:PENDING,COMPLETED,FAILED',
-            'paid_at'               => 'required|date',
+            
         ];
     }
 }
