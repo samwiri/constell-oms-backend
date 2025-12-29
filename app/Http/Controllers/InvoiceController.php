@@ -163,13 +163,13 @@ class InvoiceController extends Controller
 
         if($user->user_type=="super_user" || $user->user_type=="staff"){
 
-            $invoices = Invoice::with('order','order.user','lineItems','payments')->latest()->paginate(20);
+            $invoices = Invoice::with('order','order.user','lineItems','payments','user','order.user')->latest()->paginate(20);
 
         }else{
 
-            $orders = Order::where('user_id',$user->id)->pluck('order_id')->toArray();
+            $orders = Order::where('user_id',$user->id)->pluck('id')->toArray();
 
-            $invoices = Invoice::with('order','order.user','lineItems','payments')->whereIn('order_id',$orders)->latest()->paginate(20);
+            $invoices = Invoice::with('order','order.user','lineItems','payments','user','order.user')->whereIn('order_id',$orders)->latest()->paginate(20);
 
         }
 
@@ -262,7 +262,7 @@ class InvoiceController extends Controller
     public function show($invoice_id)
     {
 
-        $invoice = Invoice::with('lineItems','order','order.packages')->findOrFail($invoice_id);
+        $invoice = Invoice::with('lineItems','order','order.packages','payments','user','order.user')->findOrFail($invoice_id);
 
         return response()->json([
             'message' => 'Invoice fetched successfully',

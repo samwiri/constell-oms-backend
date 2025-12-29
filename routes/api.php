@@ -87,9 +87,11 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::apiResource('assisted_shopping', AssistedShoppingController::class);
     Route::apiResource('assisted_shopping_quote', AssistedShoppingQuoteController::class);
-    Route::get('orders/tracking/{tracking_number}', [OrderController::class, 'getOrderByTrackingNumber']);
+  
     Route::get('activity_logs',[NotificationController::class,'activityLogs']);
 
     
 
 });
+
+  Route::get('orders/tracking/{tracking_number}', [OrderController::class, 'getOrderByTrackingNumber']);
