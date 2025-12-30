@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Invoice #{{ $invoice->invoice_number }}</h2>
-    <p>Date: {{ $invoice->created_at->format('d M Y') }}</p>
+    <p>Date: {{ $invoice->created_at }}</p>
 
     <h3>Customer:</h3>
     <p>

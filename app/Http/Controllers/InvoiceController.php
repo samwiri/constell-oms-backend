@@ -402,7 +402,7 @@ class InvoiceController extends Controller
 
     function sendInvoice($invoice_id) {
 
-        $invoice = Invoice::with('lineItems','order','order.packages')->findOrFail($invoice_id);
+        $invoice = Invoice::with('lineItems','order','order.packages','order.user')->findOrFail($invoice_id);
  
         $pdf = Pdf::loadView('emails.invoice_pdf', compact('invoice'))->output();
    
