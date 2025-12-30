@@ -169,7 +169,7 @@ class InvoiceController extends Controller
 
             $orders = Order::where('user_id',$user->id)->pluck('id')->toArray();
 
-            $invoices = Invoice::with('order','order.user','lineItems','payments','user','order.user')->whereIn('order_id',$orders)->latest()->paginate(20);
+            $invoices = Invoice::with('order','order.user','lineItems','payments','user','order.user')->whereIn('order_id',$orders)->where('user_id',$user->id)->latest()->paginate(20);
 
         }
 
