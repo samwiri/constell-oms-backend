@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCargoDeclationRequest;
 use App\Http\Requests\UpdateCargoDeclationRequest;
+use App\Mail\CargoDeclerationEmail;
 use App\Models\CargoDeclation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class CargoDeclationController extends Controller
@@ -125,6 +127,13 @@ class CargoDeclationController extends Controller
         $data['user_id']=Auth::id();
 
         $cargoDeclation = CargoDeclation::create($data);
+
+        try {
+           Mail::to(env('MAIL_USERNAME'))->replyTo(
+                $cargoDeclation->user?->email,
+                $cargoDeclation->user?->name
+            )->send(new CargoDeclerationEmail($cargoDeclation));
+        } catch (\Exception $th) {}      
 
         return response()->json([
             'message' => 'Cargo declaration created successfully',
