@@ -4,6 +4,7 @@ use App\Http\Controllers\AssistedShoppingController;
 use App\Http\Controllers\AssistedShoppingQuoteController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BatchPackageController;
+use App\Http\Controllers\CargoDeclationController;
 use App\Http\Controllers\ConsolidationBatcheController;
 use App\Http\Controllers\DeliveryOrderController;
 use App\Http\Controllers\InvoiceController;
@@ -87,10 +88,12 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     Route::apiResource('assisted_shopping', AssistedShoppingController::class);
     Route::apiResource('assisted_shopping_quote', AssistedShoppingQuoteController::class);
+
+    Route::apiResource('cargo_decleration',CargoDeclationController::class);
+     Route::post('cargo_files/{cargo_decleration_id}',[CargoDeclationController::class,'storePackagePhotos']);
+    Route::delete('cargo_files/{cargo_decleration_id}',[CargoDeclationController::class,'deletePackagePhotos']);
   
     Route::get('activity_logs',[NotificationController::class,'activityLogs']);
-
-    
 
 });
 
