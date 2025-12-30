@@ -192,9 +192,10 @@ class InvoiceController extends Controller
      * 
      * @group Invoice  
      * @header Bearer Token    
-     * @bodyParam order_id string required
+     * @bodyParam order_id string optional
      * @bodyParam type string required Example: FREIGHT,STORAGE,CUSTOMS,OTHER
      * @bodyParam due_date date required
+     * @bodyParam user_id integer optional
      * @authenticated
      * @response {
      *   "message": "Invoice created successfully",
@@ -235,7 +236,7 @@ class InvoiceController extends Controller
 
         $data = $request->validated();
 
-        $data['user_id'] = Auth::id();
+        $data['user_id'] = isset($request->user_id) ? $request->user_id : Auth::id();
 
         $data['invoice_number'] = Invoice::generateInvoiceNumber();
 
@@ -402,12 +403,18 @@ class InvoiceController extends Controller
 
     function sendInvoice($invoice_id) {
 
-        $invoice = Invoice::with('lineItems','order','order.packages','order.user')->findOrFail($invoice_id);
+        $invoice = Invoice::with('lineItems','order','order.packages','order.user','user')->findOrFail($invoice_id);
  
         $pdf = Pdf::loadView('emails.invoice_pdf', compact('invoice'))->output();
-   
-        Mail::to($invoice->order->receiver_email)->send(new InvoiceMail($invoice, $pdf));   
 
+        if(empty($invoice->order_id)){
+
+            Mail::to($invoice->user->email)->send(new InvoiceMail($invoice, $pdf)); 
+
+        }else{
+            Mail::to($invoice->order->receiver_email)->send(new InvoiceMail($invoice, $pdf)); 
+        }
+   
         return response()->json([
             'message' => 'Invoice sent',
             'data'    => $invoice

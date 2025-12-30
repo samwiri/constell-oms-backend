@@ -11,11 +11,20 @@
     <p>Date: {{ $invoice->created_at }}</p>
 
     <h3>Customer:</h3>
+    @if (empty($invoice->order_id))
     <p>
         {{ $invoice->order->receiver_name }}<br>
         {{ $invoice->order->receiver_email }}<br>
         {{ $invoice->order->receiver_phone }}
-    </p>
+    </p>        
+    @else
+    <p>
+        {{ $invoice->user->name }}<br>
+        {{ $invoice->user->email }}<br>
+        {{ $invoice->user->phone_number }}
+    </p>        
+    @endif
+    
 
     <h3>Line Items</h3>
     <table width="100%" border="1" cellspacing="0" cellpadding="6">
