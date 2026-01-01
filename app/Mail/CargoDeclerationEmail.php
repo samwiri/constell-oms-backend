@@ -8,6 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Address;
 
 class CargoDeclerationEmail extends Mailable
 {
@@ -20,19 +21,21 @@ class CargoDeclerationEmail extends Mailable
         $this->cargo = $cargo;
     }
 
-    /**
-     * Get the message envelope.
-     */
-    public function envelope(): Envelope
+   
+   public function envelope(): Envelope
     {
         return new Envelope(
-            subject: $this->cargo->location->name.' - Cargo Decleration from '.$this->cargo->user->name,
+            subject: $this->cargo->location->name . ' - Cargo Declaration from ' . $this->cargo->user->name,
+            replyTo: [
+                new Address(
+                    $this->cargo->user->email,
+                    $this->cargo->user->name
+                ),
+            ],
         );
     }
 
-    /**
-     * Get the message content definition.
-     */
+   
     public function content(): Content
     {
         return new Content(
@@ -40,11 +43,7 @@ class CargoDeclerationEmail extends Mailable
         );
     }
 
-    /**
-     * Get the attachments for the message.
-     *
-     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
-     */
+   
     public function attachments(): array
     {
         return [];

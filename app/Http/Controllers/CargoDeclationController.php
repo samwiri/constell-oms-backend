@@ -129,10 +129,7 @@ class CargoDeclationController extends Controller
         $cargoDeclation = CargoDeclation::create($data);
 
         try {
-           Mail::to(env('MAIL_USERNAME'))->replyTo(
-                $cargoDeclation->user?->email,
-                $cargoDeclation->user?->name
-            )->send(new CargoDeclerationEmail($cargoDeclation));
+           Mail::to(env('MAIL_USERNAME'))->send(new CargoDeclerationEmail($cargoDeclation));
         } catch (\Exception $th) {}      
 
         return response()->json([
