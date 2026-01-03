@@ -25,6 +25,7 @@ class StoreCargoDeclationRequest extends FormRequest
             'cargo_details'=>'required',
             'value'=>'required|numeric',
             'weight'=>'nullable|numeric',
+            'insured'=>'sometimes|boolean'
         ];
     }
 }

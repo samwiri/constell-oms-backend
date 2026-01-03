@@ -78,11 +78,15 @@ class CargoDeclationController extends Controller
 
         $user = Auth::user(); 
 
-        if($user->user_type=="super_user" || $user->user_type=="staff")
+        if($user->user_type=="super_user"){
 
             $cargoDecleration = CargoDeclation::with('user','location')->get();
 
-        else {
+        }elseif($user->user_type=="staff"){
+
+            $cargoDecleration = CargoDeclation::with('user','location')->whereIn('warehouse_location_id',$user->wareHouses->pluck('id')->toArray())->get();
+        
+        }else {
 
             $cargoDecleration = CargoDeclation::with('user','location')->where('user_id',$user->id)->get();
 
@@ -114,6 +118,7 @@ class CargoDeclationController extends Controller
      * @bodyParam cargo_details string required
      * @bodyParam value string required
      * @bodyParam weight string
+     * @bodyParam insured boolean
      * 
      * @authenticated
      * 
@@ -127,10 +132,8 @@ class CargoDeclationController extends Controller
         $data['user_id']=Auth::id();
 
         $cargoDeclation = CargoDeclation::create($data);
-
-        try {
-           Mail::to(env('MAIL_USERNAME'))->send(new CargoDeclerationEmail($cargoDeclation));
-        } catch (\Exception $th) {}      
+      
+        Mail::to(env('MAIL_USERNAME'))->send(new CargoDeclerationEmail($cargoDeclation));            
 
         return response()->json([
             'message' => 'Cargo declaration created successfully',
@@ -138,8 +141,6 @@ class CargoDeclationController extends Controller
         ], 201);
 
     }
-
-
         
     /** 
      * Cargo decleration
@@ -186,6 +187,7 @@ class CargoDeclationController extends Controller
      * @bodyParam value string required
      * @bodyParam weight string
      * @bodyParam status string Example: pending,received,declined
+     * @bodyParam insured boolean
      * 
      * @authenticated
      * 

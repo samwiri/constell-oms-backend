@@ -17,11 +17,9 @@ class UpdateConsolidationBatchRequest extends FormRequest
 
  
     public function rules(): array
-    {
-        $id = $this->route('id');
+    {   
 
         return [
-            'mawb_number'            => "sometimes|string|max:50|unique:consolidation_batches,mawb_number,{$id}",
             'transport_mode'         => 'sometimes|in:AIR,SEA,ROAD,TRAIN',
             'container_flight_number'=> 'sometimes|string',
             'departure_date'         => 'sometimes|date',
@@ -29,9 +27,12 @@ class UpdateConsolidationBatchRequest extends FormRequest
             'package_count'          => 'sometimes|integer|min:0',
             'total_weight'           => 'sometimes|numeric|min:0',
             'created_by'             => 'sometimes|exists:users,id',
-            'finalized_at'           => 'nullable|date',
-            'departed_at'            => 'nullable|date',
-            'arrived_at'             => 'nullable|date',
+            'finalized_at'           => 'sometimes|date',
+            'departed_at'            => 'sometimes|date',
+            'arrived_at'             => 'sometimes|date',
+            'origin_country'        => 'sometimes',
+            'destination_country'   => 'sometimes',
+            'warehouse_location_id' => 'sometimes|exists:warehouse_locations,id'
         ];
 
     }

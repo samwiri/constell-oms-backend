@@ -13,7 +13,7 @@ class Invoice extends Model
     use HasFactory, LogsActivity, SoftDeletes;
 
     protected $fillable = [
-        'invoice_number', 'user_id', 'order_id', 'type','status', 'due_date',
+        'invoice_number', 'user_id', 'order_id', 'type','status', 'due_date','currency'
     ];
     protected $casts = [
         'due_date' => 'date',

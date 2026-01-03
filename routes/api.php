@@ -14,6 +14,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderStatusHistoryController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\UserWareHouseController;
 use App\Http\Controllers\WarehouseLocationController;
 use App\Http\Controllers\WarehouseRackController;
 use Illuminate\Support\Facades\Route;
@@ -35,7 +36,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::post('logout',[AuthController::class,'userLogout']);
         Route::get('user',[AuthController::class,'userProfile']);
         Route::put('update_user',[AuthController::class,'updateUser']);  
-        Route::get('all_profiles',[AuthController::class,'users']);  
+        Route::get('all_profiles',[AuthController::class,'users']);
+        Route::post('user_warehouse',[UserWareHouseController::class,'store']);    
     });
 
     Route::prefix('settings')->group(function() {
@@ -55,7 +57,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::delete('packages/{id}/package-photos', [PackageController::class, 'deletePackagePhotos']);
 
     Route::get('consolidation-batches', [ConsolidationBatcheController::class, 'index']);
-    Route::get('consolidation-batches/{id}', [ConsolidationBatcheController::class, 'show']);
+   
     Route::post('consolidation-batches', [ConsolidationBatcheController::class, 'store']);
     Route::put('consolidation-batches/{id}', [ConsolidationBatcheController::class, 'update']);
     Route::delete('consolidation-batches/{id}', [ConsolidationBatcheController::class, 'destroy']);
@@ -97,4 +99,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
 });
 
+  Route::get('consolidation-batches/{id}', [ConsolidationBatcheController::class, 'show']);
   Route::get('orders/tracking/{tracking_number}', [OrderController::class, 'getOrderByTrackingNumber']);

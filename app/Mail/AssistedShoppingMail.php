@@ -10,40 +10,40 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Address;
 
-class CargoDeclerationEmail extends Mailable
+class AssistedShoppingMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $cargo;
+    public $assisted_shopping;
 
-    public function __construct($cargo)
+    public function __construct($assisted_shopping)
     {
-        $this->cargo = $cargo;
+        $this->assisted_shopping = $assisted_shopping;
     }
 
-   
-   public function envelope(): Envelope
+ 
+    public function envelope(): Envelope
     {
         return new Envelope(
-            subject: $this->cargo->location->name . ' - Cargo Declaration from ' . $this->cargo->user->full_name,
+            subject: 'Assisted Shopping request from '.$this->assisted_shopping->user->full_name,
             replyTo: [
                 new Address(
-                    $this->cargo->user->email,
-                    $this->cargo->user->full_name
+                    $this->assisted_shopping->user->email,
+                    $this->assisted_shopping->user->full_name
                 ),
             ],
         );
     }
 
-   
+  
     public function content(): Content
     {
         return new Content(
-            view: 'emails.cargo_decleration',
+            view: 'emails.assisted_shopping',
         );
     }
 
-   
+  
     public function attachments(): array
     {
         return [];

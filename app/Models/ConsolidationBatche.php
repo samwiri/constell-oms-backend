@@ -16,7 +16,8 @@ class ConsolidationBatche extends Model
     protected $fillable = [
         'mawb_number', 'transport_mode', 'container_flight_number',
         'departure_date', 'status', 'package_count', 'total_weight',
-        'created_by', 'finalized_at', 'departed_at', 'arrived_at'
+        'created_by', 'finalized_at', 'departed_at', 'arrived_at',
+        'origin_country','destination_country','warehouse_location_id'
     ];
 
     protected $casts = [
@@ -40,6 +41,26 @@ class ConsolidationBatche extends Model
 
         return $this->belongsTo(User::class,'created_by');
         
+    }
+
+     function warehouse() : BelongsTo {
+
+        return $this->belongsTo(WarehouseLocation::class,'warehouse_location_id');
+        
+    }
+
+    public static function batchNumber($transport_mode, $origin_country, $warehouse_location_id)
+    {
+        $warehouse_location = WarehouseLocation::findOrFail($warehouse_location_id);
+
+        $batchCount = ConsolidationBatche::withTrashed()->count() + 1;
+
+        $batchNumber = str_pad($batchCount, 4, '0', STR_PAD_LEFT);
+
+        return $transport_mode
+            . '-' . $origin_country
+            . '-' . $warehouse_location->code
+            . '-' . $batchNumber;
     }
 
      public function getActivitylogOptions(): LogOptions

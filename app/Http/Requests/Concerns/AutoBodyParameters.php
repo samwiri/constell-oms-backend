@@ -38,6 +38,6 @@ trait AutoBodyParameters
             return 'https://example.com';
         }
 
-        return 'example value';
+        return 'Any string';
     }
 }

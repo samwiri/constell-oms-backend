@@ -34,6 +34,7 @@ class AssistedShoppingQuoteController extends Controller
      * @bodyParam item_name string required
      * @bodyParam quantity integer required
      * @bodyParam unit_price double required
+     * @bodyParam currency string
      * @bodyParam assisted_shopping_id integer required
      * 
      * @authenticated
@@ -77,6 +78,7 @@ class AssistedShoppingQuoteController extends Controller
      * @bodyParam quantity integer  
      * @bodyParam unit_price double  
      * @bodyParam assisted_shopping_id integer
+     * @bodyParam currency string
      * @urlParam assistedShoppingQuote_id integer required
      * 
      * @authenticated

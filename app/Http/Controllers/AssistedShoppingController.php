@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAssistedShoppingRequest;
 use App\Http\Requests\UpdateAssistedShoppingRequest;
+use App\Mail\AssistedShoppingMail;
 use App\Models\AssistedShopping;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AssistedShoppingController extends Controller
 {
@@ -153,6 +155,8 @@ class AssistedShoppingController extends Controller
         $data['user_id'] = Auth::id();
 
         $assisted_shopping = AssistedShopping::create($data);
+
+        Mail::to(env("MAIL_FROM_ADDRESS"))->send(new AssistedShoppingMail($assisted_shopping));
       
         return response()->json([
             'message' => 'Assisted Shopping item added to successfully',

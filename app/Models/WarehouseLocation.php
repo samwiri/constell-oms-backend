@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\Traits\LogsActivity;
@@ -24,5 +25,15 @@ class WarehouseLocation extends Model
 
         return $this->hasMany(WarehouseRack::class);
         
+    }
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            User::class,
+            'user_ware_houses',
+            'warehouse_location_id',
+            'user_id'
+        )->using(UserWareHouse::class);
     }
 }

@@ -16,16 +16,17 @@ class CargoDeclation extends Model
 
     protected $fillable = [
         'warehouse_location_id', 'internal_curier','tracking_number',
-        'cargo_details','value','weight','status','files','user_id'
+        'cargo_details','value','weight','status','files','user_id','insured'
     ];
 
     protected $casts = [     
-        'files' => 'array',     
+        'files' => 'array',
+        'insured'=>'boolean'
     ];
 
     function user() : BelongsTo {
 
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
         
     }
 

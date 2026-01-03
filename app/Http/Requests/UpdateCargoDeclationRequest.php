@@ -24,7 +24,8 @@ class UpdateCargoDeclationRequest extends FormRequest
             'cargo_details'=>'sometimes',
             'value'=>'sometimes|numeric',
             'weight'=>'sometimes|numeric',
-            'status'=>'sometimes|in:pending,received,declined'
+            'status'=>'sometimes|in:pending,received,declined',
+            'insured'=>'sometimes|boolean'
         ];
     }
 }

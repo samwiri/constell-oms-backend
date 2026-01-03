@@ -163,13 +163,22 @@ class InvoiceController extends Controller
 
         if($user->user_type=="super_user" || $user->user_type=="staff"){
 
-            $invoices = Invoice::with('order','order.user','lineItems','payments','user','order.user')->latest()->paginate(20);
+            $invoices = Invoice::with(['order','order.user','lineItems','payments','user','order.user'])->latest()->paginate(20);
 
         }else{
 
-            $orders = Order::where('user_id',$user->id)->pluck('id')->toArray();
-
-            $invoices = Invoice::with('order','order.user','lineItems','payments','user','order.user')->whereIn('order_id',$orders)->where('user_id',$user->id)->latest()->paginate(20);
+            $invoices = Invoice::with([
+                'order.user',
+                'lineItems',
+                'payments',
+                'user',
+            ])
+            ->whereHas('order', function ($query) use ($user) {
+                $query->where('user_id', $user->id);
+            })
+            ->where('user_id', $user->id)
+            ->latest()
+            ->paginate(20);
 
         }
 
@@ -196,6 +205,7 @@ class InvoiceController extends Controller
      * @bodyParam type string required Example: FREIGHT,STORAGE,CUSTOMS,OTHER
      * @bodyParam due_date date required
      * @bodyParam user_id integer optional
+     * @bodyParam currency string required
      * @authenticated
      * @response {
      *   "message": "Invoice created successfully",
@@ -288,6 +298,7 @@ class InvoiceController extends Controller
      * @bodyParam type string required Example: FREIGHT,STORAGE,CUSTOMS,OTHER
      * @bodyParam status string Example: UNPAID,PAID,OVERDUE,CANCELLED
      * @bodyParam due_date date required
+     * @bodyParam currency string
      * @authenticated
      * @response {
      *   "message": "Invoice Updated successfully",

@@ -23,6 +23,7 @@ class StoreInvoiceRequest extends FormRequest
             'order_id'       => 'nullable|exists:orders,id',
             'type'           => 'required|in:FREIGHT,STORAGE,CUSTOMS,OTHER',
             'due_date'       => 'nullable|date',
+            'currency'       => 'sometimes',
         ];
    
     }

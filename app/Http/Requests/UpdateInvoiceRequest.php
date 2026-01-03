@@ -23,6 +23,7 @@ class UpdateInvoiceRequest extends FormRequest
             'type'           => 'sometimes|in:FREIGHT,STORAGE,CUSTOMS,OTHER',
             'status'         => 'sometimes|in:UNPAID,PAID,OVERDUE,CANCELLED',
             'due_date'       => 'sometimes|date',
+            'currency'       => 'sometimes',
         ];
 
     }

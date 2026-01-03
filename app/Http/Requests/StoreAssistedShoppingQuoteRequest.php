@@ -22,6 +22,7 @@ class StoreAssistedShoppingQuoteRequest extends FormRequest
             'item_name' => 'required',
             'quantity'  => 'required|numeric',
             'unit_price' => 'required|numeric',
+            'currency'   => 'sometimes',
             'assisted_shopping_id'=>'required|exists:assisted_shoppings,id',
         ];
     }

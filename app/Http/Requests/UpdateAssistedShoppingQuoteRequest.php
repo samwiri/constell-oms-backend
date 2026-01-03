@@ -22,6 +22,7 @@ class UpdateAssistedShoppingQuoteRequest extends FormRequest
             'item_name' => 'sometimes',
             'quantity'  => 'sometimes|numeric',
             'unit_price' => 'sometimes|numeric',
+            'currency'   => 'sometimes',
         ];
     }
 }

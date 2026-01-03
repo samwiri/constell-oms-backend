@@ -461,11 +461,11 @@ class AuthController extends Controller
 
             if($user->user_type=="super_user" || $user->user_type=="staff"){
 
-                $users = User::get();
+                $users = User::with('wareHouses')->get();
 
             }else{
 
-                $users = User::where('id',Auth::id())->get();
+                $users = User::with('wareHouses')->where('id',Auth::id())->get();
 
             }            
 

@@ -13,7 +13,7 @@ class AssistedShoppingQuote extends Model
 {
     use HasFactory, SoftDeletes, LogsActivity;
 
-    protected $fillable = ['item_name','quantity','unit_price','assisted_shopping_id'];
+    protected $fillable = ['item_name','quantity','unit_price','assisted_shopping_id','currency'];
 
     function assistedShoping() : BelongsTo {
 

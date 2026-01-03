@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
@@ -49,6 +50,12 @@ class User extends Authenticatable
         public function invoices()
         {
             return $this->hasMany(Invoice::class);
+        }
+
+        function wareHouses() : BelongsToMany {
+
+            return $this->belongsToMany(WarehouseLocation::class, 'user_ware_houses','user_id','warehouse_location_id');
+            
         }
 
         public static function createUser($full_name,$email,$phone,$password,$tin,$passport,$address,$user_type=null){

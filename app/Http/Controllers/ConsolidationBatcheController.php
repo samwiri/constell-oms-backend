@@ -109,7 +109,7 @@ class ConsolidationBatcheController extends Controller
 
     public function index()
     {
-        return ConsolidationBatche::with('packages','packages.order','packages.order.user','packages.rack')->latest()->get();
+        return ConsolidationBatche::with('packages','packages.order','packages.order.user','packages.rack','warehouse')->latest()->get();
     }
 
     /**
@@ -126,10 +126,12 @@ class ConsolidationBatcheController extends Controller
      * 
      * @group Consolidation Batch  
      * @header Bearer Token    
-     * @bodyParam mawb_number string required
      * @bodyParam transport_mode string required e.g 'AIR', 'SEA', 'ROAD', 'TRAIN'
      * @bodyParam container_flight_number string required
      * @bodyParam departure_date date required
+     * @bodyParam origin_country string E.g. USA, UG, CHINA,UAE
+     * @bodyParam warehouse_location_id integer required
+     * @bodyParam destination_country string
      * @authenticated
      * @response  {
      *       "message": "Consolidation batch created successfully",
@@ -171,7 +173,9 @@ class ConsolidationBatcheController extends Controller
         $data = $request->validated();
 
         $data['created_by'] = Auth::id();
-        
+
+        $data['mawb_number'] = ConsolidationBatche::batchNumber($request->transport_mode,$request->origin_country,$request->warehouse_location_id);
+      
         $batch = ConsolidationBatche::create($data);
 
         return response()->json([
@@ -279,7 +283,7 @@ class ConsolidationBatcheController extends Controller
  
     public function show($consolidationBatch_id)
     {
-       return ConsolidationBatche::with('packages','packages.order','packages.order.user','packages.rack')->findOrFail($consolidationBatch_id);
+       return ConsolidationBatche::with('packages','packages.order','packages.order.user','packages.rack','warehouse')->findOrFail($consolidationBatch_id);
     }
 
  
@@ -294,7 +298,6 @@ class ConsolidationBatcheController extends Controller
      * @group Consolidation Batch  
      * @header Bearer Token    
      * @urlParam consolidationBatche_id integer required
-     * @bodyParam mawb_number string required
      * @bodyParam transport_mode string required e.g 'AIR', 'SEA', 'ROAD', 'TRAIN'
      * @bodyParam container_flight_number string required
      * @bodyParam departure_date date required
@@ -302,6 +305,9 @@ class ConsolidationBatcheController extends Controller
      * @bodyParam finalized_at date required
      * @bodyParam departed_at date required
      * @bodyParam arrived_at date required
+     * @bodyParam origin_country string E.g. USA, UG, CHINA,UAE
+     * @bodyParam warehouse_location_id integer required
+     * @bodyParam destination_country string
      * @authenticated
      * @response  {
      *       "message": "Consolidation batch updated successfully",

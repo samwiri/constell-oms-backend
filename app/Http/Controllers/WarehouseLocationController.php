@@ -38,7 +38,7 @@ class WarehouseLocationController extends Controller
 
     public function index()
     {
-        $warehouses = WarehouseLocation::with('racks')->get();
+        $warehouses = WarehouseLocation::with('racks','users')->get();
 
         $data = [
             'status' => 'success', 
@@ -92,7 +92,7 @@ class WarehouseLocationController extends Controller
      */
     public function show($warehouseLocation_id)
     {
-        $warehouses = WarehouseLocation::with('racks')->find($warehouseLocation_id);
+        $warehouses = WarehouseLocation::with('racks','users')->find($warehouseLocation_id);
 
         $data = [
             'status' => 'success', 
